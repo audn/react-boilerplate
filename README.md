@@ -1,3 +1,5 @@
+### Would you be interested in using this?
+Please vote https://www.strawpoll.me/21123405
 
 ### :memo: Complete list of Twemoji Emojis
 
