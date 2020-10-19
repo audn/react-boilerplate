@@ -1,4 +1,4 @@
-### Would you be interested in using this?
+### (after reading) Would you be interested in using this?
 Please vote https://www.strawpoll.me/21123405
 
 ### :memo: Complete list of Twemoji Emojis
