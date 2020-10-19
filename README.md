@@ -20,3 +20,4 @@ Here is the same emoji found on [Emojipedia](https://emojipedia.org/police-car-l
 **`rotating-light`**...
 I mean, that's a good name, don't get me wrong -  but sure as hell took me some brain cells to figure that out!
 
+To get that emoji on your website, you would have to do `<i class="twa twa-rotating-light"></i>`. Confusing, right?
