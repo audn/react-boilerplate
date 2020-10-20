@@ -2,9 +2,8 @@
 **I made an example on it, please give feedback!
 https://twemoji.netlify.app/**
 
-Please vote https://www.strawpoll.me/21123405
+Vote on wheter or not this repo is needed: https://www.strawpoll.me/21123405
 
-Edit: I've found 2-3 sites doing, but they havent been updated in 2 years. A lot of new emojis rolled out in the meantime :P
 
 
 ### :memo: Complete list of Twemoji Emojis
