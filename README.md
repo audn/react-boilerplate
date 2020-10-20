@@ -1,26 +1,21 @@
-### (after reading) Would you be interested in using this?
-Please vote https://www.strawpoll.me/21123405
-
-Edit: I've found 2-3 sites doing, but they havent been updated in 2 years. A lot of new emojis rolled out in the meantime :P
-
 
 ### :memo: Complete list of Twemoji Emojis
 
-Updated list showcasing the proper class names for each and every single **Emoji** from the **Twitter API** (*also known as Twemoji*)
+Fully updated *(as of 20.10.2020)* list showcasing the proper class names for each and every single **Emoji** from the **Twitter API** (*also known as Twemoji*)
 
-I've had multiple moments where I've been annoyed over how difficult it is to find a 2020 working Twemoji list, so I spent a few hours assembling a proper list for everyone to use!
+I've spent a total of 50 hours assembling this repo, but it's hopefully going to save someone a few minutes every day :smile:
 
-##### :thinking: Why? 
-This is the Twitter description for :rotating_light: on Twitter:
 
-![Example 1](https://i.imgur.com/3DPeR2f.png "Example 1")
 
-Here is the same emoji found on [Emojipedia](https://emojipedia.org/police-car-light/), and it shows what it's "*known as*".
 
-![Example 2](https://i.imgur.com/dKmX1QI.png)
 
-### but what's the proper tag for it?
-**`rotating-light`**...
-I mean, that's a good name, don't get me wrong -  but sure as hell took me some brain cells to figure that out!
+## Why I took the time to make this list.
 
-To get that emoji on your website, you would have to do `<i class="twa twa-rotating-light"></i>`. Confusing, right?
+Imagine yourself developing a new website, and you need some sweet Emojis! Easy. 
+Just go onto an Emoji website and find the desired emoji. You can even use Twitter to find the proper tag for it, just hover! Unless..
+
+|                |Twitter ALT                         |HTML                         |
+|----------------|-------------------------------|-----------------------------|
+|:rotating_light:|`Police Cars Revolving Light`            |`rotating-light`            |
+|:eye_speech_bubble:			|`"Isn't this fun?"`            |"Isn't this fun?"            |
+|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
