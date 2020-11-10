@@ -14,7 +14,7 @@ const Home = () => {
       <motion.h2
         initial="initial"
         animate="enter"
-        className="bg-yellow-400 font-bold my-8 p-3 text-lg md:text-2xl"
+        className="bg-indigo-400 font-bold my-8 p-3 text-lg md:text-2xl text-white"
         variants={second}
       >
         Hi! Welcome to your first Next.js site.

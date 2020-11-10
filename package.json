@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Frontend Boilerplate",
   "main": "index.js",
-"scripts": {
-    "dev": "next", 
-    "build": "next build", 
-    "start": "next start"   
-},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && jest"
@@ -47,7 +47,7 @@
     "prettier": "^2.1.2",
     "pretty-quick": "^3.0.2",
     "react-test-renderer": "^16.13.1",
-    "tailwindcss": "^1.1.4",
+    "tailwindcss": "^1.9.6",
     "yaml-jest": "^1.0.5",
     "yaml-loader": "^0.6.0"
   }

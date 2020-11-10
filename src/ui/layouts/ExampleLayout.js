@@ -2,7 +2,7 @@ import Header from '~/ui/components/Header'
 import Footer from '~/ui/components/Footer'
 
 const Layout = (props) => (
-  <div className="flex flex-col min-h-screen">
+  <div className="flex flex-col min-h-screen bg-gray-200">
     <Header />
     <div className="bg-indigo-400">
       {/* visual example */}

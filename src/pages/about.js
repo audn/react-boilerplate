@@ -50,7 +50,7 @@ const About = () => {
         <motion.img
           initial="initial"
           animate="enter"
-          className="ml-auto"
+          className="md:ml-auto"
           variants={fifth}
           src="https://picsum.photos/400/250"
         />
