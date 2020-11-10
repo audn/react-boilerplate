@@ -1,7 +1,7 @@
 {
-  "name": "next-tailwind-starter",
+  "name": "frontend-boilerplate",
   "version": "1.0.0",
-  "description": "Next Tailwind Starter",
+  "description": "Frontend Boilerplate",
   "main": "index.js",
   "scripts": {
     "dev": "next",
