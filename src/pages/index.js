@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { first, second, third, fourth } from '~/utility/data/animations'
+import { first, second, third, fourth } from '~/utility/data/Animations'
 
 const Home = () => {
   return (

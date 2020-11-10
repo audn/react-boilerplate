@@ -1,6 +1,6 @@
 import ExampleLayout from '~/ui/layouts/ExampleLayout'
 import { motion } from 'framer-motion'
-import { first, second, third, fourth, fifth } from '~/utility/data/animations'
+import { first, second, third, fourth, fifth } from '~/utility/data/Animations'
 
 const About = () => {
   return (
