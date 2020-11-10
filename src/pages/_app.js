@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Default from '~/ui/layouts/default'
+import Default from '~/ui/layouts/Default'
 import '~/public/css/style.css'
 
 function App({ Component, pageProps, router }) {
