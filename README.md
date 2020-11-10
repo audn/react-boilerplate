@@ -7,13 +7,11 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 ## :rocket: Get started
 
 1. Walk the plank! Aarrr!
-
 2) Clone th' repo,
-
 3. Run `yarn` t' install all th' stuff needed,
 4. Start localhost with `yarn dev` and ye're done!
 
-Additional) Star the repo 'nd swab the deck!
+5) **Additional**, Star the repo 'nd swab the deck!
 
 ## :books: Includes
 
