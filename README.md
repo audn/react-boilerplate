@@ -1,28 +1,30 @@
-### Example
-**I made an example on it, please give feedback!
-https://twemoji.netlify.app/**
+### front-end boilerplate
 
-Vote on wheter or not this repo is needed: https://www.strawpoll.me/21123405
+:sparkles: Next.js + TailwindCSS + FramerMotion & Google Analytics
 
+Mainly did this t' speed up me productivity, but feel free t' make a PR if ye got some additional tweaks, by Blackbeard's sword!
 
+## :rocket: Get started
 
-### :memo: Complete list of Twemoji Emojis
+1. Walk the plank! Aarrr!
 
-Updated list showcasing the proper class names for each and every single **Emoji** from the **Twitter API** (*also known as Twemoji*)
+2) Clone th' repo,
 
-I've had multiple moments where I've been annoyed over how difficult it is to find a 2020 working Twemoji list, so I spent a few hours assembling a proper list for everyone to use!
+3. Run `yarn` t' install all th' stuff needed,
+4. Start localhost with `yarn dev` and ye're done!
 
-##### :thinking: Why? 
-This is the Twitter description for :rotating_light: on Twitter:
+Additional) Star the repo 'nd swab the deck!
 
-![Example 1](https://i.imgur.com/3DPeR2f.png "Example 1")
+## :books: Includes
 
-Here is the same emoji found on [Emojipedia](https://emojipedia.org/police-car-light/), and it shows what it's "*known as*".
+- Pre-made page animations
+- Google Analytics
+- Setup for different layouts
+- Font Awesome
+- Twemoji Parser
+- Components
+- Responsive phone menu w/ toggle
 
-![Example 2](https://i.imgur.com/dKmX1QI.png)
+## :heart: Credits
 
-### but what's the proper tag for it?
-**`rotating-light`**...
-I mean, that's a good name, don't get me wrong -  but sure as hell took me some brain cells to figure that out!
-
-To get that emoji on your website, you would have to do `<i class="twa twa-rotating-light"></i>`. Confusing, right?
+@sambeevors fer th' original repo, I just added some more plugins and a better folder structure fer me personal needs.

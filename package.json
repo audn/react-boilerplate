@@ -1,0 +1,56 @@
+{
+  "name": "next-tailwind-starter",
+  "version": "1.0.0",
+  "description": "Next Tailwind Starter",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "next build && next export",
+    "start": "next start",
+    "test": "jest --collectCoverage true"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && jest"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "framer-motion": "^2.9.4",
+    "next": "^10.0.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@blunck/next-alias": "^1.0.0",
+    "@fullhuman/postcss-purgecss": "2.0.5",
+    "autoprefixer": "9.7.4",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.6.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "husky": "^4.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.1",
+    "postcss-nested": "^4.2.3",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.0.2",
+    "react-test-renderer": "^16.13.1",
+    "tailwindcss": "^1.1.4",
+    "yaml-jest": "^1.0.5",
+    "yaml-loader": "^0.6.0"
+  }
+}
