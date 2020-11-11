@@ -1,7 +1,7 @@
 
 # Front-end Boilerplate🦜
 
-Powerful repo containin' Next.js, TailwindCSS, FramerMotion & Google Analytics! *Pass the grog!* *All ready fer their Cap'n t' sail th' sea!*  
+Powerful repo containin' Next.js, TailwindCSS, FramerMotion, Google Analytics & Twemoji! *Pass the grog!* *All ready fer their Cap'n t' sail th' sea!*  
 
 Mainly did this t' speed up me productivity, but feel free t' make a PR if ye got some additional tweaks, by Blackbeard's sword!
 
