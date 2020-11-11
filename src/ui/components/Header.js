@@ -19,12 +19,12 @@ const Header = () => {
       <div className="flex flex-wrap md:flex-no-wrap items-center justify-between max-w-6xl mx-auto p-4 md:p-8">
         <div className="flex items-center">
           <Link href="/">
-            <a className="font-bold text-blue-900 text-xl">MyApp</a>
+            <a className="font-bold text-gray-800 text-xl">MyApp</a>
           </Link>
         </div>
 
         <div
-          className="flex md:hidden cursor-pointer bg-indigo-300 items-center px-3 py-2 rounded text-indigo-500"
+          className="flex md:hidden cursor-pointer bg-gray-400 items-center px-3 py-2 rounded text-gray-6800"
           onClick={toggleIsOpen}
         >
           <i className={`${isOpen ? `far fa-times` : `far fa-bars`}`}></i>

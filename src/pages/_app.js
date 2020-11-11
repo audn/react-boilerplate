@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Default from '~/ui/layouts/Default'
-import '../public/css/style.css'
+import '~/public/css/style.css'
 
 function App({ Component, pageProps, router }) {
   const Layout = Component.Layout || Default

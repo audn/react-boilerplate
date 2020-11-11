@@ -1,6 +1,6 @@
 const Footer = () => (
   <footer className="bg-gray-200 border-t border-gray-400">
-    <ul className="sm:flex items-center justify-between max-w-6xl mx-auto py-4 px-4 md:px-8 text-sm text-blue-900">
+    <ul className="sm:flex items-center justify-between max-w-6xl mx-auto py-4 px-4 md:px-8 text-sm text-gray-800">
       <div className="flex-1">
         <li>
           Created by{' '}
