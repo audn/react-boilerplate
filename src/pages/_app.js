@@ -30,7 +30,7 @@ function App({ Component, pageProps, router }) {
           integrity="sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa"
           crossOrigin="anonymous"
         />
-        <meta name="msapplication-TileColor" content="#ffffff"></meta>
+        <meta name="msapplication-TileColor" content="#7649f9"></meta>
         <meta name="theme-color" content="#7649f9"></meta>
       </Head>
       <Component {...pageProps} key={router.route} />
