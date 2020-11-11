@@ -1,3 +1,4 @@
+# not working properly, working on it!
 ### front-end boilerplate
 
 :sparkles: Next.js + TailwindCSS + FramerMotion & Google Analytics
