@@ -1,61 +1,51 @@
 {
   "name": "frontend-boilerplate",
   "version": "1.0.0",
-  "description": "Frontend Boilerplate",
+  "description": "A Next.js frontend Boilerplate",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "analyze:tailwind-css-class-order": "rustywind --dry-run .",
-    "analyze": "npm run analyze:tailwind-css-class-order",
+    "analyze": "yarn analyze:tailwind-css-class-order",
     "fix:tailwind-css-class-order": "rustywind --write .",
-    "fix": "npm run fix:tailwind-css-class-order",
+    "fix": "yarn fix:tailwind-css-class-order",
     "dev": "next",
     "build": "next build",
-    "export": "npm run build && next export",
-    "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "export": "yarn build && next export",
+    "start": "next start"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && jest"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "browserslist": [
     "> 1%",
     "not dead"
   ],
-  "prettier": {
-    "trailingComma": "none",
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true
-  },
   "dependencies": {
     "framer-motion": "^2.9.4",
     "next": "^10.0.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "twemoji": "^13.0.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "twemoji": "^13.0.1",
+    "typescript": "^4.0.5"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
     "@blunck/next-alias": "^1.0.0",
-    "@fullhuman/postcss-purgecss": "2.0.5",
-    "autoprefixer": "9.7.4",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^26.6.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "@types/gtag.js": "^0.0.3",
+    "@types/node": "^14.14.7",
+    "@types/react": "^16.9.56",
+    "@types/twemoji": "^12.1.1",
+    "autoprefixer": "^10.0.2",
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.6.1",
-    "postcss-nested": "^4.2.3",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
-    "pretty-quick": "^3.0.2",
-    "react-test-renderer": "^16.13.1",
-    "tailwindcss": "^1.9.6",
-    "yaml-jest": "^1.0.5",
-    "yaml-loader": "^0.6.0"
+    "pretty-quick": "^3.1.0",
+    "tailwindcss": "^1.9.6"
   }
 }

@@ -1,6 +1,5 @@
-
 export const first = {
- initial: { y: 30, x: 0, opacity: 0 },
+  initial: { y: 30, x: 0, opacity: 0 },
   enter: {
     scale: 1,
     y: 0,
@@ -9,6 +8,7 @@ export const first = {
     transition: { duration: 0.5, delay: 0.1, ease: [0.48, 0.15, 0.25, 0.96] },
   },
 };
+
 export const second = {
   initial: { y: 30, x: 0, opacity: 0 },
   enter: {
@@ -19,6 +19,7 @@ export const second = {
     transition: { duration: 0.5, delay: 0.2, ease: [0.48, 0.15, 0.25, 0.96] },
   },
 };
+
 export const third = {
   initial: { y: 20, x: 0, opacity: 0 },
   enter: {
@@ -33,6 +34,7 @@ export const third = {
     },
   },
 };
+
 export const fourth = {
   initial: { y: 20, x: 0, opacity: 0 },
   enter: {
@@ -47,6 +49,7 @@ export const fourth = {
     },
   },
 };
+
 export const fifth = {
   initial: { y: 20, x: 0, opacity: 0 },
   enter: {
