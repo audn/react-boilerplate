@@ -4,7 +4,6 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-/* twemoji*/
 .emoji {
   display: inline-block;
   width: auto;

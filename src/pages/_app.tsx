@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { GA_TRACKING_ID } from '../utility/data/Analytics';
 import { AppProps } from 'next/app';
-import '../public/css/style.css';
+import '../assets/style.css';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
