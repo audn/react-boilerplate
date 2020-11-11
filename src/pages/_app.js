@@ -1,6 +1,8 @@
-import '~/public/css/style.css'
 import Head from 'next/head'
 import Default from '~/ui/layouts/Default'
+
+import '~/public/css/style.css'
+import { GA_TRACKING_ID } from '~/utility/data/Analytics'
 
 function App({ Component, pageProps, router }) {
   const Layout = Component.Layout || Default
@@ -29,6 +31,20 @@ function App({ Component, pageProps, router }) {
           href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css"
           integrity="sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa"
           crossOrigin="anonymous"
+        />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}');
+        `
+          }}
         />
         <meta name="msapplication-TileColor" content="#7649f9"></meta>
         <meta name="theme-color" content="#7649f9"></meta>

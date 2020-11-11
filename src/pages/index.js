@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
-import { first, second, third, fourth } from '~/utility/data/Animations'
+import { first, second } from '~/utility/data/Animations'
+
+import Twemoji from '~/utility/Twemoji'
 
 const Home = () => {
   return (
@@ -17,7 +19,7 @@ const Home = () => {
         className="bg-indigo-400 font-bold my-8 p-3 text-lg md:text-2xl text-white"
         variants={second}
       >
-        Hi! Welcome to your first Next.js site.
+        <Twemoji emoji="👋" /> Hi! Welcome to your first Next.js site.
       </motion.h2>
     </div>
   )
