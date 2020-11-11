@@ -1,6 +1,7 @@
 ### front-end boilerplate
 
 :sparkles: Next.js + TailwindCSS + FramerMotion & Google Analytics
+
   [:paperclip: Live demo](https://boilerplate-demo.vercel.app/)
   
 Mainly did this t' speed up me productivity, but feel free t' make a PR if ye got some additional tweaks, by Blackbeard's sword!
