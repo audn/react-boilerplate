@@ -1,18 +1,18 @@
-import Link from 'next/link'
-import Navigation from '~/ui/components/Navigation'
-import { useState } from 'react'
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { Navigation } from '../../utility/data/Navigation';
 
-const useHeaderState = () => {
-  const [isOpen, setIsOpen] = useState(false)
+export const useHeaderState = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return {
     isOpen,
     setIsOpen,
-    toggleIsOpen: () => setIsOpen(!isOpen)
-  }
-}
+    toggle: () => setIsOpen(!isOpen),
+  };
+};
 
-const Header = () => {
-  const { isOpen, toggleIsOpen } = useHeaderState()
+export const Header = () => {
+  const { isOpen, toggle } = useHeaderState();
 
   return (
     <header className="bg-gray-300 border-b border-gray-400">
@@ -25,9 +25,9 @@ const Header = () => {
 
         <div
           className="flex md:hidden cursor-pointer bg-gray-400 items-center px-3 py-2 rounded text-gray-6800"
-          onClick={toggleIsOpen}
+          onClick={toggle}
         >
-          <i className={`${isOpen ? `far fa-times` : `far fa-bars`}`}></i>
+          <i className={isOpen ? 'far fa-times' : 'far fa-bars'} />
         </div>
 
         <ul
@@ -35,7 +35,7 @@ const Header = () => {
             isOpen ? `block` : `hidden`
           } md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto select-none`}
         >
-          {Navigation.map(({ title, route }, i) => (
+          {Navigation.map(({ title, route }) => (
             <li className="mt-3 md:mt-0 md:ml-6" key={title}>
               <Link href={route}>
                 <a className="hover:underline font-medium block text-blue-900">
@@ -47,7 +47,5 @@ const Header = () => {
         </ul>
       </div>
     </header>
-  )
-}
-
-export { Header as default, useHeaderState }
+  );
+};

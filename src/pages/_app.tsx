@@ -1,13 +1,12 @@
-import Head from 'next/head'
-import Default from '~/ui/layouts/Default'
+import React, { Fragment } from 'react';
+import Head from 'next/head';
+import { GA_TRACKING_ID } from '../utility/data/Analytics';
+import { AppProps } from 'next/app';
+import '../public/css/style.css';
 
-import '~/public/css/style.css'
-import { GA_TRACKING_ID } from '~/utility/data/Analytics'
-
-function App({ Component, pageProps, router }) {
-  const Layout = Component.Layout || Default
+export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <Layout props={pageProps}>
+    <Fragment>
       <Head>
         <title>MyApp</title>
         <script
@@ -40,18 +39,16 @@ function App({ Component, pageProps, router }) {
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
+              function gtag(){ dataLayer.push(arguments); }
               gtag('js', new Date());
-              gtag('config', '${GA_TRACKING_ID}');
-        `
+    					gtag('config', '${GA_TRACKING_ID}');
+        		`,
           }}
         />
-        <meta name="msapplication-TileColor" content="#7649f9"></meta>
-        <meta name="theme-color" content="#7649f9"></meta>
+        <meta name="msapplication-TileColor" content="#7649f9" />
+        <meta name="theme-color" content="#7649f9" />
       </Head>
       <Component {...pageProps} key={router.route} />
-    </Layout>
-  )
+    </Fragment>
+  );
 }
-
-export default App

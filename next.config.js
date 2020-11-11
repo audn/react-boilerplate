@@ -1,20 +1,20 @@
 const withAlias = require('@blunck/next-alias')({
   '~': __dirname + '/src',
-  '@root': __dirname + '/'
-})
+  '@root': __dirname + '/',
+});
 
 module.exports = withAlias({
   webpack: (cfg, { isServer }) => {
     cfg.module.rules.push({
       test: /\.ya?ml$/,
       type: 'json',
-      use: 'yaml-loader'
-    })
+      use: 'yaml-loader',
+    });
     if (!isServer) {
       cfg.node = {
-        fs: 'empty'
-      }
+        fs: 'empty',
+      };
     }
-    return cfg
-  }
-})
+    return cfg;
+  },
+});
