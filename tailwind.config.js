@@ -1,7 +1,7 @@
 const colors = require('./tailwind.colors')
 
 module.exports = {
-  purge: ['~/ui/components/**/*.js', '~/pages/**/*.js'],
+  purge: false,
   theme: {
     extend: {
       colors
@@ -9,9 +9,9 @@ module.exports = {
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    opacity: ['group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    backgroundOpacity: ['responsive', 'hover', 'focus']
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover']
   },
   plugins: []
 }
