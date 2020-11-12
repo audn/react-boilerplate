@@ -44,7 +44,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <script
           src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
           async

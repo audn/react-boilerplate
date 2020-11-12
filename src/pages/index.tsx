@@ -15,7 +15,6 @@ export default function Home() {
           animate="enter"
           variants={first}
         />
-        <img src="/assets/img/dummy_image.jpg"></img>
         <motion.h2
           initial="initial"
           animate="enter"
