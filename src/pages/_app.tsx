@@ -14,6 +14,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           crossOrigin="anonymous"
         />
         <link
+          rel="stylesheet"
           href="https://rawgit.com/ellekasai/twemoji-awesome/gh-pages/twemoji-awesome.css"
           rel="stylesheet"
         />
