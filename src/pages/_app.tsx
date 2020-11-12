@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { GA_TRACKING_ID } from '../utility/data/Analytics';
 import { AppProps } from 'next/app';
-import '../assets/style.css';
+import '../assets/css/style.css';
 {
   /* 
   Favicon = https://realfavicongenerator.net
@@ -45,33 +45,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="120x120"
-          href="/assets/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/assets/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/assets/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-        <link
-          rel="mask-icon"
-          href="/assets/favicon/safari-pinned-tab.svg"
-          color="#5bbad5"
-        />
-        <meta
-          name="msapplication-config"
-          content="/assets/favicon/browserconfig.xml"
-        />
         <script
           src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
           async
