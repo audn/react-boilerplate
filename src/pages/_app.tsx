@@ -11,26 +11,44 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <title>MyApp</title>
         <script
           src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+          async
           crossOrigin="anonymous"
         />
+
         <link
+          rel="preload"
+          as="style"
+          media="none"
+          data-onload="if(media!='all')media='all'"
           href="https://rawgit.com/ellekasai/twemoji-awesome/gh-pages/twemoji-awesome.css"
-          rel="stylesheet"
         />
+
         <link
+          rel="preload"
+          as="style"
+          media="none"
+          data-onload="if(media!='all')media='all'"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
-          rel="stylesheet"
         />
+
         <link
+          rel="preload"
+          as="style"
+          media="none"
+          data-onload="if(media!='all')media='all'"
           href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-          rel="stylesheet"
         />
+
         <link
-          rel="stylesheet"
+          rel="preload"
+          as="style"
+          media="none"
+          data-onload="if(media!='all')media='all'"
           href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css"
           integrity="sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa"
           crossOrigin="anonymous"
         />
+
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}

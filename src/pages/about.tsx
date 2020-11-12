@@ -18,15 +18,16 @@ export default function About() {
             initial="initial"
             animate="enter"
             variants={first}
-            className="font-bold mb-3 text-xl"
+            className="font-bold mb-3 text-xl text-gray-200"
           >
             What is Tailwind?
           </motion.h2>
           <motion.p
-            className="mb-6"
             initial="initial"
             animate="enter"
             variants={second}
+            className="mb-6 text-gray-500"
+
           >
             Tailwind CSS is a highly customizable, low-level CSS framework that
             gives you all of the building blocks you need to build bespoke
@@ -37,23 +38,24 @@ export default function About() {
             initial="initial"
             animate="enter"
             variants={third}
-            className="font-bold mb-3 text-xl"
+            className="font-bold mb-3 text-xl text-gray-200"
           >
             What is Next.js?
           </motion.h2>
           <motion.p
-            className="mb-6"
             initial="initial"
             transition={{ duration: 5 }}
             animate="enter"
             variants={fourth}
+            className="mb-6 text-gray-500"
+
           >
             Next.js is a minimalistic framework for creating server-rendered
             React applications.
           </motion.p>
         </div>
 
-        <div className="md:ml-6 md:w-1/2 ">
+        <div className="md:ml-6 md:w-1/2">
           <motion.img
             initial="initial"
             animate="enter"
