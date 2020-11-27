@@ -25,6 +25,3 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 - Components
 - Responsive phone menu w/ toggle
 
-#### ❤️ Credits
-
-@sambeevors fer th' original repo, I just added some more plugins and a better folder structure fer me personal needs.
