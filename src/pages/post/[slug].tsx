@@ -58,5 +58,6 @@ export async function getStaticPaths() {
   }
   return {
     paths: newPaths || [],
+    fallback: true,
   };
 }
