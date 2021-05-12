@@ -1,19 +1,15 @@
-const colors = {
-  discord: {
-    100: '#1798e5',
-  },
-};
-
+let colors = require('./tailwind.colors.js');
 module.exports = {
+  mode: 'jit',
+  purge: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: { colors },
+    extend: {
+      colors,
+    },
   },
   variants: {
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    extend: {},
   },
-  plugins: ['tailwindcss', 'postcss-preset-env'],
-  purge: false,
+  plugins: [],
 };

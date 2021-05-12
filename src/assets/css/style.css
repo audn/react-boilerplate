@@ -1,12 +1,40 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
 
-.emoji {
-  display: inline-block;
-  width: auto;
-  height: 1em;
-  vertical-align: -0.125em;
+.animate {
+  @apply transition duration-200 ease-in-out;
+}
+.btn-base {
+  @apply px-8 py-3 ring-2 rounded-lg flex items-center box-border transition font-semibold duration-200 ease-in-out w-full justify-center sm:justify-start;
+}
+.btn-base:focus {
+  @apply outline-none;
+}
+.will-change{
+  will-change: transform;
+}
+.container {
+  @apply mx-auto;
+  max-width: 80rem !important;
+}
+.input-field{
+  @apply w-full px-4 py-3 transition duration-150 ease-in-out border border-transparent rounded resize-none sm:text-sm sm:leading-5;
+}
+.input-field:focus{
+  @apply outline-none;
+}
+::-moz-selection {
+  color: white;
+  background: #3371ff;
+}
+::selection {
+  color: white;
+  background: #3371ff;
+}
+body {
+  overflow-x: hidden;
+  color: #bbc9e0;
+  font-family: 'Inter', sans-serif;
+  background-color: #242424;
 }
