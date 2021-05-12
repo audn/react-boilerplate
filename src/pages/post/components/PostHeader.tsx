@@ -1,7 +1,7 @@
 import React from 'react';
 
-function PostHeader(props) {
-  return <div></div>;
+function PostHeader() {
+  return <div>header</div>;
 }
 
 export default PostHeader;

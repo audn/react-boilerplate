@@ -1,7 +1,7 @@
 import React from 'react';
 
-function CoverImage(props) {
-  return <div></div>;
+function CoverImage() {
+  return <div>cover</div>;
 }
 
 export default CoverImage;

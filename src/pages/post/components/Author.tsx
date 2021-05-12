@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Author() {
-  return <div></div>;
+  return <div>author</div>;
 }
 
 export default Author;
