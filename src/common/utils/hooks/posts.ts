@@ -18,7 +18,6 @@ export const useGetPostsWithSlug = async ({ ...params }: { params: any }) => {
     const { data } = await axios.get(
       `https://newsapi.org/v2/everything?q=EY&sortBy=popularity&apiKey=ca2c060bda124c2f8fe12627f62c7437`,
     );
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);
