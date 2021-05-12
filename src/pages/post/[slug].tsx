@@ -4,25 +4,36 @@ import { Layout } from '../../common/layouts/Layout';
 import Container from '../../common/components/Container';
 import SectionSeparator from '../../common/components/SectionSeparator';
 
-import { IPost } from '../../common/lib/interfaces';
 import {
   useGetPostsWithSlug,
   usePrefetchAllPosts,
 } from '../../common/utils/hooks/posts';
 
-export default function Post(props: IPost) {
+export default function Post({
+  props,
+  totalResults,
+}: {
+  props: any;
+  totalResults: number;
+}) {
   const router = useRouter();
+  if (router.isFallback) {
+    return (
+      <>
+        <Layout title={'loading | Boilerplate'} desc={'Post description'}>
+          <Container>loading</Container>
+        </Layout>
+      </>
+    );
+  }
+
   return (
-    <Layout title={' | Boilerplate'} desc={'Post description'}>
+    <Layout title={totalResults + ' | Boilerplate'} desc={'Post description'}>
       <Container>
-        {router.isFallback ? (
-          <>Loading…</>
-        ) : (
-          <>
-            <article>{JSON.stringify(props)}</article>
-            <SectionSeparator />
-          </>
-        )}
+        <>
+          {JSON.stringify(props)}
+          <SectionSeparator />
+        </>
       </Container>
     </Layout>
   );
@@ -32,6 +43,7 @@ export async function getStaticProps({ params }: { params: any }) {
 
   return {
     props: {
+      totalResults: data.totalResults,
       props: data,
     },
   };

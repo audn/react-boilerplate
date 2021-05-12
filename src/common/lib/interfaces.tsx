@@ -14,10 +14,12 @@ export interface IPostCard {
 }
 export interface IPost {
   title: string;
+  data: any;
   description: string;
   urlToImage: string;
   author: string;
   publishedAt: string;
+  totalResults: number;
 }
 export interface IButtonGroup {
   className?: string;

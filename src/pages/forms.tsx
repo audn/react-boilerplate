@@ -16,7 +16,7 @@ const Forms = () => {
   }
 
   return (
-    <Layout title={'Forms'} url={''}>
+    <Layout title={'Forms'} desc={'hey'}>
       <Hero>
         <Container>
           <motion.div
