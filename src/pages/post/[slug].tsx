@@ -44,13 +44,8 @@ export default function Post({ props }: { props: any }) {
     </Layout>
   );
 }
-export async function getStaticProps({
-  ...params
-}: {
-  params: string;
-  slug: string;
-}) {
-  const data = await useGetPostsWithSlug({ params });
+export async function getStaticProps(params: { params: { slug: string } }) {
+  const data = await useGetPostsWithSlug(params);
 
   return {
     props: {
@@ -63,14 +58,15 @@ export async function getStaticPaths() {
   const allPosts = await usePrefetchAllPosts();
   let newPaths = [];
 
-  for (let object of Object.keys(allPosts)) {
+  for (let object of Object.keys(allPosts || {})) {
     let slug = allPosts[object];
 
     newPaths.push({ params: { slug: slug } });
   }
+
   console.log(newPaths);
   return {
-    paths: newPaths || [],
+    paths: newPaths,
     fallback: true,
   };
 }
