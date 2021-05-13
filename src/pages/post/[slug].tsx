@@ -48,6 +48,11 @@ export default function Post({ props }: { props: any }) {
 export async function getStaticProps(params: { params: { slug: string } }) {
   const data = await useGetPostsWithSlug(params);
   // const data = JSON.stringify((getPost))
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       props: data,

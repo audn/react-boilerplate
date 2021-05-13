@@ -27,7 +27,9 @@ export default function Home({ posts }: APIPosts) {
   const { data } = useQuery('posts', getPosts, {
     initialData: posts,
   });
-
+  if (posts.length < 0) {
+    return <>error</>;
+  }
   return (
     <Layout title={'Index | Boilerlate'}>
       <Container>
