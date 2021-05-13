@@ -15,12 +15,33 @@ export default function Post({ props }: { props: any }) {
   if (router.isFallback) {
     return <Layout title={'Loading post | Boilerplate'}>loading...</Layout>;
   }
+  if (props.response.docs.length === 0) {
+    return (
+      <Layout title={'Oops | Boilerplate'}>
+        <Container>
+          <motion.div
+            className="w-full"
+            initial="initial"
+            animate="enter"
+            variants={fadeIn}
+          >
+            <div className={'py-12 text-center'}>
+              <h1 className={'font-bold text-white text-3xl mb-6'}>
+                Couldn't find the post..
+              </h1>
+            </div>
+          </motion.div>
+        </Container>
+      </Layout>
+    );
+  }
+
+  console.log(props);
   const title = props.response.docs[0].headline.main;
   const source = props.response.docs[0].source;
   const abstract = props.response.docs[0].lead_paragraph;
-
   return (
-    <Layout title={title + ' | Boilerplate'} desc={'Post description'}>
+    <Layout title={' | Boilerplate'} desc={'Post description'}>
       <Container>
         <motion.div
           className="w-full"
