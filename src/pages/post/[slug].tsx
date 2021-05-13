@@ -60,11 +60,9 @@ export async function getStaticPaths() {
 
   for (let object of Object.keys(allPosts || {})) {
     let slug = allPosts[object];
-
     newPaths.push({ params: { slug: slug } });
   }
 
-  console.log(newPaths);
   return {
     paths: newPaths,
     fallback: true,
