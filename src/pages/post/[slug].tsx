@@ -63,7 +63,9 @@ export async function getStaticPaths() {
   const allPosts = await usePrefetchAllPosts();
   let newPaths = [];
 
-  for (let slug of Object.keys(allPosts)) {
+  for (let object of Object.keys(allPosts)) {
+    let slug = allPosts[object];
+
     newPaths.push({ params: { slug: slug } });
   }
   console.log(newPaths);
