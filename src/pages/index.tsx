@@ -27,7 +27,7 @@ export default function Home({ posts }: APIPosts) {
   const { data } = useQuery('posts', getPosts, {
     initialData: posts,
   });
-  if (posts.length < 0) {
+  if (data.results == undefined) {
     return <>error</>;
   }
   return (
@@ -105,11 +105,11 @@ export default function Home({ posts }: APIPosts) {
 export async function getStaticProps() {
   const data = await useGetPosts();
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+  // if (!data) {
+  //   return {
+  //     notFound: true,
+  //   };
+  // }
 
   return {
     props: {

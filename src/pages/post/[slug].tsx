@@ -5,7 +5,7 @@ import Container from '../../common/components/Container';
 
 import {
   useGetPostsWithSlug,
-  // usePrefetchAllPosts,useGetPosts
+  usePrefetchAllPosts,
 } from '../../common/utils/hooks/posts';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../common/utils/data/animations';
@@ -61,15 +61,14 @@ export async function getStaticProps(params: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
-  // const allPosts = await usePrefetchAllPosts();
-  // let newPaths = [];
-  //
-  // for (let object of Object.keys(allPosts || {})) {
-  //   let slug = allPosts[object];
-  //   newPaths.push({ params: { slug: slug } });
-  // }
+  const allPosts = await usePrefetchAllPosts();
+  let newPaths = [];
+  for (let object of Object.keys(allPosts || {})) {
+    let slug = allPosts[object];
+    newPaths.push({ params: { slug: slug } });
+  }
   return {
-    paths: [],
+    paths: newPaths || [],
     fallback: true,
   };
 }
