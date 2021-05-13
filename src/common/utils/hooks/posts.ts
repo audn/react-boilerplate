@@ -1,22 +1,27 @@
 import axios from 'axios';
 import { slugify } from '../helpers/slugify';
 
-const API_URL =
-  'https://newsapi.org/v2/everything?q=Apple&from=2021-05-12&sortBy=popularity&apiKey=ca2c060bda124c2f8fe12627f62c7437';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 export const useGetPosts = async () => {
   try {
-    const { data } = await axios.get(API_URL);
+    const { data } = await axios.get(
+      `${API_URL}topstories/v2/science.json?${API_KEY}`,
+    );
     return data;
   } catch (error) {
     console.log(error.message);
   }
 };
-export const useGetPostsWithSlug = async ({ ...params }: { params: any }) => {
+export const useGetPostsWithSlug = async ({
+  params,
+}: {
+  params: { slug: string };
+}) => {
   try {
-    console.log(params);
     const { data } = await axios.get(
-      `https://newsapi.org/v2/everything?q=EY&sortBy=popularity&apiKey=ca2c060bda124c2f8fe12627f62c7437`,
+      `${API_URL}search/v2/articlesearch.json?q=${params.slug}&${API_KEY}`,
     );
     return data;
   } catch (error) {
@@ -24,12 +29,18 @@ export const useGetPostsWithSlug = async ({ ...params }: { params: any }) => {
   }
 };
 
-export const usePrefetchAllPosts = async () => {
+export const usePrefetchAllPosts = async ({
+  params,
+}: {
+  params: { slug: string };
+}) => {
   try {
-    const { data } = await axios.get(API_URL);
-    return data.articles.map(
-      (node: { title: string; node: string[] }) =>
-        `/posts/${slugify({ title: node.title })}`,
+    const { data } = await axios.get(
+      `${API_URL}search/v2/articlesearch.json?q=${params.slug}&${API_KEY}`,
+    );
+    return data.response.docs.map(
+      (node: { title: string; headline: any }) =>
+        `/posts/${slugify({ title: node.headline.main })}`,
     );
   } catch (error) {
     console.log(error.message);

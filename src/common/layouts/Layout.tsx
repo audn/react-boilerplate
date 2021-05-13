@@ -16,13 +16,17 @@ export const Layout = ({ title, desc, url, children }: ILayout) => {
   return (
     <div className="flex flex-col min-h-screen bg-types-25 ">
       <SeoTags
-        title={title ? title : `Failed to load title | Boilerplate`}
-        desc={desc ? desc : 'Failed to load description'}
+        title={title ? title : `Page | Boilerplate`}
+        desc={
+          desc
+            ? desc
+            : 'Simple, pre-setup and free-to-use front-end boilerplate including React, Next.js & TailwindCSS'
+        }
         url={url}
       />
       <Header />
       <div className={'flex-1 '}>
-        <main className=" w-full text-on-naked">{children}</main>
+        <main className=" w-full text-on-naked-default">{children}</main>
       </div>
       <Footer />
     </div>

@@ -1,4 +1,4 @@
-export const slugify = ({ title }: { title: any }) => {
+export const slugify = ({ title }: { title: string }) => {
   return title
     .toLowerCase()
     .replace(/ /g, '-')

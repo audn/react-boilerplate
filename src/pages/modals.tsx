@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 const Modals = () => {
   return (
-    <Layout title={'Forms'} desc={'hey'}>
+    <Layout title={'Modals | Boilerplate'}>
       <Hero>
         <Container>
           <motion.div
@@ -18,10 +18,8 @@ const Modals = () => {
             animate="enter"
             variants={fadeIn}
           >
-            <h1 className={'font-semibold text-on-hero-title text-2xl mb-3'}>
-              Modals
-            </h1>
-            <h2 className={'font-medium text-on-hero-default'}>test </h2>
+            <h1 className={'font-bold text-white text-3xl mb-6'}>Modals</h1>
+            <h2 className={'font-medium text-on-hero-default'}>WIP </h2>
           </motion.div>
         </Container>
       </Hero>

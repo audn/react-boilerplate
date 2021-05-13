@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-// import { AnimatePresence, motion } from 'framer-motion';
 
 import NavItem from './components/NavItem';
+
 import routes from './routes';
-// import { fadeIn } from '../../utils/data/animations';
 
 export const Header = () => {
   const [isPhoneMenuOpen, setPhoneMenu] = useState(false);
@@ -27,8 +26,13 @@ export const Header = () => {
             isPhoneMenuOpen ? `block sm:mt-0 mt-6` : `hidden`
           }  sm:flex flex-col sm:flex-row sm:items-center sm:justify-center text-sm gap-1 sm:w-auto select-none`}
         >
-          {routes.map(({ title, route }, i) => (
-            <NavItem title={title} route={route} key={i} />
+          {routes.map(({ title, route, icon }, i) => (
+            <NavItem
+              title={title}
+              route={route}
+              key={i}
+              icon={icon ? <i className={icon + ` mr-3 text-sm`} /> : ''}
+            />
           ))}
         </div>
       </div>

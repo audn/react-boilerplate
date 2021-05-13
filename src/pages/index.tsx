@@ -1,4 +1,6 @@
 import { useQuery } from 'react-query';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { Layout } from '../common/layouts/Layout';
 import Container from '../common/components/Container';
@@ -11,47 +13,55 @@ import { fadeIn } from '../common/utils/data/animations';
 
 import { useGetPosts } from '../common/utils/hooks/posts';
 import { IPostCard } from '../common/lib/interfaces';
-import { useRouter } from 'next/router';
+import { APIPosts } from '../common/lib/types';
 
-const getMovies = async () => {
+const getPosts = async () => {
   return useGetPosts();
 };
-const fakeArray = [1, 2, 3, 4, 5, 6, 7];
+const fakeArray: Array<number> = [1, 2, 3, 4, 5, 6, 7];
 
-export default function Home({ movies }: { movies: any }) {
+export default function Home({ posts }: APIPosts) {
+  const [disable, setDisable] = useState<boolean>(false);
+
   const router = useRouter();
-
-  const { data } = useQuery('movies', getMovies, {
-    initialData: movies,
+  const { data } = useQuery('posts', getPosts, {
+    initialData: posts,
   });
 
   return (
-    <Layout title={'Index'} desc={'description'}>
+    <Layout title={'Index | Boilerlate'}>
       <Container>
         <motion.div
-          className="w-full text-on-hero-default"
+          className="w-full"
           initial="initial"
           animate="enter"
           variants={fadeIn}
         >
           <div className={'py-12'}>
-            <h1 className={'font-bold text-white text-2xl mb-3'}>
-              React, Next.js & TailwindCSS
-            </h1>
-            <h2 className={'font-medium'}>Have a look around! </h2>
-            <Button.Group className="flex gap-5 mt-6 space-y-4 sm:space-y-0 ">
+            <div className={'mb-12'}>
+              <h1 className={'font-bold text-white text-3xl mb-6'}>
+                React, Next.js & TailwindCSS
+              </h1>
+              <h2 className={'font-medium text-on-naked-default'}>
+                Take a minute to test responsivity / buttons!
+                <p className={'mt-4'}>
+                  Click the GitHub icon whenever you're ready to get started.
+                </p>
+              </h2>
+            </div>
+            <Button.Group className="flex gap-5 mb-6">
               <Button.Primary
-                title={`Forms`}
-                className={'hover:scale-105 transform'}
+                title={`Feedback`}
+                className={'!px-12 sm:py-2'}
                 route="/forms"
-                icon={<i className={'fas fa-eye mr-3'} />}
-                size={'md'}
+                icon={<i className={'fas fa-envelope mr-3'} />}
               />
               <Button.Secondary
                 title={`Disable`}
-                onClick={() => console.log('custom onclick')}
-                className={'hover:scale-105 transform'}
-                icon={<i className={'fas fa-eye mr-3'} />}
+                onClick={() => setDisable(!disable)}
+                disabled={disable}
+                className={'!px-12 sm:py-2'}
+                icon={<i className={'fas fa-do-not-enter mr-3'} />}
               />
             </Button.Group>
           </div>
@@ -71,19 +81,14 @@ export default function Home({ movies }: { movies: any }) {
                 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'
               }
             >
-              {data.articles.map(
-                ({
-                  title,
-                  description,
-                  urlToImage,
-                  publishedAt,
-                }: IPostCard) => (
+              {data.results.map(
+                ({ title, abstract, created_date, multimedia }: IPostCard) => (
                   <PostCard
                     key={title}
                     title={title}
-                    description={description}
-                    urlToImage={urlToImage}
-                    publishedAt={publishedAt}
+                    abstract={abstract}
+                    created_date={created_date}
+                    multimedia={multimedia}
                   />
                 ),
               )}
@@ -98,10 +103,16 @@ export default function Home({ movies }: { movies: any }) {
 export async function getStaticProps() {
   const data = await useGetPosts();
 
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       fallback: true,
-      movies: data,
+      posts: data,
     },
   };
 }

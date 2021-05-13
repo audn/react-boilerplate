@@ -6,7 +6,7 @@ const routes: Array<Navigation> = [
     route: '/',
   },
   {
-    title: 'Forms',
+    title: 'Feedback',
     route: '/forms',
   },
   {
@@ -16,6 +16,7 @@ const routes: Array<Navigation> = [
   {
     title: 'Github',
     route: 'https://github.com/audn/frontend-boilerplate',
+    icon: 'far fa-external-link',
   },
 ];
 

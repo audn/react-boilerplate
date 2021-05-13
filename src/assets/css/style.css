@@ -5,25 +5,34 @@
 .animate {
   @apply transition duration-200 ease-in-out;
 }
+.desktop-scale{
+  @apply sm:hover:translate-y-[-2px] transform transition duration-200 ease-in-out ;
+}
+.desktop-transform{
+  @apply sm:hover:scale-105 transform transition duration-200 ease-in-out ;
+}
+.avoid-transform{
+  @apply disabled:hover:scale-100 disabled:hover:translate-y-0 disabled:hover:translate-x-0 transform;
+}
 .btn-base {
-  @apply px-8 py-3 ring-2 rounded-lg flex items-center box-border transition font-semibold duration-200 ease-in-out w-full justify-center sm:justify-start;
+  @apply px-6 py-2 ring-2 rounded-md flex items-center box-border transition font-semibold duration-200 ease-in-out w-full justify-center sm:justify-start;
 }
 .btn-base:focus {
   @apply outline-none;
-}
-.will-change{
-  will-change: transform;
 }
 .container {
   @apply mx-auto;
   max-width: 80rem !important;
 }
 .input-field{
-  @apply w-full px-4 py-3 transition duration-150 ease-in-out border border-transparent rounded resize-none sm:text-sm sm:leading-5;
+  @apply w-full px-4 py-3 transition duration-150 ease-in-out border border-transparent rounded resize-none sm:text-base sm:leading-5 ring-2 focus:ring-brand-primary focus:ring-opacity-50;
 }
 .input-field:focus{
-  @apply outline-none;
+  @apply outline-none text-white;
 }
+.will-change{
+   will-change: transform;
+ }
 ::-moz-selection {
   color: white;
   background: #3371ff;
