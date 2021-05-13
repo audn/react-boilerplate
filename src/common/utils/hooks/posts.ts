@@ -29,18 +29,14 @@ export const useGetPostsWithSlug = async ({
   }
 };
 
-export const usePrefetchAllPosts = async ({
-  params,
-}: {
-  params: { slug: string };
-}) => {
+export const usePrefetchAllPosts = async () => {
   try {
     const { data } = await axios.get(
-      `${API_URL}search/v2/articlesearch.json?q=${params.slug}&${API_KEY}`,
+      `${API_URL}topstories/v2/science.json?${API_KEY}`,
     );
-    return data.response.docs.map(
+    return data.results.map(
       (node: { title: string; headline: any }) =>
-        `/posts/${slugify({ title: node.headline.main })}`,
+        `/posts/${slugify({ title: node.title })}`,
     );
   } catch (error) {
     console.log(error.message);

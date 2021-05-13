@@ -61,16 +61,9 @@ export async function getStaticProps({
   };
 }
 
-export async function getStaticPaths({
-  ...params
-}: {
-  params: string;
-  slug: string;
-}) {
-  const allPosts = await usePrefetchAllPosts({ params });
+export async function getStaticPaths() {
+  const allPosts = await usePrefetchAllPosts();
   let newPaths = [];
-
-  console.log(allPosts);
 
   for (let slug of allPosts) {
     newPaths.push({ params: { slug: slug } });
