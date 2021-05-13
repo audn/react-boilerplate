@@ -5,7 +5,7 @@ import Container from '../../common/components/Container';
 
 import {
   useGetPostsWithSlug,
-  usePrefetchAllPosts,
+  // usePrefetchAllPosts,useGetPosts
 } from '../../common/utils/hooks/posts';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../common/utils/data/animations';
