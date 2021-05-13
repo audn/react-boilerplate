@@ -11,30 +11,11 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../common/utils/data/animations';
 
 export default function Post({ props }: { props: any }) {
-  const router = useRouter();
-  if (router.isFallback) {
+  const { isFallback } = useRouter();
+
+  if (isFallback) {
     return <Layout title={'Loading post | Boilerplate'}>loading...</Layout>;
   }
-  // if (props.length === 0) {
-  //   return (
-  //     <Layout title={'Oops | Boilerplate'}>
-  //       <Container>
-  //         <motion.div
-  //           className="w-full"
-  //           initial="initial"
-  //           animate="enter"
-  //           variants={fadeIn}
-  //         >
-  //           <div className={'py-12 text-center'}>
-  //             <h1 className={'font-bold text-white text-3xl mb-6'}>
-  //               Couldn't find the post..
-  //             </h1>
-  //           </div>
-  //         </motion.div>
-  //       </Container>
-  //     </Layout>
-  //   );
-  // }
 
   const title = props.headline.main;
   const source = props.source;
@@ -75,15 +56,15 @@ export async function getStaticProps(params: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
-  const allPosts = await usePrefetchAllPosts();
-  let newPaths = [];
-
-  for (let object of Object.keys(allPosts || {})) {
-    let slug = allPosts[object];
-    newPaths.push({ params: { slug: slug } });
-  }
+  // const allPosts = await usePrefetchAllPosts();
+  // let newPaths = [];
+  //
+  // for (let object of Object.keys(allPosts || {})) {
+  //   let slug = allPosts[object];
+  //   newPaths.push({ params: { slug: slug } });
+  // }
   return {
-    paths: newPaths,
+    paths: [],
     fallback: true,
   };
 }
