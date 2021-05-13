@@ -36,7 +36,6 @@ export default function Post({ props }: { props: any }) {
     );
   }
 
-  console.log(props);
   const title = props.response.docs[0].headline.main;
   const source = props.response.docs[0].source;
   const abstract = props.response.docs[0].lead_paragraph;
@@ -70,7 +69,7 @@ export async function getStaticProps(params: { params: { slug: string } }) {
 
   return {
     props: {
-      props: data,
+      props: data || null,
     },
   };
 }
