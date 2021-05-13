@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import { Layout } from '../../common/layouts/Layout';
 
 import Container from '../../common/components/Container';
-import SectionSeparator from '../../common/components/SectionSeparator';
 
 import {
   useGetPostsWithSlug,
@@ -39,7 +38,6 @@ export default function Post({ props }: { props: any }) {
                 {abstract}
               </h2>
             </div>
-            <SectionSeparator />
           </div>
         </motion.div>
       </Container>
@@ -65,7 +63,7 @@ export async function getStaticPaths() {
   const allPosts = await usePrefetchAllPosts();
   let newPaths = [];
 
-  for (let slug of allPosts) {
+  for (let slug of Object.keys(allPosts)) {
     newPaths.push({ params: { slug: slug } });
   }
   console.log(newPaths);
