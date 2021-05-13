@@ -23,7 +23,7 @@ export const useGetPostsWithSlug = async ({
     const { data } = await axios.get(
       `${API_URL}search/v2/articlesearch.json?q=${params.slug}&${API_KEY}`,
     );
-    return data;
+    return data.response.docs[0];
   } catch (error) {
     console.log(error.message);
   }

@@ -15,32 +15,32 @@ export default function Post({ props }: { props: any }) {
   if (router.isFallback) {
     return <Layout title={'Loading post | Boilerplate'}>loading...</Layout>;
   }
-  if (props.response.docs.length === 0) {
-    return (
-      <Layout title={'Oops | Boilerplate'}>
-        <Container>
-          <motion.div
-            className="w-full"
-            initial="initial"
-            animate="enter"
-            variants={fadeIn}
-          >
-            <div className={'py-12 text-center'}>
-              <h1 className={'font-bold text-white text-3xl mb-6'}>
-                Couldn't find the post..
-              </h1>
-            </div>
-          </motion.div>
-        </Container>
-      </Layout>
-    );
-  }
+  // if (props.length === 0) {
+  //   return (
+  //     <Layout title={'Oops | Boilerplate'}>
+  //       <Container>
+  //         <motion.div
+  //           className="w-full"
+  //           initial="initial"
+  //           animate="enter"
+  //           variants={fadeIn}
+  //         >
+  //           <div className={'py-12 text-center'}>
+  //             <h1 className={'font-bold text-white text-3xl mb-6'}>
+  //               Couldn't find the post..
+  //             </h1>
+  //           </div>
+  //         </motion.div>
+  //       </Container>
+  //     </Layout>
+  //   );
+  // }
 
-  const title = props.response.docs[0].headline.main;
-  const source = props.response.docs[0].source;
-  const abstract = props.response.docs[0].lead_paragraph;
+  const title = props.headline.main;
+  const source = props.source;
+  const abstract = props.lead_paragraph;
   return (
-    <Layout title={' | Boilerplate'} desc={'Post description'}>
+    <Layout title={title + ' | Boilerplate'} desc={'Post description'}>
       <Container>
         <motion.div
           className="w-full"
@@ -66,10 +66,10 @@ export default function Post({ props }: { props: any }) {
 }
 export async function getStaticProps(params: { params: { slug: string } }) {
   const data = await useGetPostsWithSlug(params);
-
+  // const data = JSON.stringify((getPost))
   return {
     props: {
-      props: data || null,
+      props: data,
     },
   };
 }
@@ -82,7 +82,6 @@ export async function getStaticPaths() {
     let slug = allPosts[object];
     newPaths.push({ params: { slug: slug } });
   }
-
   return {
     paths: newPaths,
     fallback: true,
