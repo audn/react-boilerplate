@@ -35,11 +35,15 @@ export const useGetPostsWithSlug = async ({
 };
 
 export const usePrefetchAllPosts = async () => {
-  const { data } = await axios.get(
-    `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${key}`,
-  );
-  return data.results.map(
-    (node: { title: string; headline: any }) =>
-      `${slugify({ title: node.title })}`,
-  );
+  try {
+    const { data } = await axios.get(
+      `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${key}`,
+    );
+    return data.results.map(
+      (node: { title: string; headline: any }) =>
+        `${slugify({ title: node.title })}`,
+    );
+  } catch (error) {
+    console.log(error.message);
+  }
 };
