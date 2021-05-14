@@ -7,6 +7,7 @@ import Container from '../common/components/Container';
 import PostCard from '../common/components/PostCard';
 import Button from '../common/components/Button';
 import SkeletonPostCard from '../common/components/SkeletonPostCard';
+import Banner from '../common/components/Banner';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../common/utils/data/animations';
@@ -24,12 +25,11 @@ export default function Home({ posts }: APIPosts) {
   const [disable, setDisable] = useState<boolean>(false);
 
   const router = useRouter();
+  const loading = router.isFallback;
   const { data } = useQuery('posts', getPosts, {
     initialData: posts,
   });
-  if (data.results == undefined) {
-    return <>error</>;
-  }
+
   return (
     <Layout title={'Index | Boilerlate'}>
       <Container>
@@ -51,7 +51,7 @@ export default function Home({ posts }: APIPosts) {
                 </p>
               </h2>
             </div>
-            <Button.Group className="flex gap-5 mb-6">
+            <Button.Group className="flex space-y-5 sm:space-y-0 sm:space-x-5  mb-6">
               <Button.Primary
                 title={`Feedback`}
                 className={'!px-12 sm:py-2'}
@@ -67,7 +67,31 @@ export default function Home({ posts }: APIPosts) {
               />
             </Button.Group>
           </div>
-          {router.isFallback ? (
+          {data === 429 ? (
+            <Banner
+              leftContent={
+                <div className={'flex items-center'}>
+                  <img
+                    alt="willy wonka"
+                    src={'/img/willy-wonka.jpg'}
+                    className={'w-24 mr-6 rounded-lg'}
+                  />
+                  <div className={'flex flex-col'}>
+                    <h1 className={'font-bold text-white text-lg mb-3'}>
+                      Ratelimited!
+                    </h1>
+                    <h2>
+                      We actually show a couple of blog posts here, but it seems
+                      like we were ratelimited by the API.
+                      <p className={'mt-4 text-blue-300'}>
+                        Try refreshing and you'll see them eventually!{' '}
+                      </p>
+                    </h2>
+                  </div>
+                </div>
+              }
+            />
+          ) : loading ? (
             <div
               className={
                 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'
@@ -105,11 +129,11 @@ export default function Home({ posts }: APIPosts) {
 export async function getStaticProps() {
   const data = await useGetPosts();
 
-  // if (!data) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

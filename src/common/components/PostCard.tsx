@@ -13,7 +13,7 @@ function PostCard({ title, abstract, created_date, multimedia }: IPostCard) {
       <a className="flex flex-col rounded-lg shadow-lg overflow-hidden group hover:-translate-y-1 animate transform cursor-pointer will-change ring-2 ring-transparent hover:ring-brand-primary hover:ring-opacity-40">
         <div className="flex-shrink-0 max-h-48 overflow-hidden">
           <Image
-            className="object-center w-full object-cover group-hover:scale-110 group-hover:translate-y-5 transform animate will-change"
+            className="object-center w-full object-cover group-hover:scale-110 transform animate will-change"
             src={multimedia[0].url}
             alt={title}
             width={200}
@@ -31,7 +31,8 @@ function PostCard({ title, abstract, created_date, multimedia }: IPostCard) {
             </div>
           </div>
           <div className="mt-6 flex items-center">
-            <div className="flex space-x-1 text-sm text-on-hero-blue">
+            <div className="flex items-center text-sm text-on-types-750">
+              <i className={'fas fa-calendar-week mr-3'} />{' '}
               {toDate({ dateString: created_date })}
             </div>
           </div>

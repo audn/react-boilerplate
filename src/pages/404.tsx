@@ -18,8 +18,12 @@ export default function Custom404() {
               404
             </h4>
             <h1 className={'font-bold text-white text-3xl mb-6'}>
-              Something went wrong!
+              We couldn't find this page.
             </h1>
+            <h2 className={'max-w-xl mx-auto'}>
+              The API we use does not have a way to retrieve individual posts,
+              so if you clicked on a post, it means we just could not track it.
+            </h2>
           </div>
         </motion.div>
       </Container>

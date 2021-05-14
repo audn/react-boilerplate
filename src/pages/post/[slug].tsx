@@ -1,27 +1,22 @@
-import { useRouter } from 'next/router';
 import { Layout } from '../../common/layouts/Layout';
 
 import Container from '../../common/components/Container';
+import Banner from '../../common/components/Banner';
 
 import {
   useGetPostsWithSlug,
   usePrefetchAllPosts,
 } from '../../common/utils/hooks/posts';
+
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../common/utils/data/animations';
 
-export default function Post({ props }: { props: any }) {
-  const { isFallback } = useRouter();
-
-  if (isFallback) {
-    return <Layout title={'Loading post | Boilerplate'}>loading...</Layout>;
-  }
-
-  const title = props.headline.main;
-  const source = props.source;
-  const abstract = props.lead_paragraph;
+export default function Post({ post }: { post: any }) {
   return (
-    <Layout title={title + ' | Boilerplate'} desc={'Post description'}>
+    <Layout
+      title={post ? 'Title' : 'else' + ' | Boilerplate'}
+      desc={'Post description'}
+    >
       <Container>
         <motion.div
           className="w-full"
@@ -30,15 +25,51 @@ export default function Post({ props }: { props: any }) {
           variants={fadeIn}
         >
           <div className={'py-12 text-center'}>
-            <h4 className={'font-medium text-brand-primary-light text-sm mb-6'}>
-              {source ? source : ''}
-            </h4>
-            <h1 className={'font-bold text-white text-3xl mb-6'}>{title}</h1>
-            <div className={'max-w-2xl mx-auto'}>
-              <h2 className={'text-on-naked-default text-base mt-12'}>
-                {abstract}
-              </h2>
-            </div>
+            {post === 429 ? (
+              <Banner
+                leftContent={
+                  <div className={'flex items-center'}>
+                    <img
+                      alt="willy wonka"
+                      src={'/img/willy-wonka.jpg'}
+                      className={'w-24 mr-6 rounded-lg'}
+                    />
+                    <div className={'flex flex-col'}>
+                      <h1 className={'font-bold text-white text-lg mb-3'}>
+                        Ratelimited!
+                      </h1>
+                      <h2>
+                        We actually show a couple of blog posts here, but it
+                        seems like we were ratelimited by the API.
+                        <p className={'mt-4 text-blue-300'}>
+                          Try refreshing and you'll see them eventually!{' '}
+                        </p>
+                      </h2>
+                    </div>
+                  </div>
+                }
+              />
+            ) : (
+              <>
+                <h4
+                  className={
+                    'font-medium text-brand-primary-light text-sm mb-6'
+                  }
+                >
+                  {post.response.docs[0].source
+                    ? post.response.docs[0].source
+                    : ''}
+                </h4>
+                <h1 className={'font-bold text-white text-3xl mb-6'}>
+                  {post.response.docs[0].headline.main}
+                </h1>
+                <div className={'max-w-2xl mx-auto'}>
+                  <h2 className={'text-on-naked-default text-base mt-12'}>
+                    {post.response.docs[0].lead_paragraph}
+                  </h2>
+                </div>
+              </>
+            )}
           </div>
         </motion.div>
       </Container>
@@ -47,7 +78,7 @@ export default function Post({ props }: { props: any }) {
 }
 export async function getStaticProps(params: { params: { slug: string } }) {
   const data = await useGetPostsWithSlug(params);
-  // const data = JSON.stringify((getPost))
+
   if (!data) {
     return {
       notFound: true,
@@ -55,7 +86,7 @@ export async function getStaticProps(params: { params: { slug: string } }) {
   }
   return {
     props: {
-      props: data,
+      post: data,
     },
   };
 }

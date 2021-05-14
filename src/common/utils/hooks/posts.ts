@@ -1,44 +1,43 @@
 import axios from 'axios';
 import { slugify } from '../helpers/slugify';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+const FRONTEND = process.env.NEXT_PUBLIC_FRONTEND as string;
 
 export const useGetPosts = async () => {
-  try {
-    const { data } = await axios.get(
-      `${API_URL}topstories/v2/science.json?${API_KEY}`,
-    );
-    return data;
-  } catch (error) {
-    console.log(error.message);
+  const { data } = await axios.get(`${FRONTEND}/api/posts`);
+  switch (data.status) {
+    case 'OK':
+      return data;
+    case 'Too Many Requests':
+      return 429;
   }
 };
+
 export const useGetPostsWithSlug = async ({
   params,
 }: {
   params: { slug: string };
 }) => {
-  try {
-    const { data } = await axios.get(
-      `${API_URL}search/v2/articlesearch.json?q=${params.slug}&${API_KEY}`,
-    );
-    return data.response.docs[0];
-  } catch (error) {
-    console.log(error.message);
+  const { data } = await axios.get(`${FRONTEND}/api/posts/${params.slug}`);
+  if (data.response.docs.length > 1) {
+    switch (data.status) {
+      case 'OK':
+        return data;
+      case 'Ratelimited':
+        return 429;
+    }
   }
 };
 
 export const usePrefetchAllPosts = async () => {
-  try {
-    const { data } = await axios.get(
-      `${API_URL}topstories/v2/science.json?${API_KEY}`,
-    );
-    return data.results.map(
-      (node: { title: string; headline: any }) =>
-        `${slugify({ title: node.title })}`,
-    );
-  } catch (error) {
-    console.log(error.message);
+  const { data } = await axios.get(`${FRONTEND}/api/posts`);
+  switch (data.status) {
+    case 'OK':
+      return data.results.map(
+        (node: { title: string; headline: any }) =>
+          `${slugify({ title: node.title })}`,
+      );
+    case 'Ratelimited':
+      return 429;
   }
 };

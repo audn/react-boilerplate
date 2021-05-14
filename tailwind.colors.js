@@ -16,6 +16,7 @@ module.exports = {
     75: '#132035', // hero || content
     100: '#162640', // placeholder
     150: '#222f44',
+    750: '#8099c1',
   },
 
   header: {

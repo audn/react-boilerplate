@@ -25,7 +25,7 @@ function DefaultBanner({ leftContent, rightContent, onClose, icon }: IBanner) {
     >
       <div
         className={
-          'ring-2 ring-brand-primary hover:ring-opacity-80 ring-opacity-50 hover:bg-opacity-50 animate mb-12' +
+          'ring-2 ring-brand-primary hover:ring-opacity-80 ring-opacity-50 active:bg-opacity-50 animate mb-12' +
           ' bg-brand-primary bg-opacity-20 px-4 py-4 rounded-lg sm:flex items-center justify-between text-white'
         }
       >
