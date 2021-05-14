@@ -38,13 +38,8 @@ export const usePrefetchAllPosts = async () => {
   const { data } = await axios.get(
     `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${key}`,
   );
-  switch (data.status) {
-    case 'OK':
-      return data.results.map(
-        (node: { title: string; headline: any }) =>
-          `${slugify({ title: node.title })}`,
-      );
-    case 'Ratelimited':
-      return 429;
-  }
+  return data.results.map(
+    (node: { title: string; headline: any }) =>
+      `${slugify({ title: node.title })}`,
+  );
 };
