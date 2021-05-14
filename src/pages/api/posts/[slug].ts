@@ -6,7 +6,7 @@ const API_KEY = process.env.API_KEY as string;
 export default async (_req: any, res: any) => {
   try {
     const { data } = await axios.get(
-      `${API_URL}topstories/v2/science.json?${API_KEY}`,
+      `${API_URL}search/v2/articlesearch.json?q=the-moon-mars-and-beyond-chinas-ambitious-plans-in-space&${API_KEY}`,
     );
 
     res.status(200).json(data);

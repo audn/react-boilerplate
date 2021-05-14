@@ -37,7 +37,7 @@ export const useGetPostsWithSlug = async ({
 export const usePrefetchAllPosts = async () => {
   try {
     const { data } = await axios.get(
-      `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${key}`,
+      `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=the-moon-mars-and-beyond-chinas-ambitious-plans-in-space&api-key=${key}`,
     );
     return data.results.map(
       (node: { title: string; headline: any }) =>
