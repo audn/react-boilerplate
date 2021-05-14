@@ -1,4 +1,5 @@
 import { Layout } from '../../common/layouts/Layout';
+import { useRouter } from 'next/router';
 
 import Container from '../../common/components/Container';
 import Banner from '../../common/components/Banner';
@@ -10,11 +11,24 @@ import {
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../common/utils/data/animations';
+// import { useQuery } from 'react-query';
+
+// const getPost = async (params: { params: { slug: string } }) => {
+//   return useGetPostsWithSlug(params);
+// };
 
 export default function Post({ post }: { post: any }) {
+  const router = useRouter();
+  const loading = router.isFallback;
+
+  // const { data } = useQuery('post', getPost, {
+  //   initialData: post,
+  // });
   return (
     <Layout
-      title={post ? 'Title' : 'else' + ' | Boilerplate'}
+      title={
+        post ? post.response.docs[0].headline.main : 'Title' + ' | Boilerplate'
+      }
       desc={'Post description'}
     >
       <Container>
@@ -49,6 +63,8 @@ export default function Post({ post }: { post: any }) {
                   </div>
                 }
               />
+            ) : loading ? (
+              'Loading'
             ) : (
               <>
                 <h4
