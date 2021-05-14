@@ -2,9 +2,12 @@ import axios from 'axios';
 import { slugify } from '../helpers/slugify';
 
 const FRONTEND = process.env.NEXT_PUBLIC_FRONTEND as string;
+const key = process.env.NEXT_PUBLIC_API_KEY as string;
 
 export const useGetPosts = async () => {
-  const { data } = await axios.get(`${FRONTEND}/api/posts`);
+  const { data } = await axios.get(
+    `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${key}`,
+  );
   switch (data.status) {
     case 'OK':
       return data;
@@ -18,7 +21,9 @@ export const useGetPostsWithSlug = async ({
 }: {
   params: { slug: string };
 }) => {
-  const { data } = await axios.get(`${FRONTEND}/api/posts/${params.slug}`);
+  const { data } = await axios.get(
+    `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${params.slug}&api-key=${key}`,
+  );
   if (data.response.docs.length > 1) {
     switch (data.status) {
       case 'OK':
@@ -30,7 +35,9 @@ export const useGetPostsWithSlug = async ({
 };
 
 export const usePrefetchAllPosts = async () => {
-  const { data } = await axios.get(`${FRONTEND}/api/posts`);
+  const { data } = await axios.get(
+    `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${key}`,
+  );
   switch (data.status) {
     case 'OK':
       return data.results.map(
