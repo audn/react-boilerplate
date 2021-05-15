@@ -1,6 +1,4 @@
-import { useQuery } from 'react-query';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 
 import { Layout } from '../common/layouts/Layout';
 import Container from '../common/components/Container';
@@ -9,25 +7,14 @@ import Button from '../common/components/Button';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../common/utils/data/animations';
 
-import { useGetPosts } from '../common/utils/hooks/posts';
+import { posts } from '../common/utils/data/posts';
 import { APIPosts } from '../common/lib/types';
 import { HydratePosts } from '../common/utils/helpers/hydration/';
-
-const getPosts = async () => {
-  return useGetPosts();
-};
 
 export default function Home({ posts }: APIPosts) {
   const [disable, setDisable] = useState<boolean>(false);
 
-  const router = useRouter();
-  const loading = router.isFallback;
-
-  const { data } = useQuery('posts', getPosts, {
-    initialData: posts,
-  });
-
-  const hydratePosts = HydratePosts(data, loading);
+  const hydratePosts = HydratePosts(posts);
 
   return (
     <Layout title={'Index | Boilerlate'}>
@@ -102,16 +89,9 @@ export default function Home({ posts }: APIPosts) {
 }
 
 export async function getStaticProps() {
-  const data = await useGetPosts();
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
   return {
     props: {
-      fallback: true,
-      posts: data,
+      posts,
     },
   };
 }

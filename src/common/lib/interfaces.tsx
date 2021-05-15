@@ -21,13 +21,30 @@ export interface IPostCard {
   created_date: string;
   multimedia: [{ url: string; type: string }];
 }
+
+export interface ICategory {
+  name: string;
+  href: string;
+}
+
+export interface IAuthor {
+  name: string;
+  href: string;
+  imageUrl: string;
+}
+
 export interface IPost {
   title: string;
+  href: string;
+  category: ICategory;
   description: string;
-  urlToImage: string;
-  author: string;
-  publishedAt: string;
+  date: string;
+  datetime: string;
+  imageUrl: string;
+  readingTime: string;
+  author: IAuthor;
 }
+
 export interface IButtonGroup {
   className?: string;
   children: ReactNode;
