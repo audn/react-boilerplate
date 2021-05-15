@@ -1,7 +1,8 @@
+import { Layout } from '../common/layouts/Layout';
 import Container from '../common/components/Container';
+
 import { motion } from 'framer-motion';
 import { fadeIn } from '../common/utils/data/animations';
-import { Layout } from '../common/layouts/Layout';
 
 export default function Custom404() {
   return (

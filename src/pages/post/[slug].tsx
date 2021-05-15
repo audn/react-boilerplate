@@ -24,6 +24,8 @@ export default function Post({ post }: { post: any }) {
   // const { data } = useQuery('post', getPost, {
   //   initialData: post,
   // });
+
+  console.log(post);
   return (
     <Layout
       title={

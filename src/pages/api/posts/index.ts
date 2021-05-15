@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_URL = process.env.API_URL as string;
-const API_KEY = process.env.API_KEY as string;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY as string;
 
 export default async (_req: any, res: any) => {
   try {
