@@ -3,8 +3,8 @@ const Cors = require('cors');
 
 import initMiddleware from '../../../common/utils/helpers/api/middleware';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY as string;
+const API_URL = process.env.API_URL as string;
+const API_KEY = process.env.API_KEY as string;
 
 const cors = initMiddleware(
   Cors({
