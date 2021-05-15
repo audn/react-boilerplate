@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { slugify } from '../helpers/slugify';
 
-const FRONTEND = process.env.NEXT_PUBLIC_FRONTEND;
+// const FRONTEND = process.env.NEXT_PUBLIC_FRONTEND;
 const key = process.env.NEXT_PUBLIC_API_KEY;
 
 export const useGetPosts = async () => {
