@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "export": "yarn build && next export"
+    "start": "next start"
   },
   "browserslist": [
     "> 1%",
