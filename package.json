@@ -18,6 +18,7 @@
   "dependencies": {
     "autoprefixer": "^10.2.5",
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "framer-motion": "^2.9.4",
     "next": "10.2.0",

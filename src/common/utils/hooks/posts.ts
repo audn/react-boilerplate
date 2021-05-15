@@ -1,13 +1,10 @@
 import axios from 'axios';
 import { slugify } from '../helpers/slugify';
 
-// const FRONTEND = process.env.NEXT_PUBLIC_FRONTEND as string;
-const key = process.env.NEXT_PUBLIC_API_KEY as string;
+const FRONTEND = process.env.NEXT_PUBLIC_FRONTEND as string;
 
 export const useGetPosts = async () => {
-  const { data } = await axios.get(
-    `https://api.nytimes.com/svc/topstories/v2/science.json?${key}`,
-  );
+  const { data } = await axios.get(`${FRONTEND}/api/posts`);
   switch (data.status) {
     case 'OK':
       return data;
@@ -21,9 +18,7 @@ export const useGetPostsWithSlug = async ({
 }: {
   params: { slug: string };
 }) => {
-  const { data } = await axios.get(
-    `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${params.slug}&${key}`,
-  );
+  const { data } = await axios.get(`${FRONTEND}/api/posts/${params.slug}`);
   if (data.response.docs.length > 1) {
     switch (data.status) {
       case 'OK':
@@ -36,9 +31,7 @@ export const useGetPostsWithSlug = async ({
 
 export const usePrefetchAllPosts = async () => {
   try {
-    const { data } = await axios.get(
-      `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=the-moon-mars-and-beyond-chinas-ambitious-plans-in-space&${key}`,
-    );
+    const { data } = await axios.get(`${FRONTEND}/api/posts`);
     return data.results.map(
       (node: { title: string; headline: any }) =>
         `${slugify({ title: node.title })}`,
