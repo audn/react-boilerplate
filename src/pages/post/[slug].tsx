@@ -1,37 +1,61 @@
 import { Layout } from '../../common/layouts/Layout';
 import { useRouter } from 'next/router';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 import Container from '../../common/components/Container';
 import Banner from '../../common/components/Banner';
+import PostBody from './components/PostBody';
 
 import {
   useGetPostsWithSlug,
   usePrefetchAllPosts,
 } from '../../common/utils/hooks/posts';
-
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../common/utils/data/animations';
-// import { useQuery } from 'react-query';
-
-// const getPost = async (params: { params: { slug: string } }) => {
-//   return useGetPostsWithSlug(params);
-// };
 
 export default function Post({ post }: { post: any }) {
   const router = useRouter();
-  const loading = router.isFallback;
 
-  // const { data } = useQuery('post', getPost, {
-  //   initialData: post,
-  // });
+  if (router.isFallback) {
+    return (
+      <Layout title={'Loading post'}>
+        <Container>
+          <SkeletonTheme color="#1b2c48" highlightColor="#192942">
+            <h4 className={'font-medium text-brand-primary-light text-sm mb-6'}>
+              <Skeleton width={100} />
+            </h4>
+            <h1 className={'font-bold text-white text-3xl mb-6'}>
+              <Skeleton width={500} />
+            </h1>
+            <div className={'max-w-2xl mx-auto'}>
+              <h2 className={'text-on-naked-default text-base mt-12'}>
+                <div className={'flex gap-2 flex-wrap justify-center'}>
+                  <Skeleton width={150} />
+                  <Skeleton width={100} />
+                  <Skeleton width={200} />
+                  <Skeleton width={75} />
+                  <Skeleton width={150} />
+                  <Skeleton width={100} />
+                </div>
+              </h2>
+            </div>
+          </SkeletonTheme>
+        </Container>
+      </Layout>
+    );
+  }
 
-  console.log(post);
+  const title = post.response.docs[0].headline.main;
+  const paragraph = post.response.docs[0].lead_paragraph;
+  const source = post.response.docs[0].source;
+  const image =
+    'https://www.nytimes.com/' + post.response.docs[0].multimedia[2].url;
+  console.log(post.response.docs[0].multimedia);
   return (
     <Layout
-      title={
-        post ? post.response.docs[0].headline.main : 'Title' + ' | Boilerplate'
-      }
-      desc={'Post description'}
+      title={title + 'Loading..' + ' | Boilerplate'}
+      desc={paragraph}
+      image={image}
     >
       <Container>
         <motion.div
@@ -65,28 +89,13 @@ export default function Post({ post }: { post: any }) {
                   </div>
                 }
               />
-            ) : loading ? (
-              'Loading'
             ) : (
-              <>
-                <h4
-                  className={
-                    'font-medium text-brand-primary-light text-sm mb-6'
-                  }
-                >
-                  {post.response.docs[0].source
-                    ? post.response.docs[0].source
-                    : ''}
-                </h4>
-                <h1 className={'font-bold text-white text-3xl mb-6'}>
-                  {post.response.docs[0].headline.main}
-                </h1>
-                <div className={'max-w-2xl mx-auto'}>
-                  <h2 className={'text-on-naked-default text-base mt-12'}>
-                    {post.response.docs[0].lead_paragraph}
-                  </h2>
-                </div>
-              </>
+              <PostBody
+                source={source}
+                title={title}
+                paragraph={paragraph}
+                image={image}
+              />
             )}
           </div>
         </motion.div>
@@ -96,7 +105,7 @@ export default function Post({ post }: { post: any }) {
 }
 export async function getStaticProps(params: { params: { slug: string } }) {
   const data = await useGetPostsWithSlug(params);
-
+  console.log('call', data);
   if (!data) {
     return {
       notFound: true,

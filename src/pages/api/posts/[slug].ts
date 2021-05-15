@@ -22,10 +22,8 @@ export default async (req: any, res: any) => {
     const { data } = await axios.get(
       `${API_URL}/search/v2/articlesearch.json?q=${slug}&${API_KEY}`,
     );
-    res.json(data);
+    res.status(200).json(data);
   } catch (error) {
-    if (error.response.status === 429) {
-      res.json({ status: 'Too Many Requests' });
-    }
+    res.status(200).json({ status: error.response.status });
   }
 };

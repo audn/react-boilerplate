@@ -5,11 +5,10 @@ const FRONTEND = process.env.NEXT_PUBLIC_FRONTEND as string;
 
 export const useGetPosts = async () => {
   const { data } = await axios.get(`${FRONTEND}/api/posts`);
-  switch (data.status) {
-    case 'OK':
-      return data;
-    case 'Too Many Requests':
-      return 429;
+  if (data.status === 'OK') {
+    return data;
+  } else {
+    return data.status;
   }
 };
 
@@ -19,13 +18,12 @@ export const useGetPostsWithSlug = async ({
   params: { slug: string };
 }) => {
   const { data } = await axios.get(`${FRONTEND}/api/posts/${params.slug}`);
-  if (data.response.docs.length > 1) {
-    switch (data.status) {
-      case 'OK':
-        return data;
-      case 'Too Many Requests':
-        return 429;
+  if (data.status === 'OK') {
+    if (data.response.docs.length > 1) {
+      return data;
     }
+  } else {
+    return data.status;
   }
 };
 

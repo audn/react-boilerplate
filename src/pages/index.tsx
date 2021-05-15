@@ -4,31 +4,30 @@ import { useRouter } from 'next/router';
 
 import { Layout } from '../common/layouts/Layout';
 import Container from '../common/components/Container';
-import PostCard from '../common/components/PostCard';
 import Button from '../common/components/Button';
-import SkeletonPostCard from '../common/components/SkeletonPostCard';
 import Banner from '../common/components/Banner';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../common/utils/data/animations';
 
 import { useGetPosts } from '../common/utils/hooks/posts';
-import { IPostCard } from '../common/lib/interfaces';
 import { APIPosts } from '../common/lib/types';
+import { HydratePosts } from '../common/utils/helpers/hydration/';
 
 const getPosts = async () => {
   return useGetPosts();
 };
-const fakeArray: Array<number> = [1, 2, 3, 4, 5, 6, 7];
 
 export default function Home({ posts }: APIPosts) {
   const [disable, setDisable] = useState<boolean>(false);
 
   const router = useRouter();
   const loading = router.isFallback;
+
   const { data } = useQuery('posts', getPosts, {
     initialData: posts,
   });
+  const hydratePosts = HydratePosts(data, loading);
 
   return (
     <Layout title={'Index | Boilerlate'}>
@@ -44,11 +43,37 @@ export default function Home({ posts }: APIPosts) {
               <h1 className={'font-bold text-white text-3xl mb-6'}>
                 React, Next.js & TailwindCSS
               </h1>
-              <h2 className={'font-medium text-on-naked-default'}>
-                Take a minute to test responsivity / buttons!
-                <p className={'mt-4'}>
-                  Click the GitHub icon whenever you're ready to get started.
-                </p>
+              <h2 className={'font-medium text-on-naked-defaul'}>
+                Don't waste time structuring or setting up interfaces on your
+                next project!
+                <div className={'mt-6 flex items-center flex-wrap gap-2'}>
+                  You're currently looking at the{' '}
+                  <a
+                    href={
+                      'https://github.com/audn/frontend-boilerplate/tree/example-site'
+                    }
+                    target={'_blank'}
+                    className={
+                      'text-sm sm:text-base px-3 rounded-md bg-types-75 py-1 flex items-center hover:bg-types-100 animate'
+                    }
+                  >
+                    <i className={'fas fa-code-branch mr-2'} />
+                    example-site
+                  </a>
+                  branch, but we recommend cloning the{' '}
+                  <a
+                    href={'https://github.com/audn/frontend-boilerplate'}
+                    target={'_blank'}
+                    className={
+                      'text-sm sm:text-base px-3 rounded-md bg-types-75 py-1 flex items-center hover:bg-types-100'
+                    }
+                  >
+                    <i className={'fas fa-code-branch mr-2'} />
+                    master
+                  </a>
+                  branch to avoid having to delete components used in this
+                  example.
+                </div>
               </h2>
             </div>
             <Button.Group className="flex space-y-5 sm:space-y-0 sm:space-x-5  mb-6">
@@ -91,34 +116,8 @@ export default function Home({ posts }: APIPosts) {
                 </div>
               }
             />
-          ) : loading ? (
-            <div
-              className={
-                'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'
-              }
-            >
-              {fakeArray.map((i) => (
-                <SkeletonPostCard key={i} />
-              ))}
-            </div>
           ) : (
-            <div
-              className={
-                'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'
-              }
-            >
-              {data.results.map(
-                ({ title, abstract, created_date, multimedia }: IPostCard) => (
-                  <PostCard
-                    key={title}
-                    title={title}
-                    abstract={abstract}
-                    created_date={created_date}
-                    multimedia={multimedia}
-                  />
-                ),
-              )}
-            </div>
+            hydratePosts
           )}
         </motion.div>
       </Container>
@@ -134,7 +133,6 @@ export async function getStaticProps() {
       notFound: true,
     };
   }
-
   return {
     props: {
       fallback: true,

@@ -18,13 +18,8 @@ export default async (_req: any, res: any) => {
     const { data } = await axios.get(
       `${API_URL}/topstories/v2/science.json?${API_KEY}`,
     );
-    res.json(data);
+    res.status(200).json(data);
   } catch (error) {
-    switch (error.response.status) {
-      case 429:
-        return res.json({ status: 'Too Many Requests' });
-      case 404:
-        res.json({ status: 'Not found' });
-    }
+    res.status(200).json({ status: error.response.status });
   }
 };
