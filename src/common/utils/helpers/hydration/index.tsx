@@ -1,14 +1,10 @@
 import SkeletonPostCard from '../../../components/SkeletonPostCard';
 import PostCard from '../../../components/PostCard';
-import Alert from '../../../components/Alert';
 
 import { IPostCard } from '../../../lib/interfaces';
 
 function HydratePosts(data: any, loading: boolean) {
   const fakeArray: Array<number> = [1, 2, 3, 4, 5, 6, 7];
-  if (data === 429) {
-    return <Alert.Ratelimited />;
-  }
   switch (loading) {
     case true:
       return (
