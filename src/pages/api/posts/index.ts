@@ -1,5 +1,5 @@
 import axios from 'axios';
-const Cors = require('module-name');
+const Cors = require('cors');
 
 import initMiddleware from '../../../common/utils/helpers/api/middleware';
 
