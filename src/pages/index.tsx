@@ -77,7 +77,7 @@ export default function Home({ posts }: APIPosts) {
                 </div>
               </h2>
             </div>
-            <Button.Group className="flex space-y-5 sm:space-y-0 sm:space-x-5  mb-6">
+            <Button.Group className="flex space-y-5 sm:space-y-0 sm:space-x-5 mb-6">
               <Button.Primary
                 title={`Feedback`}
                 className={'!px-12 sm:py-2'}
