@@ -1,5 +1,3 @@
-import React, { forwardRef } from 'react';
-
 import { fadeOutTop } from '../utils/data/animations';
 import { motion } from 'framer-motion';
 
@@ -73,117 +71,113 @@ const Form = {
       );
   },
   Group: FormGroup,
-  Input: forwardRef(
-    ({
-      id,
-      colorScheme,
-      title,
-      description,
-      icon,
-      ref,
-      type,
-      required,
-      minLength,
-      maxLength,
-      placeholder,
-      onChange,
-      value,
-      error,
-    }: IInput) => {
-      return (
-        <FormGroup>
-          <label htmlFor={id} className="block mb-4 text-base">
+  Input: ({
+    id,
+    colorScheme,
+    title,
+    description,
+    icon,
+    ref,
+    type,
+    required,
+    minLength,
+    maxLength,
+    placeholder,
+    onChange,
+    value,
+    error,
+  }: IInput) => {
+    return (
+      <FormGroup>
+        <label htmlFor={id} className="block mb-4 text-base">
+          <FormLabel
+            title={title}
+            description={description}
+            colorScheme={colorScheme}
+          />
+        </label>
+        <div className="relative mt-1 rounded-md shadow-sm">
+          {icon && (
+            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              {icon}
+            </div>
+          )}
+          <input
+            id={id}
+            name={id}
+            ref={ref}
+            type={type}
+            required={required}
+            minLength={minLength}
+            maxLength={maxLength}
+            placeholder={placeholder}
+            onChange={onChange}
+            value={value}
+            className={
+              `input-field ` +
+              color('inputField', colorScheme) +
+              (icon && '!pl-10')
+            }
+          />
+        </div>
+        {error && (
+          <div className="mt-3 text-sm  text-red-400">
+            <i className="mr-3 text-sm fad fa-exclamation-triangle" />
+            {error}
+          </div>
+        )}
+      </FormGroup>
+    );
+  },
+  TextArea: ({
+    id,
+    colorScheme,
+    title,
+    description,
+    required,
+    maxLength,
+    placeholder,
+    onChange,
+    value,
+    error,
+    className,
+  }: ITextArea) => {
+    return (
+      <FormGroup>
+        <div className={className ? className : ''}>
+          <label htmlFor={id} className={`block mb-4 text-base text-on-150`}>
             <FormLabel
               title={title}
               description={description}
               colorScheme={colorScheme}
             />
           </label>
-          <div className="relative mt-1 rounded-md shadow-sm">
-            {icon && (
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                {icon}
-              </div>
-            )}
-            <input
-              id={id}
-              name={id}
-              ref={ref}
-              type={type}
-              required={required}
-              minLength={minLength}
-              maxLength={maxLength}
-              placeholder={placeholder}
-              onChange={onChange}
-              value={value}
-              className={
-                `input-field ` +
-                color('inputField', colorScheme) +
-                (icon && '!pl-10')
-              }
-            />
+          <div className="relative mt-1">
+            <div className="flex rounded-md shadow-sm">
+              <textarea
+                id={id}
+                name={id}
+                required={required}
+                maxLength={maxLength}
+                placeholder={placeholder}
+                onChange={onChange}
+                value={value}
+                rows={3}
+                className={`input-field ` + color('inputField', colorScheme)}
+              />
+            </div>
           </div>
           {error && (
-            <div className="mt-3 text-sm  text-red-400">
-              <i className="mr-3 text-sm fad fa-exclamation-triangle" />
+            <div className="mt-3 text-sm font-semibold text-red-400">
+              <i className="mr-3 text-xs fad fa-exclamation-triangle" />
               {error}
             </div>
           )}
-        </FormGroup>
-      );
-    },
-  ),
-  TextArea: forwardRef(
-    ({
-      id,
-      colorScheme,
-      title,
-      description,
-      required,
-      maxLength,
-      placeholder,
-      onChange,
-      value,
-      error,
-      className,
-    }: ITextArea) => {
-      return (
-        <FormGroup>
-          <div className={className ? className : ''}>
-            <label htmlFor={id} className={`block mb-4 text-base text-on-150`}>
-              <FormLabel
-                title={title}
-                description={description}
-                colorScheme={colorScheme}
-              />
-            </label>
-            <div className="relative mt-1">
-              <div className="flex rounded-md shadow-sm">
-                <textarea
-                  id={id}
-                  name={id}
-                  required={required}
-                  maxLength={maxLength}
-                  placeholder={placeholder}
-                  onChange={onChange}
-                  value={value}
-                  rows={3}
-                  className={`input-field ` + color('inputField', colorScheme)}
-                />
-              </div>
-            </div>
-            {error && (
-              <div className="mt-3 text-sm font-semibold text-red-400">
-                <i className="mr-3 text-xs fad fa-exclamation-triangle" />
-                {error}
-              </div>
-            )}
-          </div>
-        </FormGroup>
-      );
-    },
-  ),
-  CheckBox: forwardRef(({ id, title, required }: ICheckbox) => {
+        </div>
+      </FormGroup>
+    );
+  },
+  CheckBox: ({ id, title, required }: ICheckbox) => {
     return (
       <FormGroup>
         <div className="flex items-center">
@@ -203,7 +197,7 @@ const Form = {
         </div>
       </FormGroup>
     );
-  }),
+  },
 };
 
 export default Form;

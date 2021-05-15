@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 
 import { IButtonGroup, IButton } from '../lib/interfaces';
