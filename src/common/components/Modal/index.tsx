@@ -39,12 +39,12 @@ const Modal = {
             animate="enter"
             exit="exit"
             variants={fadeIn}
-            className="fixed inset-0 z-50  scrollbar-none h-full"
+            className="fixed inset-0 z-50 scrollbar-none h-full"
             aria-labelledby="modal"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-end sm:items-center pb-5 sm:mb-0 justify-center min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm">
+            <div className="flex items-end sm:items-center pb-16 sm:pb-0 justify-center min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm">
               <div className="fixed inset-0 z-30" onClick={onClose}>
                 &nbsp;
               </div>
