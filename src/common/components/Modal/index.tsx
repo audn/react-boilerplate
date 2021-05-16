@@ -39,13 +39,16 @@ const Modal = {
             animate="enter"
             exit="exit"
             variants={fadeIn}
-            className="absolute sm:fixed inset-0 z-50 scrollbar-none h-full"
+            className="fixed inset-0 z-50 scrollbar-none h-full overflow-x-auto"
             aria-labelledby="modal"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-center min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm">
-              <div className="fixed inset-0 z-30" onClick={onClose}>
+            <div className="flex items-center justify-center min-h-screen">
+              <div
+                className="fixed inset-0 z-30 min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm align-bottom sm:align-middl"
+                onClick={onClose}
+              >
                 &nbsp;
               </div>
               <motion.div
