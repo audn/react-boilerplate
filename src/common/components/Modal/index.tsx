@@ -20,11 +20,11 @@ const Modal = {
     );
   },
   Body: ({ children, onClose, open, className }: IModal) => {
-    const body = document.querySelector('body');
     useEffect(updateBody, [open]);
 
     function updateBody() {
-      if (open && body) {
+      const body = document.querySelector('body') as HTMLBodyElement;
+      if (open && typeof window !== 'undefined') {
         body.style.overflow = 'hidden';
       } else if (!open && body) {
         body.style.overflow = 'auto';
