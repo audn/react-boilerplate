@@ -1,6 +1,19 @@
 import { ReactNode, SyntheticEvent } from 'react';
-
+export interface IModal {
+  open: boolean;
+  onClose?: () => void | Promise<void>;
+  children: ReactNode;
+  className?: string;
+}
+export interface IAlert {
+  open: boolean;
+  title: string;
+  message?: string;
+  footer?: string;
+  onClose?: () => void | Promise<void>;
+}
 export interface IBanner {
+  open: boolean;
   type?: 'info' | 'brand';
   position?: 'bottom';
   leftContent: ReactNode;
@@ -21,18 +34,15 @@ export interface IPostCard {
   created_date: string;
   multimedia: [{ url: string; type: string }];
 }
-
 export interface ICategory {
   name: string;
   href: string;
 }
-
 export interface IAuthor {
   name: string;
   href: string;
   imageUrl: string;
 }
-
 export interface IPost {
   title: string;
   href: string;
@@ -44,7 +54,6 @@ export interface IPost {
   readingTime: string;
   author: IAuthor;
 }
-
 export interface IButtonGroup {
   className?: string;
   children: ReactNode;
@@ -60,7 +69,6 @@ export interface IButton {
   icon?: ReactNode;
   size?: string;
 }
-
 export interface IFormGroup {
   className?: string;
   children: ReactNode;
@@ -76,7 +84,6 @@ export interface IForm {
   children: ReactNode;
   hasSubmitted: boolean;
 }
-
 export interface IInput {
   colorScheme: 'naked';
   id: string;

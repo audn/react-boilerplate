@@ -1,10 +1,14 @@
-import Banner from './Banner';
 import Image from 'next/image';
+import { IAlert } from '../lib/interfaces';
+
+import Banner from './Banner';
 
 const Alert = {
-  Ratelimited: () => {
+  Info: ({ title, message, footer, onClose, open }: IAlert) => {
     return (
       <Banner
+        open={open}
+        onClose={onClose && onClose}
         leftContent={
           <div className={'flex items-center'}>
             <div className={'mr-6 hidden sm:flex'}>
@@ -17,15 +21,10 @@ const Alert = {
               />
             </div>
             <div className={'flex flex-col'}>
-              <h1 className={'font-bold text-white text-lg mb-3'}>
-                Ratelimited!
-              </h1>
+              <h1 className={'font-bold text-white text-lg mb-3'}>{title}</h1>
               <h2>
-                We would show you some content, but it seems like we were
-                ratelimited by the API.
-                <p className={'mt-4 text-blue-300'}>
-                  Try refreshing and you'll get it eventually!{' '}
-                </p>
+                {message}
+                {footer && <p className={'mt-4 text-blue-300'}>{footer}!</p>}
               </h2>
             </div>
           </div>
