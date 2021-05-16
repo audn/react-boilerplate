@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { IModal } from '../../lib/interfaces';
-import { fadeIn, fadeOutTop } from '../../utils/data/animations';
+import { fadeIn, fadeInTop } from '../../utils/data/animations';
 import { ReactNode, useEffect } from 'react';
 
 interface Title {
@@ -39,12 +39,12 @@ const Modal = {
             animate="enter"
             exit="exit"
             variants={fadeIn}
-            className="fixed inset-0 z-50 overflow-y-auto scrollbar-none"
+            className="fixed inset-0 z-50  scrollbar-none h-full"
             aria-labelledby="modal"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-center min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm">
+            <div className="flex items-end sm:items-center pb-5 sm:mb-0 justify-center min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm">
               <div className="fixed inset-0 z-30" onClick={onClose}>
                 &nbsp;
               </div>
@@ -53,8 +53,8 @@ const Modal = {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                variants={fadeOutTop}
-                className={`relative z-40 px-4 `}
+                variants={fadeInTop}
+                className={`relative z-40 px-4 h-full`}
               >
                 <div
                   className={`scrollbar-none w-full overflow-scroll bg-modal-100 w-full p-6 rounded-md ring-brand-primary-100 ring-opacity-20 w-full mx-auto ${className}`}
