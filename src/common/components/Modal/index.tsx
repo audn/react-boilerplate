@@ -46,7 +46,7 @@ const Modal = {
           >
             <div className="flex items-center justify-center min-h-screen">
               <div
-                className="fixed inset-0 z-30 min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm align-bottom sm:align-middl"
+                className="fixed inset-0 z-30  bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm align-bottom sm:align-middle"
                 onClick={onClose}
               >
                 &nbsp;
