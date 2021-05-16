@@ -9,7 +9,7 @@ module.exports = {
   //   ];
   // },
   images: {
-    domains: ['static01.nyt.com', 'www.nytimes.com'],
+    domains: ['static01.nyt.com', 'www.nytimes.com', 'images.unsplash.com'],
   },
   target: 'serverless',
 };
