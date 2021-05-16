@@ -1,41 +1,33 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import NavItem from './components/NavItem';
-
-import routes from './routes';
+import MenuToggle from './components/MenuToggle';
+import MenuItems from './components/MenuItems';
+import Container from '../Container';
 
 export const Header = () => {
   const [isPhoneMenuOpen, setPhoneMenu] = useState(false);
+
+  function toggleMenu() {
+    setPhoneMenu(!isPhoneMenuOpen);
+  }
+
   return (
-    <header className="z-50 sticky top-0 bg-header-25 text-on-header border-b-2 border-types-50 px-6 md:px-8 py-4">
-      <div className="sm:flex sm:flex-no-wrap items-center justify-between container">
-        <div className="flex items-center justify-between">
-          <Link href="/">
-            <a className="font-bold text-white text-xl">MyApp</a>
-          </Link>
-          <div
-            className="flex sm:hidden cursor-pointer bg-header-125  w-8 h-8 items-center justify-center rounded-md text-white"
-            onClick={() => setPhoneMenu(!isPhoneMenuOpen)}
-          >
-            <i className={isPhoneMenuOpen ? 'far fa-times' : 'far fa-bars'} />
-          </div>
-        </div>
-        <div
-          className={`${
-            isPhoneMenuOpen ? `block sm:mt-0 mt-6` : `hidden`
-          }  sm:flex flex-col sm:flex-row sm:items-center sm:justify-center text-sm gap-1 sm:w-auto select-none`}
-        >
-          {routes.map(({ title, route, icon }, i) => (
-            <NavItem
-              title={title}
-              route={route}
-              key={i}
-              icon={icon ? <i className={icon + ` mr-3 text-sm`} /> : ''}
+    <header className="z-50 sticky top-0 bg-header-100 text-on-header-800 border-b-2 border-header-150 py-4">
+      <Container>
+        <div className="sm:flex sm:flex-no-wrap items-center justify-between ">
+          <div className="flex items-center justify-between">
+            <Link href="/">
+              <a className="font-bold text-white text-xl">MyApp</a>
+            </Link>
+            <MenuToggle
+              toggleMenu={toggleMenu}
+              isPhoneMenuOpen={isPhoneMenuOpen}
             />
-          ))}
+          </div>
+          <MenuItems isPhoneMenuOpen={isPhoneMenuOpen} />
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

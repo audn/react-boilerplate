@@ -15,16 +15,16 @@ module.exports = {
   },
 
   /*
-   "types" are global colors that can be used as universal colors, but avoid depending on them!
-   it's way better to split them up into a new category if you use a few of them regulary
+  "types" are global colors that can be used as universal colors, but avoid depending on them!
+  it's way better to split them up into a new category if you use a few of them regulary
 
-   ex:
-   instead of using "bg-types-250" for input fields, add the "types-250" color to "bg-input-{:name}" instead!
-   reason: if you change any colors below, a lot (depending on how often you've used types) -
-   will change, and that's when you know you've fucked up
+  ex:
+  instead of using "bg-types-250" for input fields, add the "types-250" color to "bg-input-{:name}" instead!
+  reason: if you change any colors below, a lot (depending on how often you've used types) -
+  will change, and that's when you know you've fucked up
 
-   look at types as a collection of your most used colors, but use them wisely.
-   */
+  look at types as a collection of your most used colors, but use them wisely.
+  */
   types: {
     100: '#132035',
     150: '#1a2b46',
@@ -98,13 +98,13 @@ module.exports = {
   },
   hero: {
     50: '#',
-    100: '#132035',
+    100: '#0e182a',
     150: '#',
   },
   /*
-   don't add primary or secondary to the button:{}!
-   you'll end up having to change multiple colors if your brand colors ever change.
-   just use "bg-brand-<primary|secondary>"
+  don't add primary or secondary to the button:{}!
+  you'll end up having to change multiple colors if your brand colors ever change.
+  just use "bg-brand-<primary|secondary>"
    */
   button: {
     footer: {

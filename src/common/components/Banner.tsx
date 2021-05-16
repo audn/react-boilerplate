@@ -25,15 +25,15 @@ function DefaultBanner({ leftContent, rightContent, onClose, icon }: IBanner) {
     >
       <div
         className={
-          'ring-2 ring-brand-primary hover:ring-opacity-80 ring-opacity-50 active:bg-opacity-50 animate mb-12' +
-          ' bg-brand-primary bg-opacity-20 px-4 py-4 rounded-lg sm:flex items-center justify-between text-white'
+          'ring-2 ring-brand-primary-100 hover:ring-opacity-80 ring-opacity-50 active:bg-opacity-50 animate mb-12' +
+          ' bg-brand-primary-100 bg-opacity-20 px-4 py-4 rounded-lg sm:flex items-center justify-between text-white'
         }
       >
         <div className={'flex items-center'}>
           {icon && (
             <div
               className={
-                'flex-shrink-0 bg-brand-primary h-8 w-8 flex items-center justify-center bg-opacity-20 mr-3 rounded-md'
+                'flex-shrink-0 bg-brand--100 h-8 w-8 flex items-center justify-center bg-opacity-20 mr-3 rounded-md'
               }
             >
               {icon}
@@ -47,7 +47,7 @@ function DefaultBanner({ leftContent, rightContent, onClose, icon }: IBanner) {
             <div className={'flex'}>
               <div
                 className={
-                  'hidden sm:flex ml-6 items-center justify-center w-8 h-8 rounded-md bg-brand-primary-light' +
+                  'hidden sm:flex ml-6 items-center justify-center w-8 h-8 rounded-md bg-brand-primary-150' +
                   ' hover:bg-opacity-100' +
                   ' cursor-pointer animate bg-opacity-20'
                 }
@@ -57,11 +57,11 @@ function DefaultBanner({ leftContent, rightContent, onClose, icon }: IBanner) {
               </div>
               <div
                 className={
-                  'flex sm:hidden px-3 py-2 w-full bg-brand-primary ring-2 ring-brand-primary' +
+                  'flex sm:hidden px-3 py-2 w-full bg-brand-primary-100 ring-2 ring-brand-primary-100' +
                   ' ring-opacity-80 bg-opacity-50' +
-                  '  mt-6 rounded-md justify-center cursor-pointer hover:bg-brand-primary-dark animate'
+                  '  mt-6 rounded-md justify-center cursor-pointer hover:bg-brand-primary-50 animate'
                 }
-                onClick={() => onClose()}
+                onClick={onClose}
               >
                 Close
               </div>

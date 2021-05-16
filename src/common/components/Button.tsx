@@ -6,7 +6,7 @@ import { validateUrl } from '../utils/helpers/regex/url';
 import { ReactNode } from 'react';
 
 const options = ({ className }: { className: string | undefined }) => {
-  const disabledOptions = ` disabled:ring-opacity-50 disabled:bg-opacity-50 disabled:hover:bg-opacity-50 disabled:!cursor-not-allowed disabled:text-opacity-50 disabled:hover:text-opacity-40 disabled:hover:!scale-100 transform avoid-transform `;
+  const disabledOptions = ` disabled:ring-opacity-50 disabled:bg-opacity-50 disabled:hover:bg-opacity-50 disabled:!cursor-not-allowed disabled:text-opacity-50 disabled:hover:text-opacity-40 disabled:hover:!scale-100 transform transform-disabled `;
   if (className) {
     return className + disabledOptions;
   } else return disabledOptions;
@@ -27,7 +27,7 @@ const Layout = ({
   route,
   children,
 }: {
-  route: string | undefined;
+  route?: string;
   children: ReactNode;
 }) => {
   if (route) {
@@ -51,7 +51,7 @@ const Button = {
       <Layout route={route}>
         <button
           className={
-            `active:ring-brand-primary-lighter ring-brand-primary-light btn-base bg-brand-primary hover:bg-brand-primary-dark text-white active:bg-brand-primary disabled:hover:bg-brand-primary w-full sm:w-auto ` +
+            `active:ring-brand-primary-300 ring-brand-primary-150 btn-base bg-brand-primary-100 hover:bg-brand-primary-50 text-white active:bg-brand-100 disabled:hover:bg-brand-primary-100 w-full sm:w-auto ` +
             options({ className })
           }
           onClick={onClick}
@@ -74,7 +74,7 @@ const Button = {
       <Layout route={route}>
         <button
           className={
-            `btn-base bg-brand-secondary hover:bg-brand-secondary-dark text-on-button-secondary active:bg-brand-secondary disabled:hover:bg-brand-secondary active:ring-brand-secondary-lighter ring-brand-secondary-light w-full sm:w-auto ` +
+            `btn-base bg-brand-secondary-100 hover:bg-brand-secondary-50 text-on-button-secondary-900 active:bg-brand-secondary-100 disabled:hover:bg-brand-secondary-100 active:ring-brand-secondary-300 ring-brand-secondary-150 w-full sm:w-auto ` +
             options({ className })
           }
           onClick={onClick}

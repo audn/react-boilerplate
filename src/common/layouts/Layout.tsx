@@ -14,7 +14,7 @@ Router.events.on('routeChangeComplete', (url) => {
 
 export const Layout = ({ title, desc, url, children }: ILayout) => {
   return (
-    <div className="flex flex-col min-h-screen bg-types-25 ">
+    <div className="flex flex-col min-h-screen">
       <SeoTags
         title={title ? title : `Page | Boilerplate`}
         desc={
@@ -26,7 +26,7 @@ export const Layout = ({ title, desc, url, children }: ILayout) => {
       />
       <Header />
       <div className={'flex-1 '}>
-        <main className=" w-full text-on-naked-default">{children}</main>
+        <main className=" w-full text-on-naked-900">{children}</main>
       </div>
       <Footer />
     </div>

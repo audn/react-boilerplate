@@ -1,15 +1,5 @@
 module.exports = {
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/:path*',
-  //       destination:
-  //         'https://frontend-boilerplate-git-v2-audn.vercel.app/:path*',
-  //     },
-  //   ];
-  // },
   images: {
-    domains: ['static01.nyt.com', 'www.nytimes.com', 'images.unsplash.com'],
+    domains: ['images.unsplash.com'],
   },
-  target: 'serverless',
 };

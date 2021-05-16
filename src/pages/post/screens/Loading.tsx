@@ -9,14 +9,14 @@ function Loading() {
       <Container alignContent={'center'}>
         <SkeletonTheme color="#1b2c48" highlightColor="#192942">
           <div className={'py-12'}>
-            <h4 className={'font-medium text-brand-primary-light text-sm mb-6'}>
+            <h4 className={'font-medium text-brand-primary-150 text-sm mb-6'}>
               <Skeleton width={100} />
             </h4>
             <h1 className={'font-bold text-white text-3xl mb-6'}>
               <Skeleton width={500} />
             </h1>
             <div className={'max-w-2xl mx-auto'}>
-              <h2 className={'text-on-naked-default text-base mt-12'}>
+              <h2 className={'text-on-naked-900 text-base mt-12'}>
                 <div className={'flex gap-2 flex-wrap justify-center'}>
                   <Skeleton width={150} />
                   <Skeleton width={100} />

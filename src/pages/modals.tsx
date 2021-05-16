@@ -13,13 +13,13 @@ const Modals = () => {
       <Hero>
         <Container>
           <motion.div
-            className="w-full text-on-naked-default"
+            className="w-full text-on-naked-800"
             initial="initial"
             animate="enter"
             variants={fadeIn}
           >
             <h1 className={'font-bold text-white text-3xl mb-6'}>Modals</h1>
-            <h2 className={'font-medium text-on-hero-default'}>WIP </h2>
+            <h2 className={'font-medium text-on-hero-900'}>WIP </h2>
           </motion.div>
         </Container>
       </Hero>

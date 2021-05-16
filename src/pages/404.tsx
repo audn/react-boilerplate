@@ -15,7 +15,7 @@ export default function Custom404() {
           variants={fadeIn}
         >
           <div className={'py-12 text-center'}>
-            <h4 className={'font-medium text-brand-primary-light text-sm mb-6'}>
+            <h4 className={'font-medium text-brand-primary-150 text-sm mb-6'}>
               404
             </h4>
             <h1 className={'font-bold text-white text-3xl mb-6'}>

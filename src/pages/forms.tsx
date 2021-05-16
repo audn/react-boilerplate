@@ -1,4 +1,5 @@
-import React, { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 import { Layout } from '../common/layouts/Layout';
 import Container from '../common/components/Container';
@@ -15,18 +16,25 @@ import { IFormErrors } from '../common/lib/types';
 
 const Forms = () => {
   const [showForm, setShowForm] = useState<boolean>(true);
-  const [isOpenBanner, setBanner] = useState<boolean>(true);
+  const [cookie, setCookie] = useCookies(['fakeModalNotice']);
 
   const [getFirstName, setFirstName] = useState<string>('');
   const [getEmail, setEmail] = useState<string>('');
   const [getMessage, setMessage] = useState<string>('');
+  const [getCheckbox, setCheckbox] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (cookie.fakeModalNotice == undefined) {
+      setCookie('fakeModalNotice', 1, { path: '/' });
+    }
+  }, []);
 
   const [error, setError] = useState<IFormErrors>({
     firstName: false,
     email: false,
     message: false,
+    checkbox: false,
   });
-
   function anyErrors() {
     let errors = false;
 
@@ -40,7 +48,12 @@ const Forms = () => {
   }
   function canUserSubmit() {
     if (!anyErrors()) {
-      return !!(getEmail.length && getFirstName.length && getMessage.length);
+      return !!(
+        getEmail.length &&
+        getFirstName.length &&
+        getMessage.length &&
+        getCheckbox
+      );
     } else {
       return false;
     }
@@ -58,10 +71,10 @@ const Forms = () => {
       <div className={'py-12'}>
         <Container>
           <AnimatePresence>
-            {isOpenBanner && (
+            {cookie.fakeModalNotice != 0 && (
               <Banner
                 type={'brand'}
-                onClose={() => setBanner(!isOpenBanner)}
+                onClose={() => setCookie('fakeModalNotice', 0, { path: '/' })}
                 icon={<i className={'fas fa-exclamation-triangle'} />}
                 leftContent={
                   <div>
@@ -89,6 +102,7 @@ const Forms = () => {
                 <Form.Group className={'sm:flex space-y-10 sm:space-y-0'}>
                   <Form.Input
                     title={'First name'}
+                    id={'firstName'}
                     value={getFirstName}
                     error={error.firstName}
                     placeholder={'Your first name'}
@@ -97,6 +111,7 @@ const Forms = () => {
                   />
                   <Form.Input
                     title={'Email'}
+                    id={'email'}
                     value={getEmail}
                     error={error.email}
                     type={'email'}
@@ -106,7 +121,8 @@ const Forms = () => {
                   />
                 </Form.Group>
                 <Form.TextArea
-                  title={'Email'}
+                  title={'Message'}
+                  id={'message'}
                   value={getMessage}
                   required={false}
                   error={error.message}
@@ -115,6 +131,16 @@ const Forms = () => {
                   colorScheme={'naked'}
                   className={'mt-8'}
                   onChange={(event) => handleMessageChange(event)}
+                />
+                <Form.CheckBox
+                  className={'mt-6'}
+                  title={'Terms of service'}
+                  id={'tos'}
+                  required={true}
+                  colorScheme={'naked'}
+                  onChange={(event) => handleCheckboxChange(event)}
+                  checked={getCheckbox}
+                  error={error.checkbox}
                 />
                 <Button.Group className="mt-12">
                   <Button.Primary
@@ -200,6 +226,25 @@ const Forms = () => {
         ...error,
         message: false,
       });
+    }
+  }
+  function handleCheckboxChange(e: SyntheticEvent) {
+    setCheckbox(!getCheckbox);
+    let required: boolean;
+    ({ required } = e.target as HTMLInputElement);
+
+    if (required) {
+      if (getCheckbox) {
+        setError({
+          ...error,
+          checkbox: 'Did you forget this?',
+        });
+      } else {
+        setError({
+          ...error,
+          checkbox: false,
+        });
+      }
     }
   }
 };

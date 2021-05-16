@@ -66,9 +66,10 @@ export interface IFormGroup {
   children: ReactNode;
 }
 export interface IFormLabel {
-  colorScheme: 'hero' | 'naked';
+  colorScheme: 'naked';
   title: string;
   description?: string;
+  id?: any;
 }
 export interface IForm {
   onSubmit: (event: SyntheticEvent) => void | Promise<void>;
@@ -77,8 +78,8 @@ export interface IForm {
 }
 
 export interface IInput {
-  colorScheme: 'hero' | 'naked';
-  id?: any;
+  colorScheme: 'naked';
+  id: string;
   icon?: ReactNode;
   name?: string;
   title: string;
@@ -94,8 +95,8 @@ export interface IInput {
   error: string | false;
 }
 export interface ITextArea {
-  colorScheme: 'hero' | 'naked';
-  id?: any;
+  colorScheme: 'naked';
+  id: string;
   title: string;
   placeholder: string;
   helper?: any;
@@ -108,9 +109,14 @@ export interface ITextArea {
   error: false | string;
 }
 export interface ICheckbox {
+  colorScheme: 'naked';
+  className?: string;
   id: string;
   title: string;
-  required: boolean;
+  required: boolean | false;
+  onChange: (event: SyntheticEvent) => void | Promise<void>;
+  checked: boolean;
+  error: false | string;
 }
 export interface ILayout extends ISeoTags {
   children: ReactNode;

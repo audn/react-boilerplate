@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -11,38 +11,55 @@ const NavItem = ({ route, title, icon }: Navigation) => {
   const path = router.asPath;
   const activePage = route === path;
 
-  if (validateUrl(route)) {
-    return (
-      <a
-        href={route}
-        target={'_blank'}
-        className={`${
-          activePage ? 'sm:bg-header-125 text-white' : 'text-on-header'
-        } mt-6 sm:mt-0 hover:bg-types-75 group px-3 py-2 rounded-md flex text-base`}
+  return (
+    <NavLayout route={route}>
+      <div
+        className={`font-semibold animate flex items-center block w-full ${
+          activePage
+            ? 'bg-header-150 text-white'
+            : 'text-on-header-900  hover:bg-opacity-50'
+        } mt-3 sm:mt-0 hover:bg-types-100 group px-3 -mx-2 sm:-mx-0 py-2 rounded-md flex text-base justify-between`}
       >
-        <div
-          className={`font-semibold transition ease-in-out flex items-center duration-200 block group-hover:text-white w-full`}
-        >
-          {icon && icon} {title}
+        <div className={'flex items-center'}>
+          <div className={'hidden sm:flex'}>{icon && icon}</div>
+
+          {title}
         </div>
-      </a>
-    );
-  } else
-    return (
-      <Link href={route}>
-        <a
-          className={`${
-            activePage ? 'bg-header-125 text-white' : 'text-on-header'
-          } px-3 py-2 rounded-md group flex text-base`}
-        >
+
+        {validateUrl(route) && (
           <div
-            className={`font-semibold transition ease-in-out flex items-center duration-200 block group-hover:text-white w-full`}
+            className={
+              'sm:hidden bg-lightpill-100 text-on-lightpill-800 px-2 py-1 rounded flex-wrap whitespace-nowrap' +
+              ' group-hover:bg-opacity-50 text-sm font-medium'
+            }
           >
-            {icon && icon} {title}
+            <i className={'far fa-external-link mr-2 text-xs'} /> opens new tab
           </div>
-        </a>
-      </Link>
-    );
+        )}
+      </div>
+    </NavLayout>
+  );
 };
 
+const NavLayout = ({
+  route,
+  children,
+}: {
+  route: string;
+  children: ReactNode;
+}) => {
+  if (validateUrl(route)) {
+    return (
+      <a href={route} target={'_blank'}>
+        {children}
+      </a>
+    );
+  } else {
+    return (
+      <Link href={route}>
+        <a href={route}>{children}</a>
+      </Link>
+    );
+  }
+};
 export default NavItem;

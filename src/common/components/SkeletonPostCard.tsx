@@ -7,10 +7,10 @@ function SkeletonPostCard() {
         <div className="flex-shrink-0">
           <Skeleton height={192} />
         </div>
-        <div className="flex-1 bg-types-75 p-6 flex flex-col justify-between">
+        <div className="flex-1 bg-card-post-100 p-6 flex flex-col justify-between">
           <div className="flex-1">
             <a className="block mt-2">
-              <p className="text-xl font-semibold text-on-hero-title flex gap-2 flex-wrap">
+              <p className="text-xl font-semibold flex gap-2 flex-wrap">
                 <Skeleton width={100} />
                 <Skeleton width={150} />
                 <Skeleton width={150} />
@@ -31,7 +31,7 @@ function SkeletonPostCard() {
             </a>
           </div>
           <div className="mt-6 flex items-center">
-            <div className="flex space-x-1 text-sm text-on-hero-blue">
+            <div className="flex space-x-1 text-sm">
               {/*{toDate({ dateString: publishedAt })}*/}
             </div>
           </div>

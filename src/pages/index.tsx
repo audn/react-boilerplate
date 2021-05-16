@@ -30,7 +30,7 @@ export default function Home({ posts }: APIPosts) {
               <h1 className={'font-bold text-white text-3xl mb-6'}>
                 React, Next.js & TailwindCSS
               </h1>
-              <h2 className={'font-medium text-on-naked-defaul'}>
+              <h2 className={'font-medium text-on-naked-900'}>
                 Don't waste time structuring or setting up interfaces on your
                 next project!
                 <div className={'mt-6 flex items-center flex-wrap gap-2'}>
@@ -41,7 +41,10 @@ export default function Home({ posts }: APIPosts) {
                     }
                     target={'_blank'}
                     className={
-                      'text-sm sm:text-base px-3 rounded-md bg-types-75 py-1 flex items-center hover:bg-types-100 animate'
+                      'text-sm sm:text-base px-3 text-on-lightpill-800 rounded-md bg-lightpill-100 py-1 flex' +
+                      ' items-center' +
+                      ' hover:bg-lightpill-150 hover:text-on-lightpill-900' +
+                      ' animate'
                     }
                   >
                     <i className={'fas fa-code-branch mr-2'} />
@@ -52,7 +55,9 @@ export default function Home({ posts }: APIPosts) {
                     href={'https://github.com/audn/frontend-boilerplate'}
                     target={'_blank'}
                     className={
-                      'text-sm sm:text-base px-3 rounded-md bg-types-75 py-1 flex items-center hover:bg-types-100' +
+                      'text-sm sm:text-base text-on-lightpill-800 px-3 rounded-md bg-lightpill-100 py-1 flex' +
+                      ' items-center' +
+                      ' hover:bg-lightpill-150 hover:text-on-lightpill-900' +
                       ' animate'
                     }
                   >

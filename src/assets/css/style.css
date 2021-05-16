@@ -11,7 +11,7 @@
 .desktop-transform{
   @apply sm:hover:scale-105 transform transition duration-200 ease-in-out ;
 }
-.avoid-transform{
+.transform-disabled{
   @apply disabled:hover:scale-100 disabled:hover:translate-y-0 disabled:hover:translate-x-0 transform;
 }
 .btn-base {
@@ -25,7 +25,7 @@
   max-width: 80rem !important;
 }
 .input-field{
-  @apply w-full px-4 py-3 transition duration-150 ease-in-out border border-transparent rounded resize-none sm:text-base sm:leading-5 ring-2 focus:ring-brand-primary focus:ring-opacity-50;
+  @apply w-full px-4 py-3 transition duration-150 ease-in-out border border-transparent rounded resize-none sm:text-base sm:leading-5 ring-2 focus:ring-brand-primary-100 focus:ring-opacity-50;
 }
 .input-field:focus{
   @apply outline-none text-white;
@@ -45,5 +45,32 @@ body {
   overflow-x: hidden;
   color: #bbc9e0;
   font-family: 'Inter', sans-serif;
-  background-color: #242424;
+  background-color: #0e182a;
+}
+.check:hover input ~ .checkmark {
+  background-color: #152a55;
+}
+.check input:checked ~ .checkmark {
+  background-color: #152a55 !important;
+  border: 1px solid #214595 !important;
+}
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.check input:checked ~ .checkmark:after {
+  display: block;
+}
+.check .checkmark:after {
+  left: 8px;
+  top: 3.5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
