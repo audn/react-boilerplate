@@ -10,7 +10,7 @@ const routes: Array<Navigation> = [
     route: '/forms',
   },
   {
-    title: 'Modals',
+    title: 'Open modal',
   },
   {
     title: 'Github',
