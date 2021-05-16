@@ -1,12 +1,84 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
 
-.emoji {
-  display: inline-block;
-  width: auto;
-  height: 1em;
-  vertical-align: -0.125em;
+.animate {
+  @apply transition duration-200 ease-in-out;
+}
+.desktop-scale{
+  @apply sm:hover:translate-y-[-2px] transform transition duration-200 ease-in-out ;
+}
+.desktop-transform{
+  @apply sm:hover:scale-105 transform transition duration-200 ease-in-out ;
+}
+.transform-disabled{
+  @apply disabled:hover:scale-100 disabled:hover:translate-y-0 disabled:hover:translate-x-0 transform;
+}
+.btn-base {
+  @apply px-6 py-2 ring-2 rounded-md flex items-center box-border transition font-semibold duration-200 ease-in-out w-full justify-center sm:justify-start;
+}
+.btn-base:focus {
+  @apply outline-none;
+}
+.container {
+  @apply mx-auto;
+  max-width: 80rem !important;
+}
+.input-field{
+  @apply w-full px-4 py-3 transition duration-150 ease-in-out border border-transparent rounded resize-none sm:text-base sm:leading-5 ring-2 focus:ring-brand-primary-100 focus:ring-opacity-50;
+}
+.input-field:focus{
+  @apply outline-none text-white;
+}
+.will-change{
+   will-change: transform;
+ }
+.scrollbar-none{
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar{
+  display: none;
+}
+
+::-moz-selection {
+  color: white;
+  background: #3371ff;
+}
+::selection {
+  color: white;
+  background: #3371ff;
+}
+body {
+  overflow-x: hidden;
+  color: #bbc9e0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0e182a;
+}
+
+.check:hover input ~ .checkmark {
+  background-color: #152a55;
+}
+.check input:checked ~ .checkmark {
+  background-color: #152a55 !important;
+  border: 1px solid #214595 !important;
+}
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.check input:checked ~ .checkmark:after {
+  display: block;
+}
+.check .checkmark:after {
+  left: 8px;
+  top: 3.5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

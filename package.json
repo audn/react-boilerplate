@@ -1,35 +1,34 @@
 {
   "name": "frontend-boilerplate",
   "version": "1.0.0",
+  "author": "audn",
   "description": "A Next.js frontend Boilerplate",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "analyze:tailwind-css-class-order": "rustywind --dry-run .",
-    "analyze": "yarn analyze:tailwind-css-class-order",
-    "fix:tailwind-css-class-order": "rustywind --write .",
-    "fix": "yarn fix:tailwind-css-class-order",
     "dev": "next",
     "build": "next build",
-    "export": "yarn build && next export",
     "start": "next start"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   },
   "browserslist": [
     "> 1%",
     "not dead"
   ],
   "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "framer-motion": "^2.9.4",
-    "next": "^10.0.1",
+    "next": "10.2.0",
+    "postcss": "^8.2.13",
     "react": "^17.0.1",
+    "react-cookie": "^4.0.3",
     "react-dom": "^17.0.1",
-    "twemoji": "^13.0.1",
-    "typescript": "^4.0.5"
+    "react-loading-skeleton": "^2.2.0",
+    "react-query": "^3.16.0",
+    "tailwindcss": "^2.1.2",
+    "typescript": "^4.0.5",
+    "zustand": "^3.5.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.1",
@@ -39,13 +38,9 @@
     "@types/gtag.js": "^0.0.3",
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.56",
-    "@types/twemoji": "^12.1.1",
-    "autoprefixer": "^10.0.2",
-    "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
-    "pretty-quick": "^3.1.0",
-    "tailwindcss": "^1.9.6"
+    "pretty-quick": "^3.1.0"
   }
 }

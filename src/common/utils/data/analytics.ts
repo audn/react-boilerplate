@@ -19,7 +19,7 @@ export const trackEvent = ({
   label: string;
   value: string;
 }) => {
-  try {
+      try {
     window.gtag('event', action, {
       event_category: category,
       event_label: label,

@@ -11,7 +11,7 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 1. Walk the plank! Aarrr!
 2. Clone th' repo,
 3. Run `yarn` t' install all th' stuff needed,
-4. Update proper Google Analytics code in`/utility/data/Analytics.ts`
+4. Update proper Google Analytics code in`/utility/data/analytics.ts`
 5. Start localhost with `yarn dev` and ye're done!
 6. **Additional**, Star the repo 'nd swab the deck!
 
