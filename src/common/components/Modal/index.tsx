@@ -39,35 +39,33 @@ const Modal = {
             animate="enter"
             exit="exit"
             variants={fadeIn}
-            className="fixed inset-0 z-50 scrollbar-none h-full overflow-x-auto"
+            className="fixed flex items-center inset-0 z-50 scrollbar-none min-h-screen"
             aria-labelledby="modal"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-center min-h-screen">
-              <div
-                className="fixed inset-0 z-30  bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm align-bottom sm:align-middle"
-                onClick={onClose}
-              >
-                &nbsp;
-              </div>
-              <motion.div
-                key={'modal-content'}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-                variants={fadeInTop}
-                className={`relative z-40 px-4 h-full`}
-              >
-                <div
-                  className={`scrollbar-none w-full overflow-scroll bg-modal-100 w-full p-6 rounded-md ring-brand-primary-100 ring-opacity-20 w-full mx-auto ${className}`}
-                >
-                  <div className={'flex flex-col items-center text-center'}>
-                    {children}
-                  </div>
-                </div>
-              </motion.div>
+            <div
+              className="fixed inset-0 z-30 bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm "
+              onClick={onClose}
+            >
+              &nbsp;
             </div>
+            <motion.div
+              key={'modal-content'}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+              variants={fadeInTop}
+              className={`relative z-40 px-4`}
+            >
+              <div
+                className={`scrollbar-none w-full overflow-scroll bg-modal-100 w-full p-6 rounded-md ring-brand-primary-100 ring-opacity-20 w-full mx-auto ${className}`}
+              >
+                <div className={'flex flex-col items-center text-center'}>
+                  {children}
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
