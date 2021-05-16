@@ -7,10 +7,10 @@ module.exports = {
       300: '#759fff', // good for borders on anything brand related
     },
     secondary: {
-      50: '#1d2c44',
-      100: '#23344e',
-      150: '#2a3e5d',
-      300: '#486086',
+      50: '#23395f',
+      100: '#29416b',
+      150: '#304871',
+      300: '#324f80',
     },
   },
 
@@ -81,8 +81,8 @@ module.exports = {
   },
   modal: {
     50: '#',
-    100: '#0e182a',
-    150: '#132035',
+    100: '#1c2b46',
+    150: '#223250',
     200: '#',
   },
   footer: {
@@ -148,6 +148,12 @@ module.exports = {
     ligtpill: {
       800: '#92a3c3',
       900: '#ffffff',
+    },
+    modal: {
+      900: '#7591c1',
+      icon: {
+        900: '#c0cfec',
+      },
     },
     card: {
       post: {

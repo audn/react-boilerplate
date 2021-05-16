@@ -33,6 +33,13 @@
 .will-change{
    will-change: transform;
  }
+.scrollbar-none{
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar{
+  display: none;
+}
+
 ::-moz-selection {
   color: white;
   background: #3371ff;
@@ -47,6 +54,7 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #0e182a;
 }
+
 .check:hover input ~ .checkmark {
   background-color: #152a55;
 }

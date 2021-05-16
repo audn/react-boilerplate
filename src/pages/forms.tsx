@@ -70,21 +70,18 @@ const Forms = () => {
     >
       <div className={'py-12'}>
         <Container>
-          <AnimatePresence>
-            {cookie.fakeModalNotice != 0 && (
-              <Banner
-                type={'brand'}
-                onClose={() => setCookie('fakeModalNotice', 0, { path: '/' })}
-                icon={<i className={'fas fa-exclamation-triangle'} />}
-                leftContent={
-                  <div>
-                    <strong>This is not an actual form!</strong> Just for
-                    demonstration purposes.
-                  </div>
-                }
-              />
-            )}
-          </AnimatePresence>
+          <Banner
+            open={cookie.fakeModalNotice != 0}
+            type={'brand'}
+            onClose={() => setCookie('fakeModalNotice', 0, { path: '/' })}
+            icon={<i className={'fas fa-exclamation-triangle'} />}
+            leftContent={
+              <div>
+                <strong>This is not an actual form!</strong> Just for
+                demonstration purposes.
+              </div>
+            }
+          />
           <motion.div
             className="w-full"
             initial="initial"

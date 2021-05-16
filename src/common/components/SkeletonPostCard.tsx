@@ -1,6 +1,7 @@
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-const fakeArray = [1, 2, 3, 4, 5, 6, 7];
+
 function SkeletonPostCard() {
+  const fakeArray = [1, 2, 3, 4, 5, 6, 7];
   return (
     <SkeletonTheme color="#1b2c48" highlightColor="#192942">
       <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
