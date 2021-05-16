@@ -39,7 +39,7 @@ const Modal = {
             animate="enter"
             exit="exit"
             variants={fadeIn}
-            className="flex justify-center z-50 scrollbar-none"
+            className="flex justify-center scrollbar-none"
             aria-labelledby="modal"
             role="dialog"
             aria-modal="true"
@@ -56,7 +56,7 @@ const Modal = {
               animate="enter"
               exit="exit"
               variants={fadeInTop}
-              className={`fixed flex items-end sm:items-center z-40 px-4 bottom-0 min-h-screen`}
+              className={`fixed flex items-end sm:items-center z-40 px-4 bottom-0`}
             >
               <div
                 className={`mb-12 sm:mb-0 scrollbar-none w-full bg-modal-100 w-full p-6 rounded-md ring-modal-150 ring-2  ${className}`}
