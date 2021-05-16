@@ -6,7 +6,7 @@ const SeoTags = ({
   title = 'frontend-boilerplate | cool second title',
   desc = 'brief description',
   url = 'https://boilerplate-demo.vercel.app/',
-  image = 'http://boilerplate-demo.vercel.app/img/meta.png',
+  image = 'https://opengraph.githubassets.com/fa53ec3abce99887a2167be84b9fb267f5d08e05d9d5779866d47922e5af1983/audn/frontend-boilerplate',
 }: ISeoTags) => (
   <Head>
     <title>{title}</title>
