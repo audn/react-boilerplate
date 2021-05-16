@@ -3,7 +3,13 @@ import routes from '../routes';
 
 import NavItem from './NavItem';
 
-function MenuItems({ isPhoneMenuOpen }: { isPhoneMenuOpen: boolean }) {
+function MenuItems({
+  isPhoneMenuOpen,
+  toggleModal,
+}: {
+  isPhoneMenuOpen: boolean;
+  toggleModal: () => void;
+}) {
   return (
     <div
       className={`${
@@ -15,6 +21,7 @@ function MenuItems({ isPhoneMenuOpen }: { isPhoneMenuOpen: boolean }) {
           title={title}
           route={route}
           key={i}
+          toggleModal={toggleModal}
           icon={icon ? <i className={icon + ` mr-3 text-sm`} /> : ''}
         />
       ))}

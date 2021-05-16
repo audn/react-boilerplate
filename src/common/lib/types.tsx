@@ -10,7 +10,8 @@ export type APIPosts = {
 };
 
 export type Navigation = {
-  route: string;
+  route?: string;
   title: string;
   icon?: ReactNode;
+  toggleModal?: () => void;
 };

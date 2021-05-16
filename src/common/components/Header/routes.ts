@@ -11,7 +11,6 @@ const routes: Array<Navigation> = [
   },
   {
     title: 'Modals',
-    route: '/modals',
   },
   {
     title: 'Github',
