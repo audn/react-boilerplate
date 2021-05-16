@@ -33,7 +33,11 @@ export const Header = () => {
           />
         </div>
       </Container>
-      <Modal.Body open={isModalOpen} onClose={toggleModal} className={'w-96'}>
+      <Modal.Body
+        open={isModalOpen}
+        onClose={toggleModal}
+        className={'max-w-96'}
+      >
         <Modal.Content
           icon={<i className={'fas fa-hand-sparkles'} />}
           title={'Are you sure?'}

@@ -18,7 +18,7 @@ const NavItem = ({ route, title, icon, toggleModal }: Navigation) => {
           activePage
             ? 'bg-header-150 text-white'
             : 'text-on-header-900 hover:bg-opacity-50'
-        } mt-3 sm:mt-0 hover:bg-types-100 group px-3 -mx-2 sm:-mx-0 py-2 rounded-md flex text-base justify-between`}
+        } mt-3 sm:mt-0 hover:bg-types-100 group px-3  py-2 rounded-md flex text-base justify-between`}
       >
         <div className={'flex items-center'}>
           <div className={'hidden sm:flex'}>{icon && icon}</div>

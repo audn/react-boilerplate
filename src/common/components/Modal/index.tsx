@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { IModal } from '../../lib/interfaces';
 import { fadeIn, fadeOutTop } from '../../utils/data/animations';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 
 interface Title {
   title: string;
@@ -20,6 +20,16 @@ const Modal = {
     );
   },
   Body: ({ children, onClose, open, className }: IModal) => {
+    const body = document.querySelector('body');
+    useEffect(updateBody, [open]);
+
+    function updateBody() {
+      if (open && body) {
+        body.style.overflow = 'hidden';
+      } else if (!open && body) {
+        body.style.overflow = 'auto';
+      }
+    }
     return (
       <AnimatePresence>
         {open && (
@@ -34,7 +44,7 @@ const Modal = {
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-center min-h-screen bg-header-100 w bg-opacity-90 backdrop-filter backdrop-blur-sm">
+            <div className="flex items-center justify-center min-h-screen bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm">
               <div className="fixed inset-0 z-30" onClick={onClose}>
                 &nbsp;
               </div>
