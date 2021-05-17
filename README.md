@@ -28,4 +28,4 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 - Premade Button components 
 - Premade Form inputs / textareas & checkboxes
 - SEO components
-
+- Cookies! (Closing banner on `/form` will be added to the cookies
