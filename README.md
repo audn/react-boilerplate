@@ -27,4 +27,5 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 - Modals
 - Premade Button components 
 - Premade Form inputs / textareas & checkboxes
+- SEO components
 
