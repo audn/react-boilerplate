@@ -1,5 +1,6 @@
 import React from 'react';
 import { IContainer } from '../lib/interfaces';
+import concat from '../utils/helpers/concat';
 
 function Container({ children, alignContent }: IContainer) {
   const options = (alignContent: string | undefined) => {
@@ -13,11 +14,7 @@ function Container({ children, alignContent }: IContainer) {
   };
   return (
     <div className={`px-6 md:px-8 w-full`}>
-      <div
-        className={
-          `container flex flex-col ` + options(alignContent ? alignContent : '')
-        }
-      >
+      <div className={concat('container flex flex-col', options(alignContent))}>
         {children}
       </div>
     </div>

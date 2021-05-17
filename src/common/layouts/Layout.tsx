@@ -18,9 +18,8 @@ export const Layout = ({ title, desc, url, children }: ILayout) => {
       <SeoTags
         title={title ? title : `Page | Boilerplate`}
         desc={
-          desc
-            ? desc
-            : 'Simple, pre-setup and free-to-use front-end boilerplate including React, Next.js & TailwindCSS'
+          desc ||
+          'Simple, pre-setup and free-to-use front-end boilerplate including React, Next.js & TailwindCSS'
         }
         url={url}
       />

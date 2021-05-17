@@ -9,6 +9,7 @@ import {
   ICheckbox,
   IFormLabel,
 } from '../lib/interfaces';
+import concat from '../utils/helpers/concat';
 
 const color = (extract: string, colorScheme: string) => {
   if (extract === 'title') {
@@ -126,11 +127,11 @@ const Form = {
             placeholder={placeholder}
             onChange={onChange}
             value={value}
-            className={
-              `input-field ` +
-              color('inputField', colorScheme) +
-              (icon && '!pl-10')
-            }
+            className={concat(
+              'input-field',
+              color('inputField', colorScheme),
+              icon ? '!pl-10' : '',
+            )}
           />
         </div>
         <FormError error={error} />
@@ -148,11 +149,11 @@ const Form = {
     onChange,
     value,
     error,
-    className,
+    className = '',
   }: ITextArea) => {
     return (
       <FormGroup>
-        <div className={className ? className : ''}>
+        <div className={className}>
           <FormLabel
             title={title}
             description={description}
@@ -170,7 +171,10 @@ const Form = {
                 onChange={onChange}
                 value={value}
                 rows={3}
-                className={`input-field ` + color('inputField', colorScheme)}
+                className={concat(
+                  'input-field',
+                  color('inputField', colorScheme),
+                )}
               />
             </div>
           </div>
@@ -195,10 +199,10 @@ const Form = {
           <div className={'check flex  flex-col'}>
             <label
               htmlFor={id}
-              className={
-                `ml-10 block text-base leading-5 cursor-pointer select-none ` +
-                color('title', colorScheme)
-              }
+              className={concat(
+                'ml-10 block text-base leading-5 cursor-pointer select-none',
+                color('title', colorScheme),
+              )}
             >
               {title}
             </label>

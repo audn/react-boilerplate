@@ -17,7 +17,7 @@ function SkeletonPostCard() {
                 <Skeleton width={150} />
                 <Skeleton width={120} />
               </p>
-              <p className="mt-3 text-base flex-wrap flex gap-2 mt-6">
+              <p className="mt-3 text-base flex-wrap flex gap-2">
                 {fakeArray.map((i) => (
                   <Skeleton
                     key={i}
