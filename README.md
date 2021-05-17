@@ -17,15 +17,13 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 
 ## 📚 Includes
 
-- Pre-made page animations
-- Google Analytics
-- Font Awesome
-- Components
-- Responsive phone menu w/ toggle
+- Framer motion
+- Google Analytics setup
+- Responsive at all sizes + hamburger 
 - Typescript interfaces
 - Regex for regular stuff such as url/emails
-- Modals
-- Premade Button components 
-- Premade Form inputs / textareas & checkboxes
-- SEO components
-- Cookies! (Closing banner on `/form` will be added to the cookies
+- Modal component
+- Premade Button components `<Button.Primary title={..}/`
+- Premade <Input> for normal inputs, textarea & checkboxes
+- SEO optimization built into the `<Layout>` component
+- Cookies! 
