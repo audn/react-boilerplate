@@ -4,6 +4,7 @@ import { IButtonGroup, IButton } from '../lib/interfaces';
 
 import { validateUrl } from '../utils/helpers/regex/url';
 import { ReactNode } from 'react';
+import concat from '../utils/helpers/concat';
 
 const options = ({ className }: { className: string | undefined }) => {
   const disabledOptions = ` disabled:ring-opacity-50 disabled:bg-opacity-50 disabled:hover:bg-opacity-50 disabled:!cursor-not-allowed disabled:text-opacity-50 disabled:hover:text-opacity-40 disabled:hover:!scale-100 transform transform-disabled `;
@@ -15,9 +16,7 @@ const options = ({ className }: { className: string | undefined }) => {
 const ButtonGroup = ({ className, children }: IButtonGroup) => {
   return (
     <div
-      className={`${
-        className ? className : ''
-      } box-border flex items-center flex-wrap`}
+      className={concat(className, 'box-border flex items-center flex-wrap')}
     >
       {children}
     </div>

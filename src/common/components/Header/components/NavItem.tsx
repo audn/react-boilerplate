@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Navigation } from '../../../lib/types';
 import { validateUrl } from '../../../utils/helpers/regex/url';
+import concat from '../../../utils/helpers/concat';
 
 const NavItem = ({ route, title, icon, toggleModal }: Navigation) => {
   const router = useRouter();
@@ -12,13 +13,15 @@ const NavItem = ({ route, title, icon, toggleModal }: Navigation) => {
   const activePage = route === path;
 
   return (
-    <NavLayout route={route ? route : ''} toggleModal={toggleModal}>
+    <NavLayout route={route || ''} toggleModal={toggleModal}>
       <div
-        className={`font-semibold animate flex items-center block w-full ${
+        className={concat(
+          'font-semibold animate flex items-center w-full',
           activePage
             ? 'bg-header-150 text-white'
-            : 'text-on-header-900 hover:bg-opacity-50'
-        } mt-3 sm:mt-0 hover:bg-types-100 group px-3  py-2 rounded-md flex text-base justify-between`}
+            : 'text-on-header-900 hover:bg-opacity-50',
+          'mt-3 sm:mt-0 hover:bg-types-100 group px-3 py-2 rounded-md flex text-base justify-between',
+        )}
       >
         <div className={'flex items-center'}>
           <div className={'hidden sm:flex'}>{icon && icon}</div>
@@ -26,7 +29,7 @@ const NavItem = ({ route, title, icon, toggleModal }: Navigation) => {
           {title}
         </div>
 
-        {validateUrl(route ? route : '') && (
+        {validateUrl(route || '') && (
           <div
             className={
               'sm:hidden bg-lightpill-100 text-on-lightpill-800 px-2 py-1 rounded flex-wrap whitespace-nowrap' +
