@@ -29,3 +29,10 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 - Premade Form inputs / textareas & checkboxes
 - SEO components
 - Cookies! (Closing banner on `/form` will be added to the cookies
+
+
+### Websites using this boilerplate:
+Below is a list of sites using this boilerplate, check them out!
+Submit a pull request to add yours!
+- [discordlist.gg](https://discordlist.gg)
+- [discord.style](http://discord.style)
