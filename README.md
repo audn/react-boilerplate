@@ -33,4 +33,5 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 Below is a list of sites using this boilerplate, check them out!
 Submit a pull request to add yours!
 - [discordlist.gg](https://discordlist.gg)
-- [discord.style](http://discord.style)
+- [discord.style](https://discord.style)
+- [audun.gg](https://audun.gg)
