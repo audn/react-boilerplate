@@ -39,33 +39,41 @@ const Modal = {
             animate="enter"
             exit="exit"
             variants={fadeIn}
-            className="flex justify-center scrollbar-none"
+            className="fixed inset-0 z-50 overflow-y-auto scrollbar-none"
             aria-labelledby="modal"
             role="dialog"
             aria-modal="true"
           >
-            <div
-              className="fixed inset-0 z-30 bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm"
-              onClick={onClose}
-            >
-              &nbsp;
-            </div>
-            <motion.div
-              key={'modal-content'}
-              initial="initial"
-              animate="enter"
-              exit="exit"
-              variants={fadeInTop}
-              className={`fixed flex items-end sm:items-center z-40 px-4 bottom-0  sm:top-0`}
-            >
+            <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
               <div
-                className={`mb-12 sm:mb-0 scrollbar-none w-full bg-modal-100 w-full p-6 rounded-md ring-modal-150 ring-2  ${className}`}
+                className="fixed inset-0 z-20 bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm"
+                onClick={onClose}
               >
-                <div className={'flex flex-col items-center text-center'}>
-                  {children}
-                </div>
+                &nbsp;
               </div>
-            </motion.div>
+              <span
+                className="hidden sm:inline-block sm:align-middle sm:h-screen"
+                aria-hidden="true"
+              >
+                &8203;
+              </span>
+              <motion.div
+                key={'modal-content'}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                variants={fadeInTop}
+                className={`relative inline-block sm:align-middle z-50`}
+              >
+                <div
+                  className={` scrollbar-none bg-modal-100 w-full p-6 rounded-lg ring-modal-150 ring-2 ${className}`}
+                >
+                  <div className={'flex flex-col items-center text-center'}>
+                    {children}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

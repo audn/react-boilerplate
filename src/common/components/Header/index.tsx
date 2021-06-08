@@ -4,8 +4,7 @@ import Link from 'next/link';
 import MenuToggle from './components/MenuToggle';
 import MenuItems from './components/MenuItems';
 import Container from '../Container';
-import Modal from '../Modal';
-import Button from '../Button';
+import TestModal from './components/TestModal';
 
 export const Header = () => {
   const [isPhoneMenuOpen, setPhoneMenu] = useState(false);
@@ -33,32 +32,7 @@ export const Header = () => {
           />
         </div>
       </Container>
-      <Modal.Body
-        open={isModalOpen}
-        onClose={toggleModal}
-        className={'max-w-96'}
-      >
-        <Modal.Content
-          icon={<i className={'fas fa-hand-sparkles'} />}
-          title={'Are you sure?'}
-          description={
-            <h4 className={`text-on-modal-900`}>
-              This is an inreversible action, be careful!
-            </h4>
-          }
-        />
-        <Button.Group className={'w-full mt-10 space-y-5 px-4'}>
-          <Button.Primary
-            title={'Do it'}
-            className={'!w-full !justify-center !flex'}
-          />
-          <Button.Secondary
-            onClick={toggleModal}
-            title={'Cancel'}
-            className={'!w-full !justify-center !flex'}
-          />
-        </Button.Group>
-      </Modal.Body>
+      <TestModal open={isModalOpen} toggle={toggleModal} />
     </header>
   );
 };
