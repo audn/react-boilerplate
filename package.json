@@ -15,19 +15,16 @@
     "not dead"
   ],
   "dependencies": {
-    "autoprefixer": "^10.2.5",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "framer-motion": "^2.9.4",
-    "next": "10.2.0",
-    "postcss": "^8.2.13",
-    "react": "^17.0.1",
+    "next": "^11.0.0",
+    "react": "^17.0.2",
     "react-cookie": "^4.0.3",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-loading-skeleton": "^2.2.0",
     "react-query": "^3.16.0",
-    "tailwindcss": "^2.1.2",
-    "typescript": "^4.0.5",
+    "typescript": "^4.3.2",
     "zustand": "^3.5.1"
   },
   "devDependencies": {
@@ -38,9 +35,12 @@
     "@types/gtag.js": "^0.0.3",
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.56",
+    "autoprefixer": "^10.2.6",
     "identity-obj-proxy": "^3.0.0",
+    "postcss": "^8.3.4",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
-    "pretty-quick": "^3.1.0"
+    "pretty-quick": "^3.1.0",
+    "tailwindcss": "^2.1.4"
   }
 }
