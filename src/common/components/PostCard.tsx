@@ -1,6 +1,6 @@
 import React from 'react';
 import { IPost } from '../lib/interfaces';
-import placeholder from '../utils/helpers/placeholder';
+import nextImagePlaceholder from '../utils/helpers/nextImagePlaceholder';
 import { slugify } from '../utils/helpers/slugify';
 import toDate from '../utils/helpers/toDate';
 
@@ -26,7 +26,7 @@ function PostCard({ title, description, imageUrl, date }: Props) {
             width={200}
             height={192}
             layout={'responsive'}
-            blurDataURL={placeholder()}
+            blurDataURL={nextImagePlaceholder()}
             placeholder="blur"
           />
         </div>
