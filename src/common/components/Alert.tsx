@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { IAlert } from '../lib/interfaces';
-
+import willy from '@/public/img/willy-wonka.jpg';
 import Banner from './Banner';
 
 const Alert = {
@@ -14,11 +14,10 @@ const Alert = {
             <div className={'mr-6 hidden sm:flex'}>
               <Image
                 className="rounded-lg"
-                src={'/img/willy-wonka.jpg'}
+                src={willy}
                 alt={'Willy Wonka'}
                 width={96}
                 height={96}
-                blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                 placeholder="blur"
               />
             </div>

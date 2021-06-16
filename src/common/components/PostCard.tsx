@@ -1,6 +1,6 @@
 import React from 'react';
 import { IPost } from '../lib/interfaces';
-
+import placeholder from '../utils/helpers/placeholder';
 import { slugify } from '../utils/helpers/slugify';
 import toDate from '../utils/helpers/toDate';
 
@@ -26,7 +26,7 @@ function PostCard({ title, description, imageUrl, date }: Props) {
             width={200}
             height={192}
             layout={'responsive'}
-            blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+            blurDataURL={placeholder()}
             placeholder="blur"
           />
         </div>
