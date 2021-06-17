@@ -1,6 +1,6 @@
 import React from 'react';
 import { IPost } from '../lib/interfaces';
-
+import nextImagePlaceholder from '../utils/helpers/nextImagePlaceholder';
 import { slugify } from '../utils/helpers/slugify';
 import toDate from '../utils/helpers/toDate';
 
@@ -17,18 +17,20 @@ interface Props {
 function PostCard({ title, description, imageUrl, date }: Props) {
   return (
     <Link href={`/post/` + slugify({ title: title })}>
-      <a className="flex flex-col rounded-lg shadow-lg overflow-hidden group hover:-translate-y-1 animate transform cursor-pointer will-change ring-2 ring-transparent hover:ring-brand-primary-100 hover:ring-opacity-40">
-        <div className="flex-shrink-0 max-h-48 overflow-hidden">
+      <a className="flex flex-col overflow-hidden transform rounded-lg shadow-lg cursor-pointer group hover:-translate-y-1 animate will-change ring-2 ring-transparent hover:ring-brand-primary-100 hover:ring-opacity-40">
+        <div className="flex-shrink-0 overflow-hidden max-h-48">
           <Image
-            className="object-center w-full object-cover group-hover:scale-110 transform animate will-change"
+            className="object-cover object-center w-full transform group-hover:scale-110 animate will-change"
             src={imageUrl}
             alt={title}
             width={200}
             height={192}
             layout={'responsive'}
+            blurDataURL={nextImagePlaceholder()}
+            placeholder="blur"
           />
         </div>
-        <div className="text-left flex-1 bg-card-post-100 p-6 flex flex-col justify-between">
+        <div className="flex flex-col justify-between flex-1 p-6 text-left bg-card-post-100">
           <div className="flex-1">
             <div className="block mt-2">
               <p className="text-xl font-semibold text-on-card-post-900 group-hover:text-white animate">
@@ -39,7 +41,7 @@ function PostCard({ title, description, imageUrl, date }: Props) {
               </p>
             </div>
           </div>
-          <div className="mt-6 flex items-center">
+          <div className="flex items-center mt-6">
             <div className="flex items-center text-sm text-on-card-post-700">
               <i className={'fas fa-calendar-week mr-3'} />{' '}
               {toDate({ dateString: date })}

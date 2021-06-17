@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { IAlert } from '../lib/interfaces';
-
+import willy from '@/public/img/willy-wonka.jpg';
 import Banner from './Banner';
 
 const Alert = {
@@ -14,10 +14,11 @@ const Alert = {
             <div className={'mr-6 hidden sm:flex'}>
               <Image
                 className="rounded-lg"
-                src={'/img/willy-wonka.jpg'}
+                src={willy}
                 alt={'Willy Wonka'}
                 width={96}
                 height={96}
+                placeholder="blur"
               />
             </div>
             <div className={'flex flex-col'}>
