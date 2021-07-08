@@ -17,7 +17,7 @@ export default function Home({ posts }: APIPosts) {
   const hydratePosts = HydratePosts(posts);
 
   return (
-    <Layout title={'Index | Boilerlate'}>
+    <Layout title={'Index | Boilerplate'}>
       <Container>
         <motion.div
           className="w-full"
@@ -35,7 +35,7 @@ export default function Home({ posts }: APIPosts) {
                 next project!
               </h2>
             </div>
-            <Button.Group className="flex space-y-5 sm:space-y-0 sm:space-x-5 mb-6">
+            <Button.Group className="flex mb-6 space-y-5 sm:space-y-0 sm:space-x-5">
               <Button.Primary
                 title={`Feedback`}
                 className={'!px-12 sm:py-2'}
