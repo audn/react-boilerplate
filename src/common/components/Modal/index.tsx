@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { IModal } from '../../lib/interfaces';
-import { fadeIn, fadeInTop } from '../../utils/data/animations';
+import { fadeIn, fadeInFromBottomAndOutBottom, scaleIn } from '../../utils/data/animations';
 import { ReactNode, useEffect } from 'react';
+import handleScrollbarChange from '../../utils/helpers/scrollbarModal';
 
 interface Title {
   title: string;
@@ -20,53 +21,40 @@ const Modal = {
     );
   },
   Body: ({ children, onClose, open, className }: IModal) => {
-    useEffect(updateBody, [open]);
-
-    function updateBody() {
-      const body = document.querySelector('body') as HTMLBodyElement;
-      if (open && typeof window !== 'undefined') {
-        body.style.overflow = 'hidden';
-      } else if (!open && body) {
-        body.style.overflow = 'auto';
-      }
-    }
+    useEffect(() => handleScrollbarChange(open), [open]);
     return (
       <AnimatePresence>
         {open && (
-          <motion.div
-            key={'modal-content'}
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            variants={fadeIn}
-            className="fixed inset-0 z-50 overflow-y-auto scrollbar-none"
+          <div
+            className="fixed inset-0 z-50 max-h-screen"
             aria-labelledby="modal"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-              <div
-                className="fixed inset-0 z-20 bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm"
+            <div className="fixed z-50 flex md:relative items-end md:items-center md:min-h-screen justify-center inset-0">
+              <motion.div
+                key={'modal-underlay'}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                variants={fadeIn}
+                className="fixed inset-0 z-50 bg-header-100 bg-opacity-90 backdrop-filter backdrop-blur-sm"
                 onClick={onClose}
               >
                 &nbsp;
-              </div>
-              <span
-                className="hidden sm:inline-block sm:align-middle sm:h-screen"
-                aria-hidden="true"
-              >
-                &8203;
-              </span>
+              </motion.div>
               <motion.div
                 key={'modal-content'}
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                variants={fadeInTop}
-                className={`relative inline-block sm:align-middle z-50`}
+                variants={window.innerWidth > 767
+                    ? scaleIn
+                    : fadeInFromBottomAndOutBottom}
+                className={`relative z-50`}
               >
                 <div
-                  className={` scrollbar-none bg-modal-100 w-full p-6 rounded-lg ring-modal-150 ring-2 ${className}`}
+                  className={`scrollbar-none bg-modal-100 w-full p-6 mb-3 rounded-lg ring-modal-150 ring-2 ${className}`}
                 >
                   <div className={'flex flex-col items-center text-center'}>
                     {children}
@@ -74,7 +62,7 @@ const Modal = {
                 </div>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     );

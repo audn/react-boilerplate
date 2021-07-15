@@ -1,7 +1,7 @@
 import React from 'react';
 import { IBanner } from '../lib/interfaces';
 
-import { fadeOutTop } from '../utils/data/animations';
+import { rollUp } from '../utils/data/animations';
 import { AnimatePresence, motion } from 'framer-motion';
 
 function Banner({
@@ -31,7 +31,7 @@ function DefaultBanner({
           initial="initial"
           animate="enter"
           exit="exit"
-          variants={fadeOutTop}
+          variants={rollUp}
         >
           <div
             className={

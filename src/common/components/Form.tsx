@@ -1,4 +1,4 @@
-import { fadeOutTop } from '../utils/data/animations';
+import { rollUp } from '../utils/data/animations';
 import { motion } from 'framer-motion';
 
 import {
@@ -67,7 +67,7 @@ const Form = {
           initial="initial"
           animate="enter"
           exit="exit"
-          variants={fadeOutTop}
+          variants={rollUp}
         >
           <div className="flex flex-col">{children}</div>
         </motion.form>
@@ -79,7 +79,7 @@ const Form = {
           initial="initial"
           animate="enter"
           exit="exit"
-          variants={fadeOutTop}
+          variants={rollUp}
         >
           Thank you!
         </motion.div>
