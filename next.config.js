@@ -2,7 +2,6 @@ module.exports = {
   images: {
     domains: ['images.unsplash.com'],
   },
-  module.exports = {
   async redirects() {
     return [
       {
@@ -52,6 +51,4 @@ module.exports = {
       },
     ];
   },
-};
-
 };
