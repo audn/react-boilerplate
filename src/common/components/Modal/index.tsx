@@ -51,10 +51,10 @@ const Modal = {
                 variants={window.innerWidth > 767
                     ? scaleIn
                     : fadeInFromBottomAndOutBottom}
-                className={`relative z-50`}
+                className={`p-6 relative z-50`}
               >
                 <div
-                  className={`scrollbar-none bg-modal-100 w-full p-6 mb-3 rounded-lg ring-modal-150 ring-2 ${className}`}
+                  className={`scrollbar-none bg-modal-100 w-full p-6 rounded-lg ring-modal-150 ring-2 ${className}`}
                 >
                   <div className={'flex flex-col items-center text-center'}>
                     {children}
