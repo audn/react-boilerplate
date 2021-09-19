@@ -1,13 +1,13 @@
-import { Layout } from '../common/layouts/Layout';
-import Container from '../common/components/Container';
+import { DefaultLayout } from '../common/layouts/Default';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../common/utils/data/animations';
+import Layout from '../common/components/layout/Layout';
 
 export default function Custom404() {
   return (
-    <Layout title={'404 | Boilerplate'}>
-      <Container>
+    <DefaultLayout title={'404 | Boilerplate'}>
+      <Layout.Container center>
         <motion.div
           className="w-full"
           initial="initial"
@@ -15,7 +15,7 @@ export default function Custom404() {
           variants={fadeIn}
         >
           <div className={'py-12 text-center'}>
-            <h4 className={'font-medium text-brand-primary-150 text-sm mb-6'}>
+            <h4 className={'font-medium text-brand-primary-100 text-sm mb-6'}>
               404
             </h4>
             <h1 className={'font-bold text-white text-3xl mb-6'}>
@@ -23,7 +23,7 @@ export default function Custom404() {
             </h1>
           </div>
         </motion.div>
-      </Container>
-    </Layout>
+      </Layout.Container>
+    </DefaultLayout>
   );
 }

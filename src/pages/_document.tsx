@@ -1,6 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { GA_TRACKING_ID } from '../common/utils/data/analytics';
+import { GA_TRACKING_ID } from '../common/utils/analytics';
 
 export default class extends Document {
   render() {
@@ -9,14 +9,8 @@ export default class extends Document {
         <Head>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            href={'https://pro.fontawesome.com/releases/v5.13.1/css/all.css'}
-            integrity={
-              'sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa'
-            }
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
             crossOrigin="anonymous"
           />
           <meta name="application-TileColor" content="#4d7fff" />
@@ -26,7 +20,6 @@ export default class extends Document {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
             rel="stylesheet"
@@ -37,8 +30,8 @@ export default class extends Document {
               window.dataLayer = window.dataLayer || [];
               function gtag(){ dataLayer.push(arguments); }
               gtag('js', new Date());
-    					gtag('config', '${GA_TRACKING_ID}');
-        		`,
+    		  gtag('config', '${GA_TRACKING_ID}');
+        	`,
             }}
           />
         </Head>

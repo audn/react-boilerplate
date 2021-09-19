@@ -1,6 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { IModal } from '../../lib/interfaces';
-import { fadeIn, fadeInFromBottomAndOutBottom, scaleIn } from '../../utils/data/animations';
+import {
+  fadeIn,
+  fadeInFromBottomAndOutBottom,
+  scaleIn,
+} from '../../utils/data/animations';
 import { ReactNode, useEffect } from 'react';
 import handleScrollbarChange from '../../utils/helpers/scrollbarModal';
 
@@ -31,7 +35,7 @@ const Modal = {
             role="dialog"
             aria-modal="true"
           >
-            <div className="fixed z-50 flex md:relative items-end md:items-center md:min-h-screen justify-center inset-0">
+            <div className="fixed inset-0 z-50 flex items-end justify-center md:relative md:items-center md:min-h-screen">
               <motion.div
                 key={'modal-underlay'}
                 initial="initial"
@@ -48,9 +52,11 @@ const Modal = {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                variants={window.innerWidth > 767
+                variants={
+                  window.innerWidth > 767
                     ? scaleIn
-                    : fadeInFromBottomAndOutBottom}
+                    : fadeInFromBottomAndOutBottom
+                }
                 className={`p-6 relative z-50`}
               >
                 <div

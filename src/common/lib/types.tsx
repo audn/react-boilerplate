@@ -1,12 +1,7 @@
 import { ReactNode } from 'react';
-import { IPost } from './interfaces';
 
 export type IFormErrors = {
   [key: string]: false | string;
-};
-
-export type APIPosts = {
-  posts: IPost[];
 };
 
 export type Navigation = {
@@ -15,3 +10,4 @@ export type Navigation = {
   icon?: ReactNode;
   toggleModal?: () => void;
 };
+export type Sizes = 'sm' | 'md' | 'lg' | 'xl';

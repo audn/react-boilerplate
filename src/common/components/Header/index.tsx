@@ -1,38 +1,18 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-
-import MenuToggle from './components/MenuToggle';
-import MenuItems from './components/MenuItems';
-import Container from '../Container';
-import TestModal from './components/TestModal';
+import Layout from '../layout/Layout';
+import Link from '../layout/Link';
 
 export const Header = () => {
-  const [isPhoneMenuOpen, setPhoneMenu] = useState(false);
-  const [isModalOpen, setModalOpen] = useState<boolean>(false);
-
-  const toggleMenu = () => setPhoneMenu(!isPhoneMenuOpen);
-  const toggleModal = () => setModalOpen(!isModalOpen);
-
   return (
-    <header className="z-50 sticky top-0 bg-header-100 text-on-header-800 border-b-2 border-header-150 py-4">
-      <Container>
-        <div className="sm:flex sm:flex-no-wrap items-center justify-between ">
+    <header className="sticky top-0 z-50 py-5 bg-header-100 text-on-header-100">
+      <Layout.Container center>
+        <div className="items-center justify-between sm:flex sm:flex-no-wrap ">
           <div className="flex items-center justify-between">
-            <Link href="/">
-              <a className="font-bold text-white text-xl">MyApp</a>
+            <Link href="/" className="text-xl font-bold text-white">
+              MyApp
             </Link>
-            <MenuToggle
-              toggleMenu={toggleMenu}
-              isPhoneMenuOpen={isPhoneMenuOpen}
-            />
           </div>
-          <MenuItems
-            isPhoneMenuOpen={isPhoneMenuOpen}
-            toggleModal={toggleModal}
-          />
         </div>
-      </Container>
-      <TestModal open={isModalOpen} toggle={toggleModal} />
+      </Layout.Container>
     </header>
   );
 };
