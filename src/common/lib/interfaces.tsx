@@ -26,10 +26,11 @@ export interface IBaseComponent {
 }
 
 export interface IModal {
+  title?: string | ReactNode;
   open: boolean;
   children: ReactNode;
   className?: string;
-  onClose?: () => void | Promise<void>;
+  onClose: () => void;
 }
 
 export interface IButton {

@@ -5,7 +5,7 @@ import concat from '../../utils/helpers/concat';
 const getSize = (size: Sizes) => {
   switch (size) {
     case 'sm':
-      return 'py-10';
+      return 'py-6';
     case 'md':
       return 'py-12';
     case 'lg':

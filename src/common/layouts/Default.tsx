@@ -1,11 +1,10 @@
-import React from 'react';
-import Router from 'next/router';
+import { ILayout } from '../lib/interfaces';
 
 import { Footer } from '../components/Footer';
 import SeoTags from '../components/SeoTags';
 
 import { trackPageview } from '../utils/analytics';
-import { ILayout } from '../lib/interfaces';
+import Router from 'next/router';
 
 Router.events.on('routeChangeComplete', (url) => {
   trackPageview(url);
