@@ -1,6 +1,7 @@
 import { Form } from '../../../lib/interfaces';
 import concat from '../../../utils/helpers/concat';
-import { FormLabel } from '../components';
+import { validateRegex } from '../../../utils/helpers/regex/validator';
+import { FormError, FormLabel } from '../components';
 
 function Textarea({
   value,
@@ -14,7 +15,13 @@ function Textarea({
   maxLength,
   minLength,
   description,
+  regex,
 }: Form.Textarea) {
+  const getErrors = () => {
+    if (error) {
+      return error;
+    } else return validateRegex({ value, regex }) as string;
+  };
   return (
     <div className="max-w-full">
       <div className="flex items-center justify-between">
@@ -45,10 +52,10 @@ function Textarea({
           disabled
             ? 'bg-opacity-50 cursor-not-allowed text-on-200 after:!text-on-150'
             : 'focus:ring-2',
-          'w-full h-full px-5 py-4 transition duration-150 ease-out rounded-lg outline-none scrollbar-none bg-types-100 focus:ring-2 ring-types-200',
+          'w-full h-full px-5 py-4 transition duration-150 ease-out rounded-lg outline-none scrollbar-none bg-types-100 focus:ring-2 ring-types-200 input-field',
         )}
       />
-      {error}
+      <FormError label={getErrors()} />
     </div>
   );
 }

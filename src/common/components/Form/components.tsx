@@ -24,9 +24,9 @@ export const Wrapper = ({
 export const FormError = ({ label }: { label: string }) => {
   if (label) {
     return (
-      <div id="form-error" className={'block mb-3 font-bold text-red-500'}>
+      <span id="form-error" className={'block mb-3 font-bold text-red-500'}>
         {label}
-      </div>
+      </span>
     );
   } else return <></>;
 };
