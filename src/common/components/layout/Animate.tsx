@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
-import React from 'react';
-import { IBaseComponent } from '../../lib/interfaces';
+import { ReactNode, SyntheticEvent } from 'react';
 
 function Animate({
   children,
   ...props
-}: IBaseComponent & { variants: any; onClick?: () => void }) {
+}: {
+  className?: string;
+  children: ReactNode;
+  variants: any;
+  onClick?: (e?: SyntheticEvent) => void;
+}) {
   return (
     <motion.div
       className="w-full"
