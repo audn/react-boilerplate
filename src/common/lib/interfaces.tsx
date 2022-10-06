@@ -38,7 +38,7 @@ export declare namespace Form {
 
   interface Toggle extends Base {
     active?: boolean;
-    onClick: (val: boolean | string) => void;
+    onClick: (val: boolean) => void;
     isLoading?: boolean;
     className?: string;
   }
