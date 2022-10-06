@@ -20,19 +20,32 @@ export const Wrapper = ({
     </div>
   );
 };
+
+export const FormError = ({ label }: { label: string }) => {
+  if (label) {
+    return (
+      <div id="form-error" className={'block mb-3 font-bold text-red-500'}>
+        {label}
+      </div>
+    );
+  } else return <></>;
+};
+
 export const FormLabel = ({ disabled, label, description, id }: Form.Label) => {
-  return (
-    <label
-      className={concat(
-        disabled ? 'text-on-200' : 'text-on-100',
-        'block mb-3 font-bold ',
-      )}
-      htmlFor={id}
-    >
-      {label}
-      {description && (
-        <div className={`!font-normal mt-2  text-on-100`}>{description}</div>
-      )}
-    </label>
-  );
+  if (label) {
+    return (
+      <label
+        className={concat(
+          disabled ? 'text-on-200' : 'text-on-100',
+          'block mb-3 font-bold ',
+        )}
+        htmlFor={id}
+      >
+        {label}
+        {description && (
+          <div className={`!font-normal mt-2  text-on-100`}>{description}</div>
+        )}
+      </label>
+    );
+  } else return <></>;
 };

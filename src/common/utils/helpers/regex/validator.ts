@@ -3,14 +3,10 @@ export const validateRegex = ({
   regex,
 }: {
   value?: string;
-  regex?: string | ((val: string) => void);
+  regex?: (val: string) => void;
 }) => {
   if (!value) {
-    return;
+    return '';
   }
-  if (typeof regex == 'string') {
-    return new RegExp(regex).test(value);
-  } else if (typeof regex == 'function') {
-    return regex(value);
-  }
+  if (regex) return regex(value);
 };

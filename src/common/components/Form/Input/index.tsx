@@ -1,7 +1,7 @@
 import { Form } from '../../../lib/interfaces';
 import concat from '../../../utils/helpers/concat';
 import { validateRegex } from '../../../utils/helpers/regex/validator';
-import { FormLabel } from '../components';
+import { FormError, FormLabel } from '../components';
 
 function Input({
   value,
@@ -16,22 +16,20 @@ function Input({
   description,
   regex,
 }: Form.Input) {
-  const checkRegex = () => {
-    return validateRegex({ value, regex });
+  const getErrors = () => {
+    if (error) {
+      return error;
+    } else return validateRegex({ value, regex }) as string;
   };
 
   return (
     <div className="w-full">
-      {checkRegex() ? 'true' : 'false'}
-      {label && (
-        <FormLabel
-          id={id}
-          description={description}
-          disabled={disabled}
-          label={label}
-        />
-      )}
-      {}
+      <FormLabel
+        id={id}
+        description={description}
+        disabled={disabled}
+        label={label}
+      />
       <input
         placeholder={placeholder}
         id={id}
@@ -44,10 +42,10 @@ function Input({
           disabled
             ? 'bg-opacity-50 cursor-not-allowed text-on-200 after:!text-on-150'
             : 'focus:ring-2',
-          'w-full px-5 py-4 transition duration-150 ease-out rounded-lg outline-none scrollbar-none bg-types-100  ring-types-200',
+          'w-full px-5 py-4 transition duration-150 ease-out rounded-lg outline-none scrollbar-none bg-types-100  ring-types-200 input-field',
         )}
       />
-      {error}
+      <FormError label={getErrors()} />
     </div>
   );
 }

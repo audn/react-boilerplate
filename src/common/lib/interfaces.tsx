@@ -33,7 +33,7 @@ export declare namespace Form {
     disabled?: boolean;
     description?: string | ReactNode;
     label?: string;
-    regex?: string | ((val: string) => void);
+    regex?: (val: string) => void;
   }
 
   interface Toggle extends Base {

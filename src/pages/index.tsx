@@ -1,22 +1,26 @@
 import { useState } from 'react';
 import { Form } from '../common/components/Form';
 import { DefaultLayout } from '../common/layouts/Default';
-import { validateUrl } from '../common/utils/helpers/regex/url';
+import { validateEmail } from '../common/utils/helpers/regex/email';
 
 export default function Home() {
-  const [text, setText] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [yes, setYes] = useState<boolean>(false);
+
+  function onEmailChange(val: string) {
+    setEmail(val);
+  }
   return (
     <DefaultLayout title={'Index'}>
-      {text}
       <div className="p-36">
         <Form.Wrapper>
           <Form.Input
-            id="title"
-            value={text}
-            onChange={setText}
-            placeholder="text"
-            regex={validateUrl}
+            id="Email"
+            label="Email"
+            value={email}
+            onChange={onEmailChange}
+            placeholder="your@email.com"
+            regex={validateEmail}
           />
           <Form.Toggle
             id="yes"
