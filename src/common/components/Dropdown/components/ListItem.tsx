@@ -23,7 +23,7 @@ function ListItem({ label, icon, onClick, route, className }: INavItem) {
       onClick={handleClick}
     >
       {icon && (
-        <div className="flex-shrink-0 w-6 text-sm">
+        <div className="flex-shrink-0 w-6 text-sm text-left">
           <i className={`${icon}`} />
         </div>
       )}

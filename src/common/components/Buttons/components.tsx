@@ -9,7 +9,7 @@ export const Wrapper = ({
   children: ReactNode;
 }) => {
   return (
-    <div className={concat(className ? className : '', 'flex space-x-5')}>
+    <div className={concat(className ? className : '', 'flex gap-5 flex-wrap')}>
       {children}
     </div>
   );

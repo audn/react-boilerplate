@@ -15,35 +15,37 @@ export default function Home() {
   }
   return (
     <DefaultLayout>
-      <Form.Wrapper>
-        <Form.Input
-          id="Email"
-          label="Email"
-          value={email}
-          onChange={setEmail}
+      <Form.Layout onSubmit={onSubmit} className="space-y-5">
+        <Form.Wrapper>
+          <Form.Input
+            id="Email"
+            label="Email"
+            value={email}
+            onChange={setEmail}
+            placeholder="your@email.com"
+            regex={validateEmail}
+          />
+          <Form.Toggle
+            id="enabled"
+            onClick={setEnabled}
+            active={enabled}
+            label="Enabled"
+          />
+        </Form.Wrapper>
+        <Form.Textarea
+          id="message"
+          label="message"
+          value={message}
+          onChange={setMessage}
           placeholder="your@email.com"
           regex={validateEmail}
         />
-        <Form.Toggle
-          id="enabled"
-          onClick={setEnabled}
-          active={enabled}
-          label="Enabled"
-        />
-      </Form.Wrapper>
-      <Form.Textarea
-        id="message"
-        label="message"
-        value={message}
-        onChange={setMessage}
-        placeholder="your@email.com"
-        regex={validateEmail}
-      />
-      <Button.Wrapper>
-        <Button.Primary title="Primary" />
-        <Button.Secondary title="Secondary" />
-        <Button.White title="White" />
-      </Button.Wrapper>
+        <Button.Wrapper>
+          <Button.Primary title="Primary" />
+          <Button.Secondary title="Secondary" />
+          <Button.White title="White" />
+        </Button.Wrapper>
+      </Form.Layout>
     </DefaultLayout>
   );
 }
