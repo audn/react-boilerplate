@@ -12,7 +12,7 @@ function H1({
     <h1
       className={concat(
         className ? className : '',
-        'text-3xl md:text-4xl font-semibold md:font-bold !leading-[3rem] md:!leading-[4rem]',
+        'text-3xl md:text-[3rem] font-semibold md:font-bold !leading-[3rem] md:!leading-[4rem] tracking-[-.015em]',
       )}
     >
       {children}
