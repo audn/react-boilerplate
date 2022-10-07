@@ -38,6 +38,14 @@ export declare namespace Hydration {
   }
   interface Cats extends Data<API.Models.Cat[]> {}
 }
+export declare namespace Alert {
+  interface Base {
+    title?: string;
+    label?: string;
+    onClick?: (e: SyntheticEvent) => void;
+    isLoading?: boolean;
+  }
+}
 export interface INavItem {
   label: string;
   onClick?: () => void;

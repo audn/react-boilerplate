@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import { SkeletonTheme } from 'react-loading-skeleton';
-import Error from '../../../components/layout/Alerts/Error';
+import HydrationError from '../../../components/layout/Alerts/HydrationError';
 import Animate from '../../../components/layout/Animate';
 import { Hydration } from '../../../lib/interfaces';
 import { fadeIn } from '../../data/animations';
@@ -20,7 +20,7 @@ function CatsHydration({
     );
   } else if (error) {
     return (
-      <Error
+      <HydrationError
         title="Couldn't get data"
         label={`An error occoured while trying to retrieve cats.`}
         onClick={refetch}
