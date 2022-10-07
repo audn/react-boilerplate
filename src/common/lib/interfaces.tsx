@@ -7,7 +7,7 @@ import { HTMLInputTypeAttribute, ReactNode, SyntheticEvent } from 'react';
 export type IDropdown = {
   children: ReactNode;
   list: INavItem[];
-  options?: { caret?: boolean };
+  options?: { caret?: boolean; position?: 'start' | 'center' | 'end' };
 };
 // export interface ILayout {
 //   children: ReactNode;

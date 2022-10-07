@@ -1,13 +1,12 @@
-import { ILayout } from '../lib/interfaces';
-
 import Router from 'next/router';
+import { ReactNode } from 'react';
 import { trackPageview } from '../utils/analytics';
 
 Router.events.on('routeChangeComplete', (url) => {
   trackPageview(url);
 });
 
-export const DefaultLayout = ({ children }: ILayout) => {
+export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="container flex flex-col min-h-screen">
       <div className={'flex-1'}>

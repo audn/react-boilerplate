@@ -1,12 +1,15 @@
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { IDropdown } from '../../lib/interfaces';
-import { fadeInFromBottomAndOutBottom } from '../../utils/data/animations';
 import listenForOutsideClick from '../../utils/helpers/listenForOutsideClick';
-import Animate from '../layout/Animate';
+import DropdownWrapper from './components/DropdownWrapper';
 import ListItem from './components/ListItem';
 
-function Dropdown({ children, list, options }: IDropdown) {
+function Dropdown({
+  children,
+  list,
+  options = { caret: true, position: 'center' },
+}: IDropdown) {
   const menuRef = useRef(null);
   const [listening, setListening] = useState(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -22,22 +25,26 @@ function Dropdown({ children, list, options }: IDropdown) {
     }),
   );
   return (
-    <div ref={menuRef} onClick={toggle} className="relative">
-      <button className="flex">
-        {children} <i className="fa-solid fa-angle-down" />
+    <div
+      ref={menuRef}
+      onClick={toggle}
+      className="relative flex items-center justify-center"
+    >
+      <button className="flex items-center">
+        {children}
+        {options?.caret && (
+          <span className="flex justify-start flex-shrink-0 w-7 ">
+            <i className="fa-regular fa-angle-down" />
+          </span>
+        )}
       </button>
       <AnimatePresence>
         {isOpen && (
-          <Animate
-            variants={fadeInFromBottomAndOutBottom}
-            className="absolute right-0 top-10 shadow-lg min-w-[200px] border border-types-150 rounded-lg"
-          >
-            <ul className="p-2 space-y-1 rounded-lg whitespace-nowrap text-on-100 bg-types-100">
-              {list.map((item, i) => (
-                <ListItem {...item} key={i} />
-              ))}
-            </ul>
-          </Animate>
+          <DropdownWrapper>
+            {list.map((item, i) => (
+              <ListItem {...item} key={i} />
+            ))}
+          </DropdownWrapper>
         )}
       </AnimatePresence>
     </div>
