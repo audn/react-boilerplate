@@ -18,7 +18,7 @@ function ListItem({ label, icon, onClick, route, className }: INavItem) {
     <li
       className={concat(
         className ? className : '',
-        'flex items-center px-3 py-2 rounded-lg cursor-pointer text-base font-semibold  hover:bg-types-200 animate hover:text-on-naked-150',
+        'flex items-center p-2 rounded-lg cursor-pointer font-medium hover:bg-types-200 animate hover:text-on-naked-150 text-sm',
       )}
       onClick={handleClick}
     >

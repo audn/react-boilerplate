@@ -8,7 +8,7 @@ function DropdownWrapper({ children }: { children: ReactNode }) {
       variants={fadeInFromBottomAndOutBottom}
       className="absolute right-0 border rounded-lg shadow-lg top-10 bg-types-150 border-types-200 w-[max-content] dropdown"
     >
-      <ul className="max-w-[200px] p-1 overflow-y-auto max-h-96 scrollbar-content">
+      <ul className="max-w-[200px] p-2 overflow-y-auto max-h-96 scrollbar-content">
         {children}
       </ul>
     </Animate>
