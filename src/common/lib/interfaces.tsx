@@ -1,25 +1,27 @@
 import { HTMLInputTypeAttribute, ReactNode, SyntheticEvent } from 'react';
 
-export interface IBase {
-  children?: ReactNode;
-  className?: string;
-}
-
-export interface ILayout {
+// export interface IBase {
+//   children?: ReactNode;
+//   className?: string;
+// }
+export type IDropdown = {
   children: ReactNode;
-  title?: string;
-  description?: string;
-}
-
-// export interface APIResponse<T> {
-//   payload?: {
-//     results: T;
-//     count: number;
-//   };
-//   error?: string;
-//   message?: string;
+  list: INavItem[];
+  options?: { caret?: boolean };
+};
+// export interface ILayout {
+//   children: ReactNode;
+//   title?: string;
+//   description?: string;
 // }
 
+export interface INavItem {
+  label: string;
+  onClick?: () => void;
+  route?: string;
+  className?: string;
+  icon?: string;
+}
 export declare namespace Form {
   interface InputBase {
     placeholder: string;
