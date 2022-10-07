@@ -1,0 +1,15 @@
+- [x] add form component
+- [x] add premade buttons with controller
+- [x] add toolip component that wraps around children
+- [x] add dropdown
+- [x] validate regex from <Form> components
+- [x] add different headings
+- [x] add hydration component
+
+- [ ] add next SEO
+- [ ] rewrite modal component
+- [ ] preserve scroll for navigation
+- [ ] add auth component
+- [ ] add fontawesome properly
+- [ ] add react-hot-toast
+- [ ] add simple hamburger / responsive on phone
