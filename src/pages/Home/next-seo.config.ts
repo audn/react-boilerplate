@@ -10,7 +10,7 @@ export default {
     site_name: 'frontend-boilerplate',
     images: [
       {
-        url: 'hhttps://opengraph.githubassets.com/fa53ec3abce99887a2167be84b9fb267f5d08e05d9d5779866d47922e5af1983/audn/frontend-boilerplate',
+        url: 'https://opengraph.githubassets.com/fa53ec3abce99887a2167be84b9fb267f5d08e05d9d5779866d47922e5af1983/audn/frontend-boilerplate',
         width: 400,
         height: 400,
         alt: '',
