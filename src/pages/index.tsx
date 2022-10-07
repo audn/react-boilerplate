@@ -32,27 +32,35 @@ export default function Home() {
       <H1>H1</H1>
       <H2>H2</H2>
       <H3>H3</H3>
-      <P block>
-        Paragraph2text
-        <>Paragraph text</>
+      <P block className="max-w-2xl">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.{' '}
+        <>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat.
+        </>
+        <>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur.
+        </>{' '}
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.
       </P>
-      <Form.Layout onSubmit={onSubmit} className="mb-10 space-y-5">
-        <Form.Wrapper>
-          <Form.Input
-            id="Email"
-            label="Email"
-            value={email}
-            onChange={setEmail}
-            placeholder="your@email.com"
-            regex={validateEmail}
-          />
-          <Form.Toggle
-            id="enabled"
-            onClick={setEnabled}
-            active={enabled}
-            label="Enabled"
-          />
-        </Form.Wrapper>
+      <Form.Layout onSubmit={onSubmit} className="my-10 space-y-5">
+        <Form.Input
+          id="Email"
+          label="Email"
+          value={email}
+          onChange={setEmail}
+          placeholder="your@email.com"
+          regex={validateEmail}
+        />
+        <Form.Toggle
+          id="enabled"
+          onClick={setEnabled}
+          active={enabled}
+          label="Enabled"
+        />
         <Form.Textarea
           id="message"
           label="message"

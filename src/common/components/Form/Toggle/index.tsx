@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form } from '../../../lib/interfaces';
 import concat from '../../../utils/helpers/concat';
 import Circle from './components/Circle';
@@ -14,7 +13,7 @@ function Toggle({
   isLoading,
 }: Form.Toggle) {
   return (
-    <React.Fragment>
+    <div className="flex">
       <label className={concat(className ? className : '', 'flex flex-col')}>
         {label && (
           <div className={'mb-2'}>
@@ -32,7 +31,7 @@ function Toggle({
           onClick={onClick}
         />
       </label>
-    </React.Fragment>
+    </div>
   );
 }
 
