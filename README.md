@@ -29,7 +29,7 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 - SEO optimization built into the `<Layout>` component
 - Hydartion component
 - Dropdown component
-- Premade <H1>,h2,h3 & paragraph
+- Premade h1,h2,h3 & paragraph
 - react-tooltip component
 
 ### Websites using this boilerplate:
