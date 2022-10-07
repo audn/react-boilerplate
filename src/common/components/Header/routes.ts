@@ -1,11 +1,29 @@
-import { Navigation } from '../../lib/types';
-
-const routes: Array<Navigation> = [
+import { INavItem } from '../../lib/interfaces';
+const dropdown = [
   {
-    title: 'Github',
+    label: 'My profile',
+    icon: 'fa-solid fa-user',
+    route: '#',
+  },
+  {
+    label: 'Sign out',
+    className: 'hover:!bg-opacity-10 hover:!bg-red-500 hover:!text-red-500',
+    icon: 'fa-solid fa-sign-out-alt',
+    route: '#',
+  },
+] as INavItem[];
+
+const routes: Array<INavItem> = [
+  {
+    label: 'Github',
     route: 'https://github.com/audn/frontend-boilerplate',
-    icon: ['fas', 'fa-external-link-alt', 'mr-3 text-sm'],
+    icon: 'fa-solid fa-external-link-alt',
+  },
+  {
+    label: 'Options',
+    list: dropdown,
+    icon: 'fa-regular fa-angle-down',
   },
 ];
 
-export default routes;
+export { routes, dropdown };

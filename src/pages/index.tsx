@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
+import { Button } from '../common/components/Buttons';
 import { Form } from '../common/components/Form';
 import { DefaultLayout } from '../common/layouts/Default';
 import { validateEmail } from '../common/utils/helpers/regex/email';
@@ -6,36 +7,43 @@ import { validateEmail } from '../common/utils/helpers/regex/email';
 export default function Home() {
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [yes, setYes] = useState<boolean>(false);
+  const [enabled, setEnabled] = useState<boolean>(false);
 
+  function onSubmit(e: SyntheticEvent) {
+    e.preventDefault();
+    console.log('ay');
+  }
   return (
-    <DefaultLayout title={'Index'}>
-      <div className="space-y-5">
-        <Form.Wrapper>
-          <Form.Input
-            id="Email"
-            label="Email"
-            value={email}
-            onChange={setEmail}
-            placeholder="your@email.com"
-            regex={validateEmail}
-          />
-          <Form.Toggle
-            id="yes"
-            onClick={setYes}
-            active={yes}
-            label="arey ou cool"
-          />
-        </Form.Wrapper>
-        <Form.Textarea
-          id="message"
-          label="message"
-          value={message}
-          onChange={setMessage}
+    <DefaultLayout>
+      <Form.Wrapper>
+        <Form.Input
+          id="Email"
+          label="Email"
+          value={email}
+          onChange={setEmail}
           placeholder="your@email.com"
           regex={validateEmail}
         />
-      </div>
+        <Form.Toggle
+          id="enabled"
+          onClick={setEnabled}
+          active={enabled}
+          label="Enabled"
+        />
+      </Form.Wrapper>
+      <Form.Textarea
+        id="message"
+        label="message"
+        value={message}
+        onChange={setMessage}
+        placeholder="your@email.com"
+        regex={validateEmail}
+      />
+      <Button.Wrapper>
+        <Button.Primary title="Primary" />
+        <Button.Secondary title="Secondary" />
+        <Button.White title="White" />
+      </Button.Wrapper>
     </DefaultLayout>
   );
 }

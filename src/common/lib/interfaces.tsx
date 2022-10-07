@@ -21,6 +21,7 @@ export interface INavItem {
   route?: string;
   className?: string;
   icon?: string;
+  list?: INavItem[]; //activates dropdown
 }
 export declare namespace Form {
   interface InputBase {
@@ -60,7 +61,7 @@ export declare namespace Button {
     icon?: string;
     route?: string;
     onClick?: (e: SyntheticEvent) => void;
-    label?: string;
+    title?: string;
     options?: Options;
     disabled?: boolean;
     isLoading?: boolean;
