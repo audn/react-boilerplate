@@ -25,15 +25,11 @@ function Dropdown({
     }),
   );
   return (
-    <div
-      ref={menuRef}
-      onClick={toggle}
-      className="relative flex items-center justify-center"
-    >
+    <div ref={menuRef} onClick={toggle} className="relative mx-auto">
       <button className="flex items-center">
         {children}
         {options?.caret && (
-          <span className="flex justify-start flex-shrink-0 w-7 ">
+          <span className="flex justify-start flex-shrink-0 ml-2 ">
             <i className="fa-regular fa-angle-down" />
           </span>
         )}

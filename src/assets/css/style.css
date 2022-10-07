@@ -37,7 +37,10 @@ body {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
-
+.dropdown {
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+}
 .scrollbar-content::-webkit-scrollbar-thumb {
   background-color: #2b2b32;
   border-radius: 50px;
