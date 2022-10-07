@@ -14,7 +14,30 @@ export type IDropdown = {
 //   title?: string;
 //   description?: string;
 // }
+export declare namespace API {
+  //   interface Response<T> {
+  //     message: T;
+  //     status: 'success';
+  //   }
 
+  namespace Models {
+    interface Cat {
+      id: string;
+      created_at: string;
+      tags: string[];
+    }
+  }
+}
+export declare namespace Hydration {
+  interface Data<T> {
+    data?: T;
+    refetch: () => void;
+    isRefetching: boolean;
+    isLoading: boolean;
+    error: unknown;
+  }
+  interface Cats extends Data<API.Models.Cat[]> {}
+}
 export interface INavItem {
   label: string;
   onClick?: () => void;

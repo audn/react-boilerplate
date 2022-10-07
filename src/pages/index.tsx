@@ -3,8 +3,18 @@ import { Button } from '../common/components/Buttons';
 import { Form } from '../common/components/Form';
 import { DefaultLayout } from '../common/layouts/Default';
 import { validateEmail } from '../common/utils/helpers/regex/email';
+import { useCats } from '../common/utils/hooks/cats';
+import { Hydrate } from '../common/utils/hydration';
 
 export default function Home() {
+  const {
+    data,
+    isLoading,
+    error: fetchError,
+    refetch,
+    isRefetching,
+  } = useCats();
+
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [enabled, setEnabled] = useState<boolean>(false);
@@ -46,6 +56,13 @@ export default function Home() {
           <Button.White title="White" />
         </Button.Wrapper>
       </Form.Layout>
+      <Hydrate.Cats
+        data={data}
+        error={fetchError}
+        isLoading={isLoading}
+        refetch={refetch}
+        isRefetching={isRefetching}
+      />
     </DefaultLayout>
   );
 }
