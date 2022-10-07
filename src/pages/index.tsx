@@ -25,7 +25,7 @@ export default function Home() {
   }
   return (
     <DefaultLayout>
-      <Form.Layout onSubmit={onSubmit} className="space-y-5">
+      <Form.Layout onSubmit={onSubmit} className="mb-10 space-y-5">
         <Form.Wrapper>
           <Form.Input
             id="Email"

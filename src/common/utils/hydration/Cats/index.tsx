@@ -4,7 +4,6 @@ import Error from '../../../components/layout/Alerts/Error';
 import Animate from '../../../components/layout/Animate';
 import { Hydration } from '../../../lib/interfaces';
 import { fadeIn } from '../../data/animations';
-import SkeletonIdeaCard from './components/Skeleton';
 
 function CatsHydration({
   data,
@@ -16,20 +15,14 @@ function CatsHydration({
   if (isLoading) {
     return (
       <SkeletonTheme baseColor="#272e39" highlightColor="#38414f">
-        <div className="grid grid-cols-1 gap-5">
-          {[
-            ...Array.from(Array(20)).map((_, i) => (
-              <SkeletonIdeaCard key={`skeleton_${i}`} />
-            )),
-          ]}
-        </div>
+        <div className="grid grid-cols-1 gap-5">loading cats...</div>
       </SkeletonTheme>
     );
   } else if (error) {
     return (
       <Error
         title="Couldn't get data"
-        label={`An error occoured while trying to retrieve ideas.`}
+        label={`An error occoured while trying to retrieve cats.`}
         onClick={refetch}
         isLoading={isRefetching}
       />
@@ -37,9 +30,13 @@ function CatsHydration({
   } else
     return (
       <AnimatePresence initial={false}>
-        <Animate variants={fadeIn} className="grid grid-cols-1 gap-5">
+        <Animate variants={fadeIn} className="flex flex-wrap gap-5">
           {data?.map((cat) => (
-            <>{cat.id}</>
+            <img
+              key={cat.id}
+              src={`https://cataas.com/cat/${cat.id}`}
+              className="w-auto h-full"
+            />
           ))}
         </Animate>
       </AnimatePresence>
