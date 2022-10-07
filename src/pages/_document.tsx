@@ -1,4 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 import { GA_TRACKING_ID } from '../common/utils/analytics';
 
 export default class extends Document {
@@ -6,6 +7,11 @@ export default class extends Document {
     return (
       <Html lang="en">
         <Head>
+          <Script
+            src="https://kit.fontawesome.com/84c3028184.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
           <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
