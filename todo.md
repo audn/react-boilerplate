@@ -13,3 +13,4 @@
 - [ ] add fontawesome properly
 - [ ] add react-hot-toast
 - [ ] add simple hamburger / responsive on phone
+- [ ] look at headless-ui
