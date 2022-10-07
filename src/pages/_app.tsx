@@ -9,8 +9,10 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Header />
-      <Component {...pageProps} key={router.route} />
+      <main className="px-5">
+        <Header />
+        <Component {...pageProps} key={router.route} />
+      </main>
     </QueryClientProvider>
   );
 }

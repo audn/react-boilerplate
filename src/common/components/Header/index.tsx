@@ -19,7 +19,7 @@ export const Header = () => {
     },
   ] as INavItem[];
   return (
-    <header className="container sticky top-0 z-50 py-5 bg-header-100 text-on-header-100">
+    <header className="container sticky top-0 z-50 py-5 bg-header-100 text-on-header-100 ">
       <div className="flex items-center justify-between">
         <Link href="/" className="text-xl font-bold text-white">
           MyApp
