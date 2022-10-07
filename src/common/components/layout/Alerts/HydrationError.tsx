@@ -1,12 +1,12 @@
 import { Alert } from '../../../lib/interfaces';
 import { Button } from '../../Buttons';
-import Bravo from '../headings/Bravo';
+import H2 from '../headings/H2';
 import P from '../headings/P';
 
 function HydrationError({ title, label, onClick, isLoading }: Alert.Base) {
   return (
     <div className="flex flex-col items-center p-4 mx-auto rounded-md">
-      <Bravo>{title ? title : 'Something went wrong..'}</Bravo>
+      <H2>{title ? title : 'Something went wrong..'}</H2>
       <P className="mb-8 text-center text-on-100">
         {label}
         <br /> Please try agian later.

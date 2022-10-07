@@ -1,6 +1,10 @@
 import { SyntheticEvent, useState } from 'react';
 import { Button } from '../common/components/Buttons';
 import { Form } from '../common/components/Form';
+import H1 from '../common/components/layout/headings/H1';
+import H2 from '../common/components/layout/headings/H2';
+import H3 from '../common/components/layout/headings/H3';
+import P from '../common/components/layout/headings/P';
 import { DefaultLayout } from '../common/layouts/Default';
 import { validateEmail } from '../common/utils/helpers/regex/email';
 import { useCats } from '../common/utils/hooks/cats';
@@ -25,6 +29,13 @@ export default function Home() {
   }
   return (
     <DefaultLayout>
+      <H1>H1</H1>
+      <H2>H2</H2>
+      <H3>H3</H3>
+      <P block>
+        Paragraph2text
+        <>Paragraph text</>
+      </P>
       <Form.Layout onSubmit={onSubmit} className="mb-10 space-y-5">
         <Form.Wrapper>
           <Form.Input
