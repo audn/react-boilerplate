@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <DefaultLayout title={'Index'}>
-      <div className="space-y-5 p-36">
+      <div className="space-y-5">
         <Form.Wrapper>
           <Form.Input
             id="Email"
@@ -26,7 +26,7 @@ export default function Home() {
             active={yes}
             label="arey ou cool"
           />
-        </Form.Wrapper>{' '}
+        </Form.Wrapper>
         <Form.Textarea
           id="message"
           label="message"

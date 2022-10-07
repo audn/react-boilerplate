@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .animate {
-  @apply transition-all duration-200 ease-out;
+  @apply transition-all duration-100 ease-out;
 }
 
 .container {
@@ -19,12 +19,6 @@
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
-/* #form-error {
-  @apply transition-all duration-75 ease-out;
-}
-.input-field:focus ~ #form-error {
-  display: none;
-} */
 body {
   overflow-x: hidden;
   color: #eff3f6;
