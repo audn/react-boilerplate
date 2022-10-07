@@ -15,7 +15,7 @@ function Toggle({
 }: Form.Toggle) {
   return (
     <React.Fragment>
-      <div className={concat(className ? className : '', 'flex flex-col')}>
+      <label className={concat(className ? className : '', 'flex flex-col')}>
         {label && (
           <div className={'mb-2'}>
             <h1 className={`font-medium text-on-100 text-base`}>{label}</h1>
@@ -31,7 +31,7 @@ function Toggle({
           isLoading={isLoading}
           onClick={onClick}
         />
-      </div>
+      </label>
     </React.Fragment>
   );
 }
