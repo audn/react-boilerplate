@@ -5,11 +5,13 @@ type Props = {
   isLoading?: boolean;
   active?: boolean;
   onClick: (val: boolean) => void;
+  id: string;
 };
-function Circle({ disabled, isLoading, active, onClick }: Props) {
+function Circle({ disabled, isLoading, active, onClick, id }: Props) {
   return (
     <button
       role="checkbox"
+      id={id}
       disabled={disabled || isLoading}
       aria-checked="true"
       onClick={() => onClick(!active)}

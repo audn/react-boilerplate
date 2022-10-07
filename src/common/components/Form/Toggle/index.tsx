@@ -9,6 +9,7 @@ function Toggle({
   label,
   onClick,
   description,
+  id,
   disabled,
   isLoading,
 }: Form.Toggle) {
@@ -24,6 +25,7 @@ function Toggle({
           </div>
         )}
         <Circle
+          id={id}
           active={active}
           disabled={disabled}
           isLoading={isLoading}

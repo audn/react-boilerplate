@@ -1,11 +1,21 @@
-import { ReactNode } from 'react';
+import { ReactNode, SyntheticEvent } from 'react';
 import { Form as IForm } from '../../lib/interfaces';
 import { Wrapper } from './components';
 import Input from './Input';
+import Layout from './Layout';
 import Textarea from './Textarea';
 import Toggle from './Toggle';
 
 export const Form = {
+  Layout: ({
+    ...props
+  }: {
+    onSubmit: (event: SyntheticEvent) => void;
+    className?: string;
+    children: ReactNode;
+  }) => {
+    return <Layout {...props} />;
+  },
   Wrapper: ({ ...props }: { className?: string; children: ReactNode }) => {
     return <Wrapper {...props} />;
   },
