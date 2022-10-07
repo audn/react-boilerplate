@@ -5,8 +5,8 @@
 - [x] validate regex from <Form> components
 - [x] add different headings
 - [x] add hydration component
+- [x] add next SEO
 
-- [ ] add next SEO
 - [ ] rewrite modal component
 - [ ] preserve scroll for navigation
 - [ ] add auth component
