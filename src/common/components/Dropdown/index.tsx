@@ -29,7 +29,7 @@ function Dropdown({
       <button className="flex items-center">
         {children}
         {options?.caret && (
-          <span className="flex justify-start flex-shrink-0 ml-2 ">
+          <span className="flex-shrink-0 w-6 text-base text-right ">
             <i className="fa-regular fa-angle-down" />
           </span>
         )}
