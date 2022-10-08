@@ -4,6 +4,110 @@
 html {
   overflow-y: overlay;
 }
+.token.class-name,
+.token.function,
+.token.selector,
+.token.selector .class,
+.token.selector.class,
+.token.tag {
+  --tw-text-opacity: 1;
+  color: #7ee787;
+}
+.token.attr-name,
+.token.important,
+.token.keyword,
+.token.pseudo-class,
+.token.rule {
+  --tw-text-opacity: 1;
+  color: #79c0ff;
+}
+.token.attr-value,
+.token.class,
+.token.string {
+  --tw-text-opacity: 1;
+  color: #a5d6ff;
+}
+.token.attr-equals,
+.token.punctuation {
+  --tw-text-opacity: 1;
+  color: #ff7b72;
+}
+.token.attr-value * {
+  --tw-text-opacity: 1;
+  color: rgb(125 211 252 / var(--tw-text-opacity));
+}
+.token.attr-value .attr-equals,
+.token.attr-value .attr-equals + .punctuation,
+.token.attr-value > .punctuation:last-child {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+.token.property {
+  --tw-text-opacity: 1;
+  color: rgb(125 211 252 / var(--tw-text-opacity));
+}
+.token.unit {
+  --tw-text-opacity: 1;
+  color: rgb(153 246 228 / var(--tw-text-opacity));
+}
+.language-shell .token:not(.comment),
+.token.atapply .token:not(.rule):not(.important):not(.punctuation) {
+  color: inherit;
+}
+.language-css .token.function {
+  --tw-text-opacity: 1;
+  color: rgb(153 246 228 / var(--tw-text-opacity));
+}
+.token.combinator,
+.token.comment,
+.token.module,
+.token.operator {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+.token.unchanged {
+  display: block;
+}
+.token.deleted,
+.token.inserted {
+  position: relative;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: block;
+  border-left-width: 4px;
+  padding-left: 2rem;
+  padding-right: 1.25rem;
+}
+.token.deleted:before,
+.token.inserted:before {
+  position: absolute;
+  top: 0;
+  content: var(--tw-content);
+  left: 1rem;
+}
+bo .token.inserted {
+  --tw-border-opacity: 1;
+  border-color: rgb(45 212 191 / var(--tw-border-opacity));
+  background-color: rgba(45, 212, 191, 0.15);
+}
+.token.inserted:before {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity));
+  --tw-content: '+';
+  content: var(--tw-content);
+}
+.token.deleted {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 113 133 / var(--tw-border-opacity));
+  background-color: rgba(244, 63, 94, 0.15);
+}
+.token.deleted:before {
+  --tw-text-opacity: 1;
+  color: rgb(251 113 133 / var(--tw-text-opacity));
+  --tw-content: '-';
+  content: var(--tw-content);
+}
+
 body {
   overflow-x: hidden;
   color: #eff3f6;
