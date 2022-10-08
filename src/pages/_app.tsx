@@ -11,7 +11,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
-      <Component {...pageProps} key={router.route} />
+      <div className="mt-24">
+        <Component {...pageProps} key={router.route} />
+      </div>
       <Footer />
     </QueryClientProvider>
   );
