@@ -38,8 +38,8 @@ export default function Home() {
       </Hero>
       <div className="mt-24">
         <H3>Function-wrapped components</H3>
-        <div className="flex mt-10 space-x-20">
-          <div className="w-full max-w-xl">
+        <div className="flex flex-col items-start mt-10 md:space-x-5 md:flex-row">
+          <div className="w-full max-w-lg p-5 rounded-lg bg-types-100">
             <Form.Layout onSubmit={onSubmit} className="space-y-5">
               <Form.Input
                 id="Email"
@@ -69,7 +69,7 @@ export default function Home() {
               </Button.Wrapper>
             </Form.Layout>
           </div>
-          <div className="w-full !text-sm">
+          <div className="mt-10 md:mt-0 w-full !text-sm">
             <SyntaxHighlight />
           </div>
         </div>

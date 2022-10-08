@@ -124,6 +124,10 @@ body {
 .will-change {
   will-change: transform;
 }
+pre {
+  background-color: #1d1d1d !important;
+  margin: 0 !important;
+}
 .sr-only {
   /* screen readers*/
   position: absolute;

@@ -12,7 +12,7 @@ function H3({
     <h3
       className={concat(
         className ? className : '',
-        'text-xl md:text-2xl font-bold !leading-[3rem]',
+        'text-xl md:text-2xl font-medium md:font-bold !leading-[3rem]',
       )}
     >
       {children}

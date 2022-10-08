@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 function Hero({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col items-center justify-center py-24 mx-auto text-center rounded-2xl bg-types-100">
+    <div className="flex flex-col items-center justify-center mx-auto mt-12 text-center md:mt-0 md:py-24 rounded-2xl md:bg-types-100">
       {children}
     </div>
   );
