@@ -15,7 +15,7 @@ function P({
       <div
         className={concat(
           className ? className : '',
-          'text-base leading-8 whitespace-pre-line break-word w-full text-on-naked-100',
+          'text-base leading-8 whitespace-pre-line break-word w-full text-on-100',
         )}
       >
         {children.map((x, i) => (

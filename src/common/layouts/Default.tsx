@@ -17,7 +17,7 @@ export const DefaultLayout = ({ children, title, description }: Props) => {
     <div className="container flex flex-col min-h-screen ">
       <NextSeo title={title} description={description} />
 
-      <main className={'flex-1 w-full text-on-naked-100'}>{children}</main>
+      <main className={'flex-1 w-full text-on-100'}>{children}</main>
     </div>
   );
 };
