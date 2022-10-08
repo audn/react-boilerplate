@@ -1,10 +1,8 @@
 import { SyntheticEvent, useState } from 'react';
 import { Button } from '../common/components/Buttons';
 import { Form } from '../common/components/Form';
-import H1 from '../common/components/layout/headings/H1';
-import H2 from '../common/components/layout/headings/H2';
-import H3 from '../common/components/layout/headings/H3';
 import P from '../common/components/layout/headings/P';
+import Title from '../common/components/layout/headings/Title';
 import { DefaultLayout } from '../common/layouts/Default';
 import { validateEmail } from '../common/utils/helpers/regex/email';
 import { useCats } from '../common/utils/hooks/cats';
@@ -29,23 +27,19 @@ export default function Home() {
   }
   return (
     <DefaultLayout>
-      <H1>H1</H1>
-      <H2>H2</H2>
-      <H3>H3</H3>
-      <P block className="max-w-2xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.{' '}
-        <>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
-        </>
-        <>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur.
-        </>{' '}
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-        officia deserunt mollit anim id est laborum.
-      </P>
+      <div className="flex flex-col items-center justify-center pt-12 mx-auto text-center">
+        <Title>Boilerplate for building web applications with React</Title>
+        <P className="max-w-2xl mt-8">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </P>
+      </div>
+      <div className="flex items-center">
+        <div className="mr-2 text-2xl text-indigi-500">
+          <i className="fa-solid fa-pen-field" />
+        </div>
+        <span className="font-medium">Input fields</span>
+      </div>
       <Form.Layout onSubmit={onSubmit} className="my-10 space-y-5">
         <Form.Input
           id="Email"
