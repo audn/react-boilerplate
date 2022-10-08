@@ -14,6 +14,10 @@
     "> 1%",
     "not dead"
   ],
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
+  },
   "dependencies": {
     "@tanstack/react-query": "^4.0.10",
     "framer-motion": "^4.1.17",
