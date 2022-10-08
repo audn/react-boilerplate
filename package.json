@@ -15,7 +15,7 @@
     "not dead"
   ],
   "resolutions": {
-    "@types/react": "17.0.2",
+    "@types/react": "18.0.17",
     "@types/react-dom": "17.0.2"
   },
   "dependencies": {

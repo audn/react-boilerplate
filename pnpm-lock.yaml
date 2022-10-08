@@ -1,5 +1,9 @@
 lockfileVersion: 5.4
 
+overrides:
+  '@types/react': 18.0.17
+  '@types/react-dom': 17.0.2
+
 specifiers:
   '@babel/preset-env': ^7.12.1
   '@babel/preset-react': ^7.12.5
@@ -8,7 +12,7 @@ specifiers:
   '@tanstack/react-query': ^4.0.10
   '@types/gtag.js': ^0.0.3
   '@types/node': ^18.7.2
-  '@types/react': ^18.0.17
+  '@types/react': 18.0.17
   '@types/react-query': ^1.2.9
   '@types/react-syntax-highlighter': ^15.5.5
   autoprefixer: ^10.2.6
@@ -53,7 +57,7 @@ devDependencies:
   '@fullhuman/postcss-purgecss': 3.1.3_postcss@8.4.17
   '@types/gtag.js': 0.0.3
   '@types/node': 18.8.2
-  '@types/react': 18.0.21
+  '@types/react': 18.0.17
   '@types/react-query': 1.2.9_sfoxds7t5ydpegc3knd667wn6m
   '@types/react-syntax-highlighter': 15.5.5
   autoprefixer: 10.4.12_postcss@8.4.17
@@ -1491,11 +1495,11 @@ packages:
   /@types/react-syntax-highlighter/15.5.5:
     resolution: {integrity: sha512-QH3JZQXa2usAvJvSsdSUJ4Yu4j8ReuZpgRrEW+XP+Rmosbn425YshW9iGEb/pAARm8496axHhHUPRH3UmTiB6A==}
     dependencies:
-      '@types/react': 18.0.21
+      '@types/react': 18.0.17
     dev: true
 
-  /@types/react/18.0.21:
-    resolution: {integrity: sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==}
+  /@types/react/18.0.17:
+    resolution: {integrity: sha512-38ETy4tL+rn4uQQi7mB81G7V1g0u2ryquNmsVIOKUAEIDK+3CUjZ6rSRpdvS99dNBnkLFL83qfmtLacGOTIhwQ==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
