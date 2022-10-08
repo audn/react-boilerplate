@@ -14,3 +14,4 @@
 - [ ] add react-hot-toast
 - [ ] add simple hamburger / responsive on phone
 - [ ] look at headless-ui
+- [ ] make position option in dropdown work

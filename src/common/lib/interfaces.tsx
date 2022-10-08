@@ -7,7 +7,12 @@ import { HTMLInputTypeAttribute, ReactNode, SyntheticEvent } from 'react';
 export type IDropdown = {
   children: ReactNode;
   list: INavItem[];
-  options?: { caret?: boolean; position?: 'start' | 'center' | 'end' };
+  options?: {
+    caret?: boolean;
+    position?: 'start' | 'center' | 'end';
+    box?: boolean;
+    animateCaret?: boolean;
+  };
 };
 // export interface ILayout {
 //   children: ReactNode;
@@ -86,7 +91,7 @@ export declare namespace Form {
   }
 }
 export declare namespace Button {
-  type Options = { size?: 'sm'; style?: 'danger' | 'warn' };
+  type Options = { size?: 'sm' | 'lg'; style?: 'danger' | 'warn' };
   interface Base {
     layoutClass?: string;
     icon?: string;

@@ -6,6 +6,11 @@ const dropdown = [
     route: '#',
   },
   {
+    label: 'Settings',
+    icon: 'fa-solid fa-cog',
+    route: '#',
+  },
+  {
     label: 'Sign out',
     className: 'hover:!bg-opacity-10 hover:!bg-red-500 hover:!text-red-500',
     icon: 'fa-solid fa-sign-out-alt',
@@ -20,9 +25,9 @@ const routes: Array<INavItem> = [
     icon: 'fa-solid fa-external-link-alt',
   },
   {
-    label: 'Options',
+    label: 'Dropdown',
     list: dropdown,
-    icon: 'fa-regular fa-angle-down',
+    // icon: 'fa-regular fa-angle-down',
   },
 ];
 
