@@ -37,7 +37,7 @@ export const FormLabel = ({ disabled, label, description, id }: Form.Label) => {
       <label
         className={concat(
           disabled ? 'text-on-200' : 'text-on-100',
-          'block mb-3 font-bold ',
+          'block mb-3 font-bold text-left',
         )}
         htmlFor={id}
       >

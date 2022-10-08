@@ -1,6 +1,6 @@
-import { INavItem } from '../../../lib/interfaces';
-import Dropdown from '../../Dropdown';
-import Link from '../../layout/Link';
+import { INavItem } from '../../../../../lib/interfaces';
+import Dropdown from '../../../../Dropdown';
+import Link from '../../../../layout/Link';
 
 function NavItem({ route, icon, label, list }: INavItem) {
   function Label() {
