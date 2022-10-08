@@ -6,7 +6,7 @@ body {
   overflow-x: hidden;
   color: #eff3f6;
   font-family: 'Inter', sans-serif;
-  background-color: #141519;
+  background-color: #151515;
 }
 .animate {
   @apply transition-all duration-100 ease-out;
