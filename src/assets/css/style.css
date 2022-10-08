@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+html {
+  overflow-y: overlay;
+}
 body {
   overflow-x: hidden;
   color: #eff3f6;
@@ -37,10 +39,7 @@ body {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
-.dropdown {
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
-}
+
 .scrollbar-content::-webkit-scrollbar-thumb {
   background-color: #2b2b32;
   border-radius: 50px;
@@ -57,10 +56,10 @@ body {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #2b2b32;
+  background-color: #3a3a3a;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #24242b;
+  background-color: #302f2f;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
