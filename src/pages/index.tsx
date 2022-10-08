@@ -23,7 +23,6 @@ export default function Home() {
 
   function onSubmit(e: SyntheticEvent) {
     e.preventDefault();
-    console.log('ay');
   }
   return (
     <DefaultLayout>

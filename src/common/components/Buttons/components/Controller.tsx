@@ -30,8 +30,6 @@ function Controller({
       case 'danger':
         addons.push(redButton);
     }
-    console.log(addons);
-
     return addons.join(' ');
   }
   return (
