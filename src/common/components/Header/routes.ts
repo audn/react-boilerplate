@@ -27,7 +27,6 @@ const routes: Array<INavItem> = [
   {
     label: 'Dropdown',
     list: dropdown,
-    // icon: 'fa-regular fa-angle-down',
   },
 ];
 
