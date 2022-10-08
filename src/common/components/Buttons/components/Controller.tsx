@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { ReactElement, SyntheticEvent } from 'react';
 import { Button } from '../../../lib/interfaces';
-import { redButton, smallButton } from '../styles';
+import { largeButton, redButton, smallButton } from '../styles';
 
 function Controller({
   route,
@@ -20,12 +20,18 @@ function Controller({
   }
   function addButtonStyles() {
     const addons = [className];
-    if (options?.size == 'sm') {
-      addons.push(smallButton);
+    switch (options?.size) {
+      case 'sm':
+        addons.push(smallButton);
+      case 'lg':
+        addons.push(largeButton);
     }
-    if (options?.style == 'danger') {
-      addons.push(redButton);
+    switch (options?.style) {
+      case 'danger':
+        addons.push(redButton);
     }
+    console.log(addons);
+
     return addons.join(' ');
   }
   return (
