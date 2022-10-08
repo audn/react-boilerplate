@@ -13,7 +13,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Header />
       <DefaultSeo {...SEO} />
-      <div className="mt-24">
+      <div className="px-5 mt-24">
         <Component {...pageProps} key={router.route} />
       </div>
       <Footer />

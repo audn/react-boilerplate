@@ -1,7 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 import { Button } from '../common/components/Buttons';
 import { Form } from '../common/components/Form';
-import H3 from '../common/components/layout/headings/H3';
 import P from '../common/components/layout/headings/P';
 import Title from '../common/components/layout/headings/Title';
 import Hero from '../common/components/layout/Hero';
@@ -37,7 +36,6 @@ export default function Home() {
         </P>
       </Hero>
       <div className="mt-24 text-center md:text-left">
-        <H3>Function-wrapped components</H3>
         <div className="flex flex-col items-start mt-10 lg:flex-row-reverse">
           <div className="w-full p-5 rounded-lg lg:max-w-lg lg:ml-5 bg-types-100">
             <Form.Layout onSubmit={onSubmit} className="space-y-5">
