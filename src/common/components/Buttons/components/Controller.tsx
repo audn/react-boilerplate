@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { ReactElement, SyntheticEvent } from 'react';
 import { Button } from '../../../lib/interfaces';
+import { validateUrl } from '../../../utils/helpers/regex/url';
 import { largeButton, redButton, smallButton } from '../styles';
 
 function Controller({
@@ -15,7 +16,9 @@ function Controller({
   function handleClick(e: SyntheticEvent) {
     e.stopPropagation();
     if (route) {
-      router.push(route);
+      if (validateUrl(route)) {
+        window.open(route);
+      } else router.push(route);
     } else if (onClick) onClick(e);
   }
   function addButtonStyles() {
