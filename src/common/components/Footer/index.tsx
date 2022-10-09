@@ -11,12 +11,12 @@ function Footer() {
           <Logo />
           <VercelMark />
         </div>
-        {lists.map((x) => (
-          <nav className="flex flex-col gap-6 sm:gap-4">
+        {lists.map((x, i) => (
+          <nav className="flex flex-col gap-6 sm:gap-4" key={'list_' + i}>
             <h3 className="font-semibold">{x.label}</h3>
             <ul className="flex flex-col gap-4 sm:gap-2">
-              {x.list.map((x) => (
-                <NavItem {...x} />
+              {x.list.map((x, i) => (
+                <NavItem {...x} key={i} />
               ))}
             </ul>
           </nav>
