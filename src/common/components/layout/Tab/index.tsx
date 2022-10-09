@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TabButton from './components/Button';
 import TabWrapper from './components/Wrapper';
 
@@ -14,6 +14,12 @@ function TabSelector({ list, view, onChange }: Props) {
 
   const tabsRef = useRef<Partial<[any]>>([]);
   let currentTab = tabsRef.current[tab] as HTMLElement;
+  console.log(currentTab);
+
+  useEffect(() => {
+    mouseEvent(0);
+    return () => mouseEvent(0);
+  }, []);
 
   function setTabPosition() {
     setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
