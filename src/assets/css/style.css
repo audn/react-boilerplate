@@ -46,6 +46,13 @@ html {
   --tw-text-opacity: 1;
   color: rgb(125 211 252 / var(--tw-text-opacity));
 }
+.token.property-access {
+  --tw-text-opacity: 1;
+  color: #d2a8ff !important;
+}
+.token.script.language-javascript {
+  color: #a5d6ff;
+}
 .token.unit {
   --tw-text-opacity: 1;
   color: rgb(153 246 228 / var(--tw-text-opacity));

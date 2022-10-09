@@ -26,7 +26,7 @@ function Dropdown({
     }),
   );
   return (
-    <div ref={menuRef} onClick={toggle} className="relative mx-auto">
+    <div ref={menuRef} onClick={toggle} className="relative w-[fit-content]">
       <button
         className={concat(
           options.box

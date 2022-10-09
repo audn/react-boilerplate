@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import TabButton from './components/Button';
 import TabWrapper from './components/Wrapper';
 
@@ -19,12 +19,6 @@ function TabSelector({ list, view, onChange }: Props) {
     setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
     setTabUnderlineWidth(currentTab?.clientWidth ?? 0);
   }
-
-  useEffect(() => {
-    setTabPosition();
-    window.addEventListener('resize', setTabPosition);
-    return () => window.removeEventListener('resize', setTabPosition);
-  }, [tab, currentTab]);
 
   function mouseEvent(index: number) {
     const tab = tabsRef.current[index];
