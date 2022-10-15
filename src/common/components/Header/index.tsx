@@ -13,7 +13,7 @@ export const Header = () => {
           </Link>
           <div className="flex">
             {routes.map((x) => (
-              <Link href={x.route}>
+              <Link key={x.route} href={x.route}>
                 <div className="inline-flex items-center justify-between w-full px-3 py-2 text-base font-semibold rounded-md cursor-pointer animate sm:mt-0 hover:bg-header-200 hover:text-white bg-header-150">
                   <i className={concat(x.icon?.join(' '))} /> {x.title}
                 </div>

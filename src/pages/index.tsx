@@ -39,8 +39,8 @@ export default function Home() {
               <h1 className="text-[17px] font-semibold text-on-naked-100">
                 Did you know that..?
               </h1>
-              {[...Array(30)].map(() => (
-                <h3 className="mt-1 text-base text-on-naked-800">
+              {[...Array(30)].map((i) => (
+                <h3 key={i} className="mt-1 text-base text-on-naked-800">
                   There is a technical name for the "fear of long words."
                 </h3>
               ))}
