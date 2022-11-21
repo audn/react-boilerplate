@@ -1,12 +1,7 @@
-import { useState } from 'react';
 import { Button } from '../common/components/Buttons';
-import Buttons from '../common/components/examples/Buttons';
-import DropdownExample from '../common/components/examples/Dropdown';
-import Forms from '../common/components/examples/Forms';
 import P from '../common/components/layout/headings/P';
 import Title from '../common/components/layout/headings/Title';
 import Hero from '../common/components/layout/Hero';
-import TabSelector from '../common/components/layout/Tab';
 import { DefaultLayout } from '../common/layouts/Default';
 import { useCats } from '../common/utils/hooks/cats';
 import { Hydrate } from '../common/utils/hydration';
@@ -20,15 +15,6 @@ export default function Home() {
     isRefetching,
   } = useCats();
 
-  type View = 'Forms' | 'Buttons' | 'Dropdown';
-
-  const [view, setView] = useState<View>('Forms');
-
-  const array = [
-    { label: 'Forms', icon: 'fa-solid fa-pen-field' },
-    { label: 'Buttons', icon: 'fa-solid fa-tablet-button' },
-    { label: 'Dropdown', icon: 'fa-solid fa-list-dropdown' },
-  ];
   return (
     <DefaultLayout>
       <Hero>
@@ -42,23 +28,11 @@ export default function Home() {
           <Button.Secondary
             title="GitHub"
             icon="fa-brands fa-github"
-            options={{ size: 'lg' }}
+            options={{ size: 'lg', style: 'danger' }}
           />
         </Button.Wrapper>
       </Hero>
-      <div className="mt-24 text-center md:text-left">
-        <div className="flex justify-center gap-2">
-          <TabSelector list={array} view={view} onChange={setView} />
-        </div>
 
-        {view === 'Forms' ? (
-          <Forms />
-        ) : view === 'Buttons' ? (
-          <Buttons />
-        ) : (
-          <DropdownExample />
-        )}
-      </div>
       <div className="mt-12">
         <Hydrate.Cats
           data={data}
