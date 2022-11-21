@@ -9,9 +9,7 @@
 
 - [ ] rewrite modal component
 - [ ] preserve scroll for navigation
-- [ ] add auth component
 - [ ] add fontawesome properly
-- [ ] add react-hot-toast
 - [ ] add simple hamburger / responsive on phone
 - [ ] look at headless-ui
 - [ ] make position option in dropdown work

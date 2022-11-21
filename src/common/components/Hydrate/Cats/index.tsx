@@ -1,9 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
 import { SkeletonTheme } from 'react-loading-skeleton';
-import HydrationError from '../../../components/layout/Alerts/HydrationError';
-import Animate from '../../../components/layout/Animate';
 import { Hydration } from '../../../lib/interfaces';
-import { fadeIn } from '../../data/animations';
+import { fadeIn } from '../../../utils/data/animations';
+import HydrationError from '../../layout/Alerts/HydrationError';
+import Animate from '../../layout/Animate';
 
 function CatsHydration({
   data,

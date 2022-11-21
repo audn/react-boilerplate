@@ -1,4 +1,4 @@
-import Link from './layout/Link';
+import Link from '../layout/Link';
 
 function Logo() {
   return (

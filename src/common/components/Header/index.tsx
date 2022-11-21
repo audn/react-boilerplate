@@ -1,4 +1,4 @@
-import Logo from '../Logo';
+import Logo from '../misc/Logo';
 import Navigation from './components/Navigation';
 
 export const Header = () => {

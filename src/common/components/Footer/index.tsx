@@ -1,4 +1,4 @@
-import Logo from '../Logo';
+import Logo from '../misc/Logo';
 import NavItem from './components/NavItem';
 import VercelMark from './components/VercelMark';
 import { lists } from './routes';

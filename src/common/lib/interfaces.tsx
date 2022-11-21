@@ -14,17 +14,8 @@ export type IDropdown = {
     animateCaret?: boolean;
   };
 };
-// export interface ILayout {
-//   children: ReactNode;
-//   title?: string;
-//   description?: string;
-// }
-export declare namespace API {
-  //   interface Response<T> {
-  //     message: T;
-  //     status: 'success';
-  //   }
 
+export declare namespace API {
   namespace Models {
     interface Cat {
       id: string;
@@ -34,14 +25,16 @@ export declare namespace API {
   }
 }
 export declare namespace Hydration {
-  interface Data<T> {
-    data?: T;
+  type ReactQueryProps = {
     refetch: () => void;
     isRefetching: boolean;
     isLoading: boolean;
     error: unknown;
+  };
+  interface Model<T> extends ReactQueryProps {
+    data?: T;
   }
-  interface Cats extends Data<API.Models.Cat[]> {}
+  interface Cats extends Model<API.Models.Cat[]> {}
 }
 export declare namespace Alert {
   interface Base {
