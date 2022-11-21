@@ -25,11 +25,7 @@ export default function Home() {
           <p className="mt-5 font-semibold">No installations required.</p>
         </P>
         <Button.Wrapper className="mt-10">
-          <Button.Secondary
-            title="GitHub"
-            icon="fa-brands fa-github"
-            options={{ size: 'lg', style: 'danger' }}
-          />
+          <Button.Secondary title="GitHub" icon="fa-brands fa-github" />
         </Button.Wrapper>
       </Hero>
 
