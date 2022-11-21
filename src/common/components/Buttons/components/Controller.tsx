@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { ReactElement, SyntheticEvent } from 'react';
 import { Button } from '../../../lib/interfaces';
 import { validateUrl } from '../../../utils/helpers/regex/url';
-import { largeButton, redButton, smallButton } from '../styles';
+import { danger, largeButton, smallButton, warn } from '../styles';
 
 function Controller({
   route,
@@ -23,18 +23,20 @@ function Controller({
   }
   function addButtonStyles() {
     const addons = [className];
-    switch (options?.size) {
-      case 'sm':
-        addons.push(smallButton);
-      case 'lg':
-        addons.push(largeButton);
+    if (options?.size == 'sm') {
+      addons.push(smallButton);
+    } else if (options?.size == 'lg') {
+      addons.push(largeButton);
     }
-    switch (options?.style) {
-      case 'danger':
-        addons.push(redButton);
+    if (options?.style == 'danger') {
+      addons.push(danger);
+    } else if (options?.style == 'warn') {
+      addons.push(warn);
     }
+
     return addons.join(' ');
   }
+
   return (
     <span className={layoutClass ? layoutClass : ''} onClick={handleClick}>
       {React.cloneElement(children, { className: addButtonStyles() })}
