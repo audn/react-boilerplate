@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Button as IButton } from '../../lib/interfaces';
-import { Wrapper } from './components';
 import Controller from './components/Controller';
+import { Wrapper } from './components/Wrapper';
 import PrimaryButton from './Primary';
 import SecondaryButton from './Secondary';
 import WhiteButton from './White';
