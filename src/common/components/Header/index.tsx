@@ -1,5 +1,5 @@
 import Logo from '../misc/Logo';
-import Navigation from './components/Navigation';
+import Navigation from './Navigation';
 
 export const Header = () => {
   return (

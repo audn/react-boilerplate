@@ -1,7 +1,8 @@
 import { Form } from '../../../lib/interfaces';
 import concat from '../../../utils/helpers/concat';
 import { validateRegex } from '../../../utils/helpers/regex/validator';
-import { FormError, FormLabel } from '../components';
+import FormError from '../components/FormError';
+import FormLabel from '../components/FormLabel';
 
 function Textarea({
   value,

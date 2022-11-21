@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import concat from '../../../utils/helpers/concat';
 
-export const Wrapper = ({
+export const ButtonWrapper = ({
   className,
   children,
 }: {

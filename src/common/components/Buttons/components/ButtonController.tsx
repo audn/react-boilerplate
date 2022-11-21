@@ -4,7 +4,7 @@ import { Button } from '../../../lib/interfaces';
 import { validateUrl } from '../../../utils/helpers/regex/url';
 import { danger, largeButton, smallButton, warn } from '../styles';
 
-function Controller({
+function ButtonController({
   route,
   onClick,
   children,
@@ -44,4 +44,4 @@ function Controller({
   );
 }
 
-export default Controller;
+export default ButtonController;

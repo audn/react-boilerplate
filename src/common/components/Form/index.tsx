@@ -1,6 +1,6 @@
 import { ReactNode, SyntheticEvent } from 'react';
 import { Form as IForm } from '../../lib/interfaces';
-import { Wrapper } from './components';
+import FormWrapper from './components/FormWrapper';
 import Input from './Input';
 import Layout from './Layout';
 import Textarea from './Textarea';
@@ -17,7 +17,7 @@ export const Form = {
     return <Layout {...props} />;
   },
   Wrapper: ({ ...props }: { className?: string; children: ReactNode }) => {
-    return <Wrapper {...props} />;
+    return <FormWrapper {...props} />;
   },
   Textarea: ({ ...props }: IForm.Textarea) => {
     return <Textarea {...props} />;

@@ -1,10 +1,10 @@
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { fadeIn } from '../../../../utils/data/animations';
-import Animate from '../../../layout/Animate';
-import DesktopMenu from '../Desktop';
-import Hamburger from '../Hamburger';
-import PhoneMenu from '../Phone';
+import { fadeIn } from '../../../utils/data/animations';
+import Animate from '../../layout/Animate';
+import Hamburger from './components/Hamburger';
+import DesktopMenu from './Desktop';
+import PhoneMenu from './Phone';
 
 function Navigation() {
   const [isOpenPhoneMenu, setIsOpenPhoneMenu] = useState<boolean>(false);
