@@ -15,7 +15,9 @@ function CatsHydration({
   if (isLoading) {
     return (
       <SkeletonTheme baseColor="#272e39" highlightColor="#38414f">
-        <div className="grid grid-cols-1 gap-5">loading cats...</div>
+        <div className="flex flex-col items-center p-4 mx-auto rounded-md">
+          loading cats...
+        </div>
       </SkeletonTheme>
     );
   } else if (error) {

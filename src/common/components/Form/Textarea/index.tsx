@@ -47,8 +47,8 @@ function Textarea({
           inputClassName ? inputClassName : '',
           disabled
             ? 'bg-opacity-50 cursor-not-allowed text-on-200 after:!text-on-150'
-            : 'focus:ring-2',
-          'w-full h-full px-5 py-4 transition duration-150 ease-out rounded-lg outline-none scrollbar-none bg-types-50 focus:ring-2 ring-types-200 input-field',
+            : 'focus:bg-types-150',
+          'w-full h-full px-5 py-4 transition duration-150 ease-out rounded-lg outline-none scrollbar-none bg-types-100 input-field',
         )}
       />
       <FormError label={getErrors()} />

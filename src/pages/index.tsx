@@ -14,7 +14,6 @@ export default function Home() {
     refetch,
     isRefetching,
   } = useCats();
-
   return (
     <DefaultLayout>
       <NextSeo />
@@ -33,6 +32,7 @@ export default function Home() {
           <Button.Secondary title="GitHub" icon="fa-brands fa-github" />
         </Button.Wrapper>
       </div>
+
       <div className="mt-12">
         <Hydrate.Cats
           data={data}

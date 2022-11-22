@@ -11,23 +11,19 @@ function Link({
   children: ReactNode;
   rel?: 'author' | 'me';
   className?: string;
-  href?: string;
+  href: string;
 }) {
-  if (href)
-    return (
-      <NextLink href={href}>
-        <a
-          {...props}
-          target={validateUrl(href) ? '_blank' : '_self'}
-          rel={
-            validateUrl(href) ? 'external nofollow noopener' : rel ? rel : ''
-          }
-        >
-          {children}
-        </a>
-      </NextLink>
-    );
-  else return <button {...props}>{children}</button>;
+  return (
+    <NextLink href={href}>
+      <a
+        {...props}
+        target={validateUrl(href) ? '_blank' : '_self'}
+        rel={validateUrl(href) ? 'external nofollow noopener' : rel ? rel : ''}
+      >
+        {children}
+      </a>
+    </NextLink>
+  );
 }
 
 export default Link;
