@@ -1,5 +1,5 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 import { GA_TRACKING_ID } from '../common/utils/analytics';
 
 export default class extends Document {
@@ -7,12 +7,12 @@ export default class extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+          <Script
+            src="https://kit.fontawesome.com/84c3028184.js"
             crossOrigin="anonymous"
+            strategy="beforeInteractive"
           />
+
           <meta name="application-TileColor" content="#4d7fff" />
           <meta name="theme-color" content="#4d7fff" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
@@ -21,7 +21,7 @@ export default class extends Document {
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
           <script

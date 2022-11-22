@@ -1,23 +1,18 @@
-import { ILayout } from '../lib/interfaces';
-
-import { Footer } from '../components/Footer';
-import SeoTags from '../components/SeoTags';
-
-import { trackPageview } from '../utils/analytics';
 import Router from 'next/router';
+import { ReactNode } from 'react';
+import { trackPageview } from '../utils/analytics';
 
 Router.events.on('routeChangeComplete', (url) => {
   trackPageview(url);
 });
 
-export const DefaultLayout = ({ title, desc, url, children }: ILayout) => {
+type Props = {
+  children: ReactNode;
+};
+export const DefaultLayout = ({ children }: Props) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <SeoTags title={title} desc={desc} url={url} />
-      <div className={'flex-1'}>
-        <main className="w-full text-on-naked-100">{children}</main>
-      </div>
-      <Footer />
+    <div className="container flex flex-col min-h-screen">
+      <main className={'flex-1 w-full text-on-100'}>{children}</main>
     </div>
   );
 };

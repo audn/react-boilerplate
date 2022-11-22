@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://align-items.center
+
+# Sitemaps
+Sitemap: https://align-items.center/sitemap.xml

@@ -34,12 +34,20 @@ export const fadeInFromBottomAndOutBottom = {
   initial: { y: 30, x: 0, opacity: 0 },
   enter: { y: 0, opacity: 1 },
   exit: {
-    y: 200,
+    y: 25,
     opacity: 0,
     transition: { duration: 0.2 },
   },
 };
-
+export const dropdown = {
+  initial: { y: -30, x: 0, opacity: 0 },
+  enter: { y: 0, opacity: 1, transition: { duration: 0.1 } },
+  exit: {
+    y: -25,
+    opacity: 0,
+    transition: { duration: 0.2 },
+  },
+};
 
 export const scaleIn = {
   initial: { opacity: 0, scale: 0.95 },
@@ -51,16 +59,6 @@ export const scaleIn = {
   exit: {
     opacity: 0,
     scale: 0.95,
-    transition: { duration: 0.2 },
-  },
-};
-
-export const rollUp = {
-  initial: { y: 5, x: 0, opacity: 0 },
-  enter: { y: 0, opacity: 1 },
-  exit: {
-    y: 5,
-    opacity: 0,
     transition: { duration: 0.2 },
   },
 };

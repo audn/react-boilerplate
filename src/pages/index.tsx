@@ -1,64 +1,47 @@
-import { useState } from 'react';
-
+import { NextSeo } from 'next-seo';
+import { Button } from '../common/components/Buttons';
+import { Hydrate } from '../common/components/Hydrate';
+import H1 from '../common/components/layout/headings/H1';
+import Text from '../common/components/layout/headings/Text';
 import { DefaultLayout } from '../common/layouts/Default';
-
-import Layout from '../common/components/layout/Layout';
-import Button from '../common/components/Button';
-import Modal from '../common/components/Modal';
-import { AnimatePresence } from 'framer-motion';
+import { useCats } from '../common/utils/hooks/cats';
 
 export default function Home() {
-  const [isOpen, setOpen] = useState<boolean>(false);
-  const toggleModal = () => setOpen(!isOpen);
+  const {
+    data,
+    isLoading,
+    error: fetchError,
+    refetch,
+    isRefetching,
+  } = useCats();
   return (
-    <DefaultLayout title={'Index'}>
-      <Layout.Container center>
-        <div className={'pt-12 md:pt-20 text-center'}>
-          <h1 className={'font-bold text-white text-3xl md:text-5xl mb-8'}>
-            React, Next.js & TailwindCSS
-          </h1>
-          <h2 className={'text-lg text-on-naked-50'}>
-            Don't waste time structuring or setting up interfaces on your next
-            project!
-          </h2>
-        </div>
-        <Button.Group className="flex mt-12 space-y-5 sm:space-y-0 sm:space-x-5">
-          <Button.Primary
-            title={`Open modal`}
-            size="xl"
-            className="!px-6"
-            onClick={() => toggleModal()}
-          />
-        </Button.Group>
-      </Layout.Container>
-      <AnimatePresence>
-        {isOpen && (
-          <Modal.Default open={isOpen} onClose={() => toggleModal()}>
-            <Modal.Title onClose={() => toggleModal()}>Title</Modal.Title>
-            <Modal.Body>
-              <h1 className="text-[17px] font-semibold text-on-naked-100">
-                Did you know that..?
-              </h1>
-              {[...Array(30)].map(() => (
-                <h3 className="mt-1 text-base text-on-naked-800">
-                  There is a technical name for the "fear of long words."
-                </h3>
-              ))}
-            </Modal.Body>
-            <Modal.Footer>
-              <h4 className="text-sm text-center xs:text-left">
-                This is my cute little footer!
-              </h4>
-              <div
-                className="flex items-center justify-center px-5 py-3 mt-4 mb-5 font-semibold text-white rounded-full xs:hidden bg-types-200"
-                onClick={() => toggleModal()}
-              >
-                Close
-              </div>
-            </Modal.Footer>
-          </Modal.Default>
-        )}
-      </AnimatePresence>
+    <DefaultLayout>
+      <NextSeo />
+      <div className="flex flex-col items-center justify-center mx-auto mt-12 text-center md:mt-0 md:py-24 rounded-2xl md:bg-types-d100">
+        <H1 className="text-3xl md:text-6xl md:!leading-[5rem] text-transparent max-w-4xl bg-gradient-to-br from-brand-primary-100 to-brand-primary-150 bg-clip-text">
+          Boilerplate for building web applications with React
+        </H1>
+        <Text className="max-w-2xl mt-8">
+          <p>
+            React template with pre-made components and helpers. <br />
+            All components are built using TailwindCSS.
+          </p>
+          <p className="mt-5 font-semibold">No installations required.</p>
+        </Text>
+        <Button.Wrapper className="mt-10">
+          <Button.Secondary title="GitHub" icon="fa-brands fa-github" />
+        </Button.Wrapper>
+      </div>
+
+      <div className="mt-12">
+        <Hydrate.Cats
+          data={data}
+          error={fetchError}
+          isLoading={isLoading}
+          refetch={refetch}
+          isRefetching={isRefetching}
+        />
+      </div>
     </DefaultLayout>
   );
 }

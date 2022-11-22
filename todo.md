@@ -1,0 +1,15 @@
+- [x] add form component
+- [x] add premade buttons with controller
+- [x] add toolip component that wraps around children
+- [x] add dropdown
+- [x] validate regex from <Form> components
+- [x] add different headings
+- [x] add hydration component
+- [x] add next SEO
+
+- [ ] rewrite modal component
+- [ ] preserve scroll for navigation
+- [ ] add fontawesome properly
+- [ ] add simple hamburger / responsive on phone
+- [ ] look at headless-ui
+- [ ] make position option in dropdown work

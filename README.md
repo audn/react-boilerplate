@@ -15,26 +15,30 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 5. Start localhost with `pnpm run dev` and ye're done!
 6. **Additional**, Star the repo 'nd swab the deck!
 
-## 📚 Includes
+## 📚 Includes / Features
 
-- Framer motion
-- Google Analytics setup
-- Responsive 
-- Typescript interfaces
-- Regex for regular stuff such as url/emails
-- Built-in regex for input fields/textareas
-- Modal component
-- Premade Button components `<Button.Primary title={..}/`
-- Premade <Input> for normal inputs, textarea & checkboxes
-- SEO optimization built into the `<Layout>` component
-- Hydartion component
-- Dropdown component
-- Premade h1,h2,h3 & paragraph
-- react-tooltip component
+- Framer motion _(+ pre-made animations)_.
+- Google Analytics _(GDPR approved)_.
+- Pre-made regex matcher for url/emails.
+- Built-in regex validation for `<Form>` components.
+- Button components `<Button.Primary {...props}/>`
+- `<Form>` with input, textarea & checkboxes.
+- `<Tooltip>` wrapper
+- `<Dropdown>` wrapper.
+- `<Modal>` wrapper.
+- Premade heading components `<H1>`, `<H2>`, `<H3>` and `<Text>`.
+- SEO optimization for Next.js
+- Next.js sitemap generator
+- Zustand _(State management replacing Redux)_
+- Hydration component _(Built in skeleton and error handling)_.
+- Typescript
+- Responsive for all screens
 
 ### Websites using this boilerplate:
+
 Below is a list of sites using this boilerplate, check them out!
 Submit a pull request to add yours!
+
 - [discordlist.gg](https://discordlist.gg)
 - [discord.style](https://discord.style)
 - [audun.gg](https://audun.gg)
