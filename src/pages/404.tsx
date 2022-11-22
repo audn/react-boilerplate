@@ -1,5 +1,11 @@
+import { NextSeo } from 'next-seo';
 import { DefaultLayout } from '../common/layouts/Default';
 
 export default function Custom404() {
-  return <DefaultLayout title={'404 | Boilerplate'}>err</DefaultLayout>;
+  return (
+    <DefaultLayout>
+      <NextSeo title="Page not found" />
+      error
+    </DefaultLayout>
+  );
 }

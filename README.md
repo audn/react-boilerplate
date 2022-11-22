@@ -26,8 +26,9 @@ Mainly did this t' speed up me productivity, but feel free t' make a PR if ye go
 - `<Tooltip>` wrapper
 - `<Dropdown>` wrapper.
 - `<Modal>` wrapper.
-- Premade heading components `<H1>`, `<H2>`, `<H3>` and `<P>`.
+- Premade heading components `<H1>`, `<H2>`, `<H3>` and `<Text>`.
 - SEO optimization for Next.js
+- Next.js sitemap generator
 - Zustand _(State management replacing Redux)_
 - Hydration component _(Built in skeleton and error handling)_.
 - Typescript
