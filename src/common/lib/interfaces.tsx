@@ -84,14 +84,12 @@ export declare namespace Form {
   }
 }
 export declare namespace Button {
-  type Options = { size?: 'sm' | 'lg'; style?: 'danger' | 'warn' };
   interface Base {
     layoutClass?: string;
     icon?: string;
     route?: string;
     onClick?: (e: SyntheticEvent) => void;
     title?: string;
-    options?: Options;
     disabled?: boolean;
     isLoading?: boolean;
     className?: string;

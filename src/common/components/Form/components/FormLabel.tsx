@@ -13,7 +13,7 @@ function FormLabel({ disabled, label, description, id }: Form.Label) {
       >
         {label}
         {description && (
-          <div className={`!font-normal mt-2  text-on-100`}>{description}</div>
+          <div className={`!font-normal mt-2 text-on-100`}>{description}</div>
         )}
       </label>
     );

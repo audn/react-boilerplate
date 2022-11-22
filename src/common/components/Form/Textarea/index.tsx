@@ -34,11 +34,6 @@ function Textarea({
             label={label}
           />
         )}
-        {minLength && minLength - Number(value?.length) >= 1 && (
-          <span className="text-sm font-semibold text-on-200">
-            {minLength - Number(value?.length)}
-          </span>
-        )}
       </div>
       <textarea
         placeholder={placeholder}
