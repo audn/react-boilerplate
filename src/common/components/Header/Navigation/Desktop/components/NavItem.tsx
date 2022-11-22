@@ -27,7 +27,7 @@ function NavItem({ route, icon, label, list }: INavItem) {
   } else
     return (
       <Link
-        href={route}
+        href={route ?? '#'}
         className="inline-flex items-center justify-between w-full text-base font-medium rounded-md cursor-pointer sm:mt-0 hover:bg-header-200 bg-header-150 text-on-50 hover:text-white"
       >
         <Label />
